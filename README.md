@@ -6,6 +6,10 @@
 
 This project examines why some Taiwan-related geopolitical shocks fail to generate persistent financial-market damage despite elevated objective risk. It develops a grey-zone sovereignty framework, arguing that Taiwan's unresolved sovereignty status generates recurring geopolitical and geoeconomic shocks. Market reactions are shaped by investor interpretation, including threat, opportunity, adaptation, and surprise. The empirical strategy is an exploratory event study of abnormal returns for the Taiwan Stock Exchange Weighted Index (TWSE) and Taiwan Semiconductor Manufacturing Company (TSMC) around Taiwan-related events from 2022 to 2025.
 
+## Project Status
+
+This is a research portfolio repository for an exploratory event-study project. The findings should be interpreted as descriptive and theory-building rather than definitive causal proof.
+
 ## Research Question
 
 Why do some Taiwan-related geopolitical shocks produce negative financial-market reactions while others generate muted or even positive abnormal returns?
@@ -38,6 +42,7 @@ Daily market data are collected with `yfinance`. The analysis calculates daily r
 │   ├── raw/
 │   ├── processed/
 │   └── events/
+├── docs/
 ├── scripts/
 │   ├── download_market_data.py
 │   ├── clean_market_data.py
@@ -45,6 +50,8 @@ Daily market data are collected with `yfinance`. The analysis calculates daily r
 │   └── generate_figures.py
 ├── figures/
 ├── notes/
+│   └── drafts/
+├── output/
 ├── results/
 │   └── summary_results.md
 ├── requirements.txt
@@ -58,6 +65,10 @@ Daily market data are collected with `yfinance`. The analysis calculates daily r
 - However, individual cases vary substantially.
 - Some risk events, such as Joint Sword-2024B, generate positive abnormal returns.
 - This supports a conditional interpretation of geopolitical risk rather than an automatic risk-damage model.
+
+## Key Figure
+
+![Average cumulative abnormal returns by event type](figures/average_car_by_event_type.png)
 
 ## Limitations
 
