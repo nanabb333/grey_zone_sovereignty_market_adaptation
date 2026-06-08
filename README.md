@@ -105,3 +105,7 @@ The completed dissertation paper is stored at:
 ```text
 paper/Grey-Zone-Sovereignty-and-Market-Adaptation.pdf
 ```
+
+## License
+
+This project is for academic and research use. Reuse and adaptation permitted with attribution.
