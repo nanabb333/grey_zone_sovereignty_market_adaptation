@@ -61,7 +61,7 @@ Daily market data are collected with `yfinance`. The analysis calculates daily r
 
 ## Limitations
 
-This is an exploratory event study with a small number of Taiwan-related events. Event classification requires interpretive judgment, and some shocks overlap with broader market conditions, earnings expectations, or global technology-sector movements. The benchmark-adjusted abnormal-return approach improves comparability, but it does not fully isolate causality. The findings should therefore be read as evidence of conditional market interpretation and adaptation, not as definitive proof of a single causal mechanism.
+This is an exploratory event research with a small number of Taiwan-related events. Event classification requires interpretive judgment, and some shocks overlap with broader market conditions, earnings expectations, or global technology-sector movements. The benchmark-adjusted abnormal-return approach improves comparability, but it does not fully isolate causality. The findings should therefore be read as evidence of conditional market interpretation and adaptation, not as definitive proof of a single causal mechanism.
 
 ## How to Reproduce the Analysis
 
