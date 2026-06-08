@@ -37,7 +37,7 @@ Daily market data are collected with `yfinance`. The analysis calculates daily r
 .
 ├── README.md
 ├── paper/
-│   └── Grey-Zone-Sovereignty-and-Market-Adaptation.pdf
+│   └── README.md
 ├── data/
 │   ├── raw/
 │   ├── processed/
@@ -60,9 +60,7 @@ Daily market data are collected with `yfinance`. The analysis calculates daily r
 
 ## Full Dissertation
 
-The full dissertation manuscript is available at:
-
-[Grey-Zone-Sovereignty-and-Market-Adaptation.pdf](paper/Grey-Zone-Sovereignty-and-Market-Adaptation.pdf)
+The full dissertation manuscript is not included in this public repository to protect unpublished academic work. It is available upon request for academic, application, or research review purposes.
 
 ## Main Findings
 
@@ -121,14 +119,12 @@ This is an exploratory event study with a small number of Taiwan-related events.
 
 The main processed datasets are written to `data/processed/`, event coding files are stored in `data/events/`, figures are written to `figures/`, and summary tables are written to `results/`.
 
-## Paper
+## Paper Access
 
-The completed dissertation paper is stored at:
-
-```text
-paper/Grey-Zone-Sovereignty-and-Market-Adaptation.pdf
-```
+The `paper/` folder is the canonical location for the final dissertation manuscript in private/local copies of this repository. The public GitHub version includes a paper-access note rather than the full PDF.
 
 ## License
 
-This project is for academic and research use. Reuse and adaptation permitted with attribution.
+© 2026 Tina Chen. All rights reserved.
+
+Code, figures, and documentation may be reused or adapted for academic and research purposes with attribution. The dissertation manuscript may not be copied, redistributed, or reproduced without permission.

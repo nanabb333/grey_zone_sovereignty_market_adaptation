@@ -29,3 +29,6 @@ data/cache/
 .env.*
 *.key
 *.pem
+
+# Unpublished manuscript files
+paper/*.pdf
