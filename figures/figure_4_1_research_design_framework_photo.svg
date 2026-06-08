@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1800" viewBox="0 0 1800 1800" role="img" aria-labelledby="title desc">
+  <title id="title">Figure 4.1 Research Design Framework</title>
+  <desc id="desc">A black-and-white dissertation flowchart showing the research design from grey-zone sovereignty to market reaction.</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <style>
+      .title {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 54px;
+        font-weight: 700;
+        fill: #111111;
+      }
+      .box {
+        fill: #ffffff;
+        stroke: #111111;
+        stroke-width: 4;
+      }
+      .heading {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        fill: #111111;
+      }
+      .subtext {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        fill: #111111;
+      }
+      .arrow {
+        stroke: #111111;
+        stroke-width: 5;
+        fill: none;
+        marker-end: url(#arrowhead);
+      }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1800" fill="#ffffff"/>
+  <text x="900" y="90" class="title" text-anchor="middle">Research Design Framework</text>
+
+  <rect class="box" x="330" y="140" width="1140" height="150"/>
+  <text x="900" y="202" class="heading" text-anchor="middle">Grey-Zone Sovereignty</text>
+  <text x="900" y="252" class="subtext" text-anchor="middle">(Structural Independent Variable)</text>
+
+  <path class="arrow" d="M900 290 L900 350"/>
+
+  <rect class="box" x="330" y="352" width="1140" height="120"/>
+  <text x="900" y="426" class="heading" text-anchor="middle">Recurring Taiwan-Related Shocks</text>
+
+  <path class="arrow" d="M900 472 L900 532"/>
+
+  <rect class="box" x="260" y="534" width="1280" height="150"/>
+  <text x="900" y="594" class="heading" text-anchor="middle">Event Selection</text>
+  <text x="900" y="643" class="subtext" text-anchor="middle">(2022-2025 Taiwan-related geopolitical and strategic events)</text>
+
+  <path class="arrow" d="M900 684 L900 744"/>
+
+  <rect class="box" x="300" y="746" width="1200" height="180"/>
+  <text x="900" y="806" class="heading" text-anchor="middle">Event Classification</text>
+  <text x="900" y="858" class="subtext" text-anchor="middle">- Geopolitical-Risk Events</text>
+  <text x="900" y="908" class="subtext" text-anchor="middle">- Strategic-Importance Events</text>
+
+  <path class="arrow" d="M900 926 L900 986"/>
+
+  <rect class="box" x="330" y="988" width="1140" height="160"/>
+  <text x="900" y="1048" class="heading" text-anchor="middle">Event Study Analysis</text>
+  <text x="900" y="1100" class="subtext" text-anchor="middle">- TWSE     - TSMC</text>
+
+  <path class="arrow" d="M900 1148 L900 1208"/>
+
+  <rect class="box" x="330" y="1210" width="1140" height="140"/>
+  <text x="900" y="1270" class="heading" text-anchor="middle">Abnormal Returns</text>
+  <text x="900" y="1320" class="subtext" text-anchor="middle">(CAR [-7,+7])</text>
+
+  <path class="arrow" d="M900 1350 L900 1410"/>
+
+  <rect class="box" x="300" y="1412" width="1200" height="220"/>
+  <text x="900" y="1472" class="heading" text-anchor="middle">Interpretation</text>
+  <text x="900" y="1524" class="subtext" text-anchor="middle">- Threat     - Opportunity</text>
+  <text x="900" y="1574" class="subtext" text-anchor="middle">- Adaptation     - Surprise</text>
+
+  <path class="arrow" d="M900 1632 L900 1680"/>
+
+  <rect class="box" x="330" y="1682" width="1140" height="90"/>
+  <text x="900" y="1742" class="heading" text-anchor="middle">Market Reaction</text>
+</svg>

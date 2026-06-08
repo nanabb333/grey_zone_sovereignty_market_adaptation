@@ -1,0 +1,4 @@
+event_name,event_type,risk_level,strategic_value,taiex_before,taiex_event_day,taiex_after,taiex_change,usd_twd_before,usd_twd_event_day,usd_twd_after,usd_twd_change,tsmc_before,tsmc_event_day,tsmc_after,tsmc_change
+Pelosi Visit,diplomatic,5,4,14981,14821,14567,-2.7635004338829185,29.9,30.05,30.3,1.3377926421404756,500,490,480,-4.0
+Lai Inauguration,political,4,3,,,,,,,,,,,,
+Nvidia AI Factory Announcement,investment,1,5,,,,,,,,,,,,

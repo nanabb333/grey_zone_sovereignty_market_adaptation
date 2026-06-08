@@ -1,0 +1,26 @@
+date,event_name,event_category,mechanism,market_exact_date_match,event_trading_date,days_to_trading_date,has_event_day_market_values,missing_event_day_variables,has_minus7_plus7_trading_window,window_start,window_end
+2022-07-19,China Warns Against Pelosi Taiwan Visit,Diplomatic Shock,Risk,Yes,2022-07-19,0,Yes,,Yes,2022-07-08,2022-07-28
+2022-08-02,Pelosi Visit,Diplomatic Shock,Risk,Yes,2022-08-02,0,Yes,,Yes,2022-07-22,2022-08-11
+2022-08-03,China Trade Restrictions After Pelosi Visit,Economic Coercion,Risk,Yes,2022-08-03,0,Yes,,Yes,2022-07-25,2022-08-12
+2022-08-04,PLA Military Exercises After Pelosi Visit,Military Demonstration,Risk,Yes,2022-08-04,0,Yes,,Yes,2022-07-26,2022-08-15
+2022-10-07,BIS Advanced Semiconductor Export Controls,Technology Competition,Strategic_Importance,Yes,2022-10-07,0,Yes,,Yes,2022-09-28,2022-10-18
+2022-12-06,TSMC Arizona US$40B Expansion,Technology Competition,Strategic_Importance,Yes,2022-12-06,0,Yes,,Yes,2022-11-25,2022-12-15
+2023-04-05,Tsai-McCarthy Meeting,Diplomatic Shock,Risk,Yes,2023-04-05,0,No,twse_close;tsmc_close,Yes,2023-03-27,2023-04-14
+2023-04-08,Joint Sword 2023,Military Demonstration,Risk,No,2023-04-10,2,Yes,,Yes,2023-03-30,2023-04-19
+2023-08-12,Lai U.S. Transit,Diplomatic Shock,Risk,No,2023-08-14,2,Yes,,Yes,2023-08-03,2023-08-23
+2023-08-19,PLA Drills After Lai U.S. Transit,Military Demonstration,Risk,No,2023-08-21,2,Yes,,Yes,2023-08-10,2023-08-30
+2023-08-26,China Sends Aircraft and Vessels After U.S. Arms Sale,Military Demonstration,Risk,No,2023-08-28,2,Yes,,Yes,2023-08-17,2023-09-06
+2024-01-13,Lai Wins Taiwan Presidential Election,Political Signaling,Risk,No,2024-01-15,2,No,nasdaq_close;nvidia_close;sox_close,Yes,2024-01-04,2024-01-24
+2024-01-15,Nauru Switches Recognition to China,Diplomatic Shock,Risk,Yes,2024-01-15,0,No,nasdaq_close;nvidia_close;sox_close,Yes,2024-01-04,2024-01-24
+2024-02-14,Kinmen Boat Capsizing Incident,Political Signaling,Risk,Yes,2024-02-14,0,No,twse_close;tsmc_close,Yes,2024-02-05,2024-02-23
+2024-02-18,China Coast Guard Patrols Near Kinmen,Military Demonstration,Risk,No,2024-02-19,1,No,nasdaq_close;nvidia_close;sox_close,Yes,2024-02-08,2024-02-28
+2024-04-08,TSMC CHIPS Act Preliminary Terms,Technology Competition,Strategic_Importance,Yes,2024-04-08,0,Yes,,Yes,2024-03-28,2024-04-17
+2024-05-20,Lai Ching-te Inauguration,Political Signaling,Risk,Yes,2024-05-20,0,Yes,,Yes,2024-05-09,2024-05-29
+2024-05-23,Joint Sword-2024A,Military Demonstration,Risk,Yes,2024-05-23,0,Yes,,Yes,2024-05-14,2024-06-03
+2024-06-21,PRC Judicial Guidelines on Taiwan Independence,Political Signaling,Risk,Yes,2024-06-21,0,Yes,,Yes,2024-06-12,2024-07-02
+2024-10-10,Lai National Day Speech,Political Signaling,Risk,Yes,2024-10-10,0,No,twse_close;tsmc_close,Yes,2024-10-01,2024-10-21
+2024-10-14,Joint Sword-2024B,Military Demonstration,Risk,Yes,2024-10-14,0,Yes,,Yes,2024-10-03,2024-10-23
+2025-01-22,PLA Joint Combat Readiness Patrols Around Taiwan,Military Demonstration,Risk,Yes,2025-01-22,0,Yes,,Yes,2025-01-13,2025-01-31
+2025-03-04,TSMC US$165B U.S. Expansion,Technology Competition,Strategic_Importance,Yes,2025-03-04,0,Yes,,Yes,2025-02-21,2025-03-13
+2025-04-01,Strait Thunder-2025A,Military Demonstration,Risk,Yes,2025-04-01,0,Yes,,Yes,2025-03-21,2025-04-10
+2025-12-29,Justice Mission 2025,Military Demonstration,Risk,No,,,No,twse_close;tsmc_close;nasdaq_close;nvidia_close;sox_close,No,,

@@ -1,0 +1,26 @@
+date,event_name,event_category,mechanism,event_role,include_in_event_study,exclusion_reason
+2022-07-19,China Warns Against Pelosi Taiwan Visit,Diplomatic Shock,Risk,Diplomatic_Risk_Shock,No,Excluded due to severe overlap with Pelosi Visit; Pelosi Visit is the preferred repricing event.
+2022-08-02,Pelosi Visit,Diplomatic Shock,Risk,Diplomatic_Risk_Shock,Yes,
+2022-08-03,China Trade Restrictions After Pelosi Visit,Economic Coercion,Risk,Economic_Coercion_Shock,No,Excluded due to severe overlap with Pelosi Visit; Pelosi Visit is the preferred repricing event.
+2022-08-04,PLA Military Exercises After Pelosi Visit,Military Demonstration,Risk,Military_Risk_Shock,No,Excluded due to severe overlap with Pelosi Visit; Pelosi Visit is the preferred repricing event.
+2022-10-07,BIS Advanced Semiconductor Export Controls,Technology Competition,Strategic_Importance,Strategic_Importance_Shock,Yes,
+2022-12-06,TSMC Arizona US$40B Expansion,Technology Competition,Strategic_Importance,Strategic_Importance_Shock,Yes,
+2023-04-05,Tsai-McCarthy Meeting,Diplomatic Shock,Risk,Diplomatic_Risk_Shock,No,Excluded due to severe overlap with Joint Sword 2023; Joint Sword 2023 is the preferred repricing event.
+2023-04-08,Joint Sword 2023,Military Demonstration,Risk,Military_Risk_Shock,Yes,
+2023-08-12,Lai U.S. Transit,Diplomatic Shock,Risk,Diplomatic_Risk_Shock,No,Excluded due to severe overlap with PLA Drills After Lai U.S. Transit; the military response is the preferred repricing event.
+2023-08-19,PLA Drills After Lai U.S. Transit,Military Demonstration,Risk,Military_Risk_Shock,Yes,
+2023-08-26,China Sends Aircraft and Vessels After U.S. Arms Sale,Military Demonstration,Risk,Military_Risk_Shock,No,Excluded due to severe overlap with the August 2023 Lai transit military-response window.
+2024-01-13,Lai Wins Taiwan Presidential Election,Political Signaling,Risk,Political_Signaling_Shock,No,Excluded because event-day market data are incomplete: nasdaq_close;nvidia_close;sox_close.
+2024-01-15,Nauru Switches Recognition to China,Diplomatic Shock,Risk,Diplomatic_Risk_Shock,No,Excluded because event-day market data are incomplete: nasdaq_close;nvidia_close;sox_close.
+2024-02-14,Kinmen Boat Capsizing Incident,Political Signaling,Risk,Political_Signaling_Shock,No,Excluded because event-day market data are incomplete: twse_close;tsmc_close.
+2024-02-18,China Coast Guard Patrols Near Kinmen,Military Demonstration,Risk,Military_Risk_Shock,No,Excluded because event-day market data are incomplete: nasdaq_close;nvidia_close;sox_close.
+2024-04-08,TSMC CHIPS Act Preliminary Terms,Technology Competition,Strategic_Importance,Strategic_Importance_Shock,Yes,
+2024-05-20,Lai Ching-te Inauguration,Political Signaling,Risk,Political_Signaling_Shock,No,Excluded due to severe overlap with Joint Sword-2024A; Joint Sword-2024A is the preferred repricing event.
+2024-05-23,Joint Sword-2024A,Military Demonstration,Risk,Military_Risk_Shock,Yes,
+2024-06-21,PRC Judicial Guidelines on Taiwan Independence,Political Signaling,Risk,Political_Signaling_Shock,Yes,
+2024-10-10,Lai National Day Speech,Political Signaling,Risk,Political_Signaling_Shock,No,Excluded due to severe overlap with Joint Sword-2024B; Joint Sword-2024B is the preferred repricing event.
+2024-10-14,Joint Sword-2024B,Military Demonstration,Risk,Military_Risk_Shock,Yes,
+2025-01-22,PLA Joint Combat Readiness Patrols Around Taiwan,Military Demonstration,Risk,Military_Risk_Shock,Yes,
+2025-03-04,TSMC US$165B U.S. Expansion,Technology Competition,Strategic_Importance,Strategic_Importance_Shock,Yes,
+2025-04-01,Strait Thunder-2025A,Military Demonstration,Risk,Military_Risk_Shock,Yes,
+2025-12-29,Justice Mission 2025,Military Demonstration,Risk,Military_Risk_Shock,No,"Excluded because no complete [-7,+7] trading window is available in the market dataset."

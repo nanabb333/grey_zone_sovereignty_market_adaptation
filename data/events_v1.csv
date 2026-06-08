@@ -1,0 +1,15 @@
+date,event_name,event_category,military_risk,diplomatic_risk,sanctions_risk,semiconductor_relevance,ai_relevance,security_relevance,confidence_level,source
+1995-07-21,Third Taiwan Strait Crisis Begins,military,4,4,1,2,1,5,TBD,TBD
+1996-03-08,Third Taiwan Strait Crisis Peak,military,5,4,1,2,1,5,TBD,TBD
+2020-12-18,SMIC Added to Entity List,sanctions,1,3,5,5,3,5,TBD,TBD
+2022-02-16,Chinese Military-Industrial Complex Sanctions Regulations,sanctions,2,3,5,3,3,5,TBD,TBD
+2022-08-02,Pelosi Visit,diplomatic,3,5,2,3,1,5,TBD,TBD
+2022-08-04,PLA Military Exercises After Pelosi Visit,military,5,4,1,3,1,5,TBD,TBD
+2022-10-07,BIS Advanced Semiconductor Export Controls,sanctions,1,4,5,5,5,5,TBD,TBD
+2022-12-06,TSMC Arizona US$40B Expansion,investment,1,3,1,5,3,4,TBD,TBD
+2023-04-08,Joint Sword 2023,military,4,3,1,3,1,5,TBD,TBD
+2024-04-08,TSMC CHIPS Act Preliminary Terms,investment,1,3,1,5,4,5,TBD,TBD
+2024-05-20,Lai Ching-te Inauguration,political,1,4,1,3,1,4,TBD,TBD
+2024-05-23,Joint Sword-2024A,military,4,4,1,3,1,5,TBD,TBD
+2024-10-14,Joint Sword-2024B,military,4,4,1,3,1,5,TBD,TBD
+2025-05-19,NVIDIA-Foxconn Taiwan AI Factory Announcement,investment,1,3,1,4,5,4,TBD,TBD

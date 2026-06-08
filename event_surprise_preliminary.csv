@@ -1,0 +1,19 @@
+event_name,event_date,surprise_level,justification,confidence
+China Warns Against Pelosi Taiwan Visit,2022-07-19,1,"Pelosi travel was already publicly discussed, but the intensity of PRC warnings and market relevance remained uncertain.",Medium
+Pelosi Visit,2022-08-02,1,"The visit was signaled in advance, but the final occurrence and scale of PRC response were still uncertain.",High
+China Trade Restrictions After Pelosi Visit,2022-08-03,1,"A PRC response was expected, but the exact trade restrictions were not fully known before implementation.",Medium
+PLA Military Exercises After Pelosi Visit,2022-08-04,1,"Military response was expected after PRC warnings, but the scope and intensity of exercises were uncertain.",High
+BIS Advanced Semiconductor Export Controls,2022-10-07,1,"U.S. technology restrictions were anticipated in broad terms, but the detailed controls materially clarified policy direction.",Medium
+TSMC Arizona US$40B Expansion,2022-12-06,1,"TSMC U.S. expansion was known, but the scale and updated investment commitment were not fully priced with certainty.",Medium
+Joint Sword 2023,2023-04-08,0,"The exercise followed the Tsai-McCarthy meeting and the 2022 Pelosi precedent, making a PRC military response highly predictable.",High
+Lai U.S. Transit,2023-08-12,0,"The transit was scheduled and publicly known before the event date.",High
+PLA Drills After Lai U.S. Transit,2023-08-19,0,"A PRC military response to Lai's U.S. transit was broadly expected and followed recent precedent.",Medium
+China Sends Aircraft and Vessels After U.S. Arms Sale,2023-08-26,1,"A PRC response to U.S. arms sales was plausible, but the exact military signaling was not fully predictable.",Medium
+TSMC CHIPS Act Preliminary Terms,2024-04-08,1,"CHIPS Act negotiations were expected, but the preliminary terms and market interpretation were uncertain.",Medium
+Lai Ching-te Inauguration,2024-05-20,0,"The inauguration date was scheduled and fully anticipated by market participants.",High
+Joint Sword-2024A,2024-05-23,0,"A PRC response after Lai's inauguration was highly anticipated and followed prior exercise patterns.",High
+PRC Judicial Guidelines on Taiwan Independence,2024-06-21,2,"The specific judicial guidelines were less predictable and may have changed expectations about legal-coercive pressure.",Low
+Joint Sword-2024B,2024-10-14,0,"A PRC response after sovereignty-related political signaling was expected and followed the repeated Joint Sword pattern.",Medium
+PLA Joint Combat Readiness Patrols Around Taiwan,2025-01-22,1,"PLA patrols were part of a recurring pattern, but this specific episode and timing were only partially expected.",Medium
+TSMC US$165B U.S. Expansion,2025-03-04,1,"Further U.S. investment was plausible, but the scale of the announcement was not fully expected.",Medium
+Strait Thunder-2025A,2025-04-01,1,"PLA exercises were part of an established pattern, but the precise timing and scenario details remained uncertain.",Medium

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1320" viewBox="0 0 900 1320" role="img" aria-labelledby="title desc">
+  <title id="title">Figure 4.1 Research Design Framework</title>
+  <desc id="desc">A black-and-white flowchart showing the dissertation research design from grey-zone sovereignty to recurring Taiwan-related shocks, event selection, classification, event study analysis, abnormal returns, interpretation, and market reaction.</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#111111"/>
+    </marker>
+    <style>
+      .title {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        fill: #111111;
+      }
+      .box {
+        fill: #ffffff;
+        stroke: #111111;
+        stroke-width: 2;
+      }
+      .heading {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        fill: #111111;
+      }
+      .subtext {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        fill: #111111;
+      }
+      .arrow {
+        stroke: #111111;
+        stroke-width: 2.2;
+        fill: none;
+        marker-end: url(#arrowhead);
+      }
+    </style>
+  </defs>
+
+  <rect width="900" height="1320" fill="#ffffff"/>
+  <text x="450" y="52" class="title" text-anchor="middle">Research Design Framework</text>
+
+  <g id="box-1">
+    <rect class="box" x="190" y="90" width="520" height="96" rx="0"/>
+    <text x="450" y="128" class="heading" text-anchor="middle">Grey-Zone Sovereignty</text>
+    <text x="450" y="158" class="subtext" text-anchor="middle">(Structural Independent Variable)</text>
+  </g>
+
+  <path class="arrow" d="M450 186 L450 229"/>
+
+  <g id="box-2">
+    <rect class="box" x="190" y="230" width="520" height="76" rx="0"/>
+    <text x="450" y="276" class="heading" text-anchor="middle">Recurring Taiwan-Related Shocks</text>
+  </g>
+
+  <path class="arrow" d="M450 306 L450 349"/>
+
+  <g id="box-3">
+    <rect class="box" x="160" y="350" width="580" height="104" rx="0"/>
+    <text x="450" y="389" class="heading" text-anchor="middle">Event Selection</text>
+    <text x="450" y="419" class="subtext" text-anchor="middle">(2022-2025 Taiwan-related geopolitical</text>
+    <text x="450" y="443" class="subtext" text-anchor="middle">and strategic events)</text>
+  </g>
+
+  <path class="arrow" d="M450 454 L450 497"/>
+
+  <g id="box-4">
+    <rect class="box" x="170" y="498" width="560" height="128" rx="0"/>
+    <text x="450" y="537" class="heading" text-anchor="middle">Event Classification</text>
+    <text x="450" y="570" class="subtext" text-anchor="middle">- Geopolitical-Risk Events</text>
+    <text x="450" y="596" class="subtext" text-anchor="middle">- Strategic-Importance Events</text>
+  </g>
+
+  <path class="arrow" d="M450 626 L450 669"/>
+
+  <g id="box-5">
+    <rect class="box" x="190" y="670" width="520" height="120" rx="0"/>
+    <text x="450" y="709" class="heading" text-anchor="middle">Event Study Analysis</text>
+    <text x="450" y="742" class="subtext" text-anchor="middle">- TWSE</text>
+    <text x="450" y="768" class="subtext" text-anchor="middle">- TSMC</text>
+  </g>
+
+  <path class="arrow" d="M450 790 L450 833"/>
+
+  <g id="box-6">
+    <rect class="box" x="190" y="834" width="520" height="96" rx="0"/>
+    <text x="450" y="872" class="heading" text-anchor="middle">Abnormal Returns</text>
+    <text x="450" y="902" class="subtext" text-anchor="middle">(CAR [-7,+7])</text>
+  </g>
+
+  <path class="arrow" d="M450 930 L450 973"/>
+
+  <g id="box-7">
+    <rect class="box" x="170" y="974" width="560" height="168" rx="0"/>
+    <text x="450" y="1013" class="heading" text-anchor="middle">Interpretation</text>
+    <text x="450" y="1046" class="subtext" text-anchor="middle">- Threat</text>
+    <text x="450" y="1072" class="subtext" text-anchor="middle">- Opportunity</text>
+    <text x="450" y="1098" class="subtext" text-anchor="middle">- Adaptation</text>
+    <text x="450" y="1124" class="subtext" text-anchor="middle">- Surprise</text>
+  </g>
+
+  <path class="arrow" d="M450 1142 L450 1185"/>
+
+  <g id="box-8">
+    <rect class="box" x="190" y="1186" width="520" height="76" rx="0"/>
+    <text x="450" y="1232" class="heading" text-anchor="middle">Market Reaction</text>
+  </g>
+
+  <text x="450" y="1292" class="subtext" text-anchor="middle">Note: Grey-zone sovereignty is the upstream condition; interpretation links events to market outcomes.</text>
+</svg>
