@@ -23,6 +23,11 @@ Thumbs.db
 *.cache
 data/cache/
 .matplotlib_cache/
+results/event_window_data.csv
+
+# Local README migration drafts/backups
+README_V2_DRAFT.md
+README_REPO1_BACKUP.md
 
 # Secrets
 .env

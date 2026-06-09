@@ -1,0 +1,5 @@
+event_id,event_name,event_date,mechanism,event_type,asset,benchmark,event_window_start,event_window_end,trading_days_in_window,car_value,status,error_message
+E001,Pelosi Visit,2022-08-02,Risk,Diplomatic Shock,TSMC,SOX,-7,7,11,0.0044332006595363405,success,
+E002,Joint Sword 2023,2023-04-08,Risk,Military Demonstration,TSMC,SOX,-7,7,4,-0.00652430533284698,success,
+E003,Joint Sword 2024A,2024-05-23,Risk,Military Demonstration,TSMC,SOX,-7,7,9,-0.0054448613183898376,success,
+E004,NVIDIA Taiwan AI Factory,2025-05-19,Strategic_Importance,Strategic Investment,TSMC,SOX,-7,7,10,-0.017605731552964965,success,

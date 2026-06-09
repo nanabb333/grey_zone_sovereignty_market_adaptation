@@ -1,0 +1,3 @@
+mechanism,event_count,mean_car_value,min_car_value,max_car_value,successful_event_count,failed_event_count
+Risk,3,-0.002511988663900134,-0.0065243053328469,0.0044332006595363,3,0
+Strategic_Importance,1,-0.0176057315529649,-0.0176057315529649,-0.0176057315529649,1,0

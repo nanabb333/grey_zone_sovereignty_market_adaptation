@@ -1,0 +1,5 @@
+event_id,event_name,event_date,mechanism,event_type,asset,benchmark,event_window_start,event_window_end
+E001,Pelosi Visit,2022-08-02,Risk,Diplomatic Shock,TSMC,SOX,-7,7
+E002,Joint Sword 2023,2023-04-08,Risk,Military Demonstration,TSMC,SOX,-7,7
+E003,Joint Sword 2024A,2024-05-23,Risk,Military Demonstration,TSMC,SOX,-7,7
+E004,NVIDIA Taiwan AI Factory,2025-05-19,Strategic_Importance,Strategic Investment,TSMC,SOX,-7,7
