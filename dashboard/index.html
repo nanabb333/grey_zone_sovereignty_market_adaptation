@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Taiwan Geopolitical Risk Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Repo 3 MVP Skeleton</p>
+        <h1>Taiwan Geopolitical Risk Dashboard</h1>
+        <p class="subtitle">
+          AI-assisted decision-support view for Repo 2 event-study outputs.
+        </p>
+      </div>
+      <div class="notice">
+        Academic and educational analytics only. Not investment advice.
+      </div>
+    </header>
+
+    <main class="dashboard-shell">
+      <section class="panel executive-panel">
+        <div class="section-heading">
+          <p class="eyebrow">Executive Dashboard</p>
+          <h2>Batch Metrics</h2>
+        </div>
+        <div id="kpiCards" class="kpi-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="panel latest-event-panel">
+        <div class="section-heading">
+          <p class="eyebrow">Latest Event View</p>
+          <h2 id="latestEventTitle">Loading event...</h2>
+        </div>
+        <div id="latestEventDetails" class="detail-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="panel summary-panel">
+        <div class="section-heading">
+          <p class="eyebrow">Repo 2 Output</p>
+          <h2>Executive Summary</h2>
+        </div>
+        <article id="executiveSummary" class="markdown-body" aria-live="polite">
+          Loading executive summary...
+        </article>
+      </section>
+
+      <section class="panel ai-panel">
+        <div class="section-heading">
+          <p class="eyebrow">AI Insight Panel</p>
+          <h2>Interpretation Placeholder</h2>
+        </div>
+        <div class="ai-placeholder">
+          <p>
+            AI integration is not enabled in this MVP skeleton. Future versions
+            will generate analyst-reviewed explanations from dashboard data,
+            mechanism summaries, and executive context.
+          </p>
+          <ul>
+            <li>Event explanation</li>
+            <li>Mechanism interpretation</li>
+            <li>Historical comparison</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

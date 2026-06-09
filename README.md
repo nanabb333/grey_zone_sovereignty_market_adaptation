@@ -188,6 +188,41 @@ V3 adds two business-facing outputs without changing the core CAR calculation:
 
 These files are designed to support a future Repo 3 dashboard or analytics interface.
 
+## Repo 3: AI-Assisted Geopolitical Risk Dashboard
+
+Repo 3 adds the first runnable dashboard layer on top of the Repo 2 analytics engine.
+
+The dashboard turns structured event-study outputs into a single-page decision-support view for a geopolitical risk analyst. The current MVP displays batch KPIs, latest event context, the generated executive summary, and a placeholder AI Insight Panel.
+
+Current MVP status:
+
+- single-page dashboard skeleton is runnable locally
+- KPI cards load from `results/dashboard_data.csv`
+- latest event view loads from `results/dashboard_data.csv`
+- executive summary renders from `results/executive_summary.md`
+- AI Insight Panel is a placeholder only
+- no AI integration, forecasting, trading recommendation, or complex filtering is included yet
+
+Repo 3 consumes these Repo 2 outputs:
+
+```text
+results/dashboard_data.csv
+results/executive_summary.md
+results/mechanism_summary.csv
+```
+
+Run the dashboard locally from the repository root:
+
+```bash
+python3 -m http.server 8000 --bind 127.0.0.1
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8000/dashboard/
+```
+
 ## Skills Demonstrated
 
 - Business Analytics Workflow Design
