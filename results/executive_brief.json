@@ -1,0 +1,32 @@
+{
+  "title": "Taiwan Geopolitical Risk Dashboard Executive Brief",
+  "method": "deterministic_rule_based_template",
+  "overview": "The dashboard summarizes 4 Taiwan-related event(s), including 4 successful event-study result(s).",
+  "highlights": [
+    "Strongest positive event: Pelosi Visit (0.44%).",
+    "Strongest negative event: NVIDIA Taiwan AI Factory (-1.76%).",
+    "Rule-based insights generated: 5.",
+    "Historical comparisons use event abnormal CAR magnitude versus mechanism average magnitude."
+  ],
+  "mechanism_summaries": [
+    {
+      "mechanism": "Risk",
+      "summary": "Risk includes 3 event(s), with mean abnormal CAR of -0.25%.",
+      "mean_car_value": -0.002511988663900134,
+      "mean_car_percent": "-0.25%"
+    },
+    {
+      "mechanism": "Strategic_Importance",
+      "summary": "Strategic_Importance includes 1 event(s), with mean abnormal CAR of -1.76%.",
+      "mean_car_value": -0.0176057315529649,
+      "mean_car_percent": "-1.76%"
+    }
+  ],
+  "comparison_summary": {
+    "comparison_count": 4,
+    "stronger_than_average_count": 3,
+    "weaker_than_average_count": 0
+  },
+  "analyst_note": "This brief is generated with deterministic templates from dashboard outputs. It is intended for educational and research use only.",
+  "restriction_note": "This brief does not provide forecasts, trading recommendations, investment advice, policy advice, or official conclusions."
+}

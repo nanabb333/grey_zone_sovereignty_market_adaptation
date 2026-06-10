@@ -1,6 +1,9 @@
 const dashboardDataPath = "../results/dashboard_data.csv";
 const executiveSummaryPath = "../results/executive_summary.md";
 const eventInsightsPath = "../results/event_insights.json";
+const llmContextPath = "../results/llm_context.json";
+const historicalComparisonPath = "../results/historical_comparison.json";
+const executiveBriefPath = "../results/executive_brief.json";
 
 const formatPercent = (value) => {
   const number = Number(value);
@@ -229,32 +232,153 @@ const renderInsights = (insightData) => {
     .join("");
 };
 
+const renderContextSummary = (contextData) => {
+  const runSummary = contextData.run_summary ?? {};
+  const sourceFiles = contextData.source_files ?? [];
+  const constraints = contextData.use_constraints ?? [];
+
+  const items = [
+    ["Events", runSummary.event_count ?? "N/A"],
+    ["Successful", runSummary.successful_event_count ?? "N/A"],
+    ["Failed", runSummary.failed_event_count ?? "N/A"],
+    ["Sources", sourceFiles.join(", ")],
+    ["Constraints", constraints.join("; ")],
+    ["Purpose", contextData.purpose ?? "N/A"],
+  ];
+
+  document.getElementById("contextSummary").innerHTML = items
+    .map(
+      ([label, value]) => `
+        <div class="detail-item">
+          <p class="detail-label">${label}</p>
+          <p class="detail-value">${value}</p>
+        </div>
+      `,
+    )
+    .join("");
+};
+
+const renderHistoricalComparison = (comparisonData) => {
+  const comparisons = comparisonData.comparisons ?? [];
+  const container = document.getElementById("historicalComparison");
+
+  if (!comparisons.length) {
+    container.innerHTML =
+      '<div class="insight-card"><p>No historical comparisons available.</p></div>';
+    return;
+  }
+
+  container.innerHTML = comparisons
+    .map(
+      (comparison) => `
+        <article class="comparison-card">
+          <p class="insight-category">${comparison.relative_strength}</p>
+          <h3>${comparison.event_name}</h3>
+          <dl class="evidence-list">
+            <div>
+              <dt>Event CAR</dt>
+              <dd>${comparison.event_car_percent}</dd>
+            </div>
+            <div>
+              <dt>Mechanism Avg.</dt>
+              <dd>${comparison.mechanism_average_percent}</dd>
+            </div>
+            <div>
+              <dt>Magnitude Ratio</dt>
+              <dd>${
+                comparison.magnitude_ratio === null
+                  ? "N/A"
+                  : Number(comparison.magnitude_ratio).toFixed(2)
+              }</dd>
+            </div>
+          </dl>
+          <p>${comparison.interpretation}</p>
+        </article>
+      `,
+    )
+    .join("");
+};
+
+const renderExecutiveBrief = (briefData) => {
+  const mechanismSummaries = briefData.mechanism_summaries ?? [];
+  const highlights = briefData.highlights ?? [];
+  const comparisonSummary = briefData.comparison_summary ?? {};
+
+  document.getElementById("executiveBrief").innerHTML = `
+    <p>${briefData.overview}</p>
+    <h3>Highlights</h3>
+    <ul>
+      ${highlights.map((highlight) => `<li>${highlight}</li>`).join("")}
+    </ul>
+    <h3>Mechanism Summaries</h3>
+    <ul>
+      ${mechanismSummaries
+        .map((summary) => `<li>${summary.summary}</li>`)
+        .join("")}
+    </ul>
+    <h3>Comparison Summary</h3>
+    <p>
+      ${comparisonSummary.comparison_count ?? 0} comparison(s);
+      ${comparisonSummary.stronger_than_average_count ?? 0} stronger than average;
+      ${comparisonSummary.weaker_than_average_count ?? 0} weaker than average.
+    </p>
+    <p class="insight-note">${briefData.analyst_note}</p>
+    <p class="insight-note">${briefData.restriction_note}</p>
+  `;
+};
+
 const loadDashboard = async () => {
   try {
-    const [csvResponse, summaryResponse, insightsResponse] = await Promise.all([
+    const [
+      csvResponse,
+      summaryResponse,
+      insightsResponse,
+      contextResponse,
+      comparisonResponse,
+      briefResponse,
+    ] = await Promise.all([
       fetch(dashboardDataPath),
       fetch(executiveSummaryPath),
       fetch(eventInsightsPath),
+      fetch(llmContextPath),
+      fetch(historicalComparisonPath),
+      fetch(executiveBriefPath),
     ]);
 
-    if (!csvResponse.ok || !summaryResponse.ok || !insightsResponse.ok) {
+    if (
+      !csvResponse.ok ||
+      !summaryResponse.ok ||
+      !insightsResponse.ok ||
+      !contextResponse.ok ||
+      !comparisonResponse.ok ||
+      !briefResponse.ok
+    ) {
       throw new Error("Unable to load Repo 2 dashboard outputs.");
     }
 
     const events = parseCsv(await csvResponse.text());
     const executiveSummary = await summaryResponse.text();
     const insightData = await insightsResponse.json();
+    const contextData = await contextResponse.json();
+    const comparisonData = await comparisonResponse.json();
+    const briefData = await briefResponse.json();
 
     renderKpiCards(events);
     renderLatestEvent(events);
     document.getElementById("executiveSummary").innerHTML =
       renderMarkdown(executiveSummary);
     renderInsights(insightData);
+    renderContextSummary(contextData);
+    renderHistoricalComparison(comparisonData);
+    renderExecutiveBrief(briefData);
   } catch (error) {
     document.getElementById("kpiCards").innerHTML =
       `<div class="kpi-card"><p class="kpi-value">Data unavailable</p><p class="kpi-note">${error.message}</p></div>`;
     document.getElementById("executiveSummary").textContent = error.message;
     document.getElementById("insightCards").textContent = error.message;
+    document.getElementById("contextSummary").textContent = error.message;
+    document.getElementById("historicalComparison").textContent = error.message;
+    document.getElementById("executiveBrief").textContent = error.message;
   }
 };
 

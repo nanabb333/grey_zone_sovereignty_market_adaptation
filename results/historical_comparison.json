@@ -1,0 +1,64 @@
+{
+  "method": "deterministic_historical_comparison",
+  "comparison_basis": "event abnormal CAR magnitude versus mechanism mean abnormal CAR magnitude",
+  "comparison_count": 4,
+  "comparisons": [
+    {
+      "event_id": "E001",
+      "event_name": "Pelosi Visit",
+      "event_date": "2022-08-02",
+      "mechanism": "Risk",
+      "event_car_value": 0.0044332006595363,
+      "event_car_percent": "0.44%",
+      "mechanism_average_car": -0.002511988663900134,
+      "mechanism_average_percent": "-0.25%",
+      "relative_strength": "stronger_than_mechanism_average",
+      "magnitude_ratio": 1.764817143980768,
+      "comparison_rule": "abs(event_car_value) compared with abs(mechanism_average_car)",
+      "interpretation": "Pelosi Visit had a larger abnormal-CAR magnitude than the current Risk mechanism average."
+    },
+    {
+      "event_id": "E002",
+      "event_name": "Joint Sword 2023",
+      "event_date": "2023-04-08",
+      "mechanism": "Risk",
+      "event_car_value": -0.0065243053328469,
+      "event_car_percent": "-0.65%",
+      "mechanism_average_car": -0.002511988663900134,
+      "mechanism_average_percent": "-0.25%",
+      "relative_strength": "stronger_than_mechanism_average",
+      "magnitude_ratio": 2.5972670285530715,
+      "comparison_rule": "abs(event_car_value) compared with abs(mechanism_average_car)",
+      "interpretation": "Joint Sword 2023 had a larger abnormal-CAR magnitude than the current Risk mechanism average."
+    },
+    {
+      "event_id": "E003",
+      "event_name": "Joint Sword 2024A",
+      "event_date": "2024-05-23",
+      "mechanism": "Risk",
+      "event_car_value": -0.0054448613183898,
+      "event_car_percent": "-0.54%",
+      "mechanism_average_car": -0.002511988663900134,
+      "mechanism_average_percent": "-0.25%",
+      "relative_strength": "stronger_than_mechanism_average",
+      "magnitude_ratio": 2.1675501154276966,
+      "comparison_rule": "abs(event_car_value) compared with abs(mechanism_average_car)",
+      "interpretation": "Joint Sword 2024A had a larger abnormal-CAR magnitude than the current Risk mechanism average."
+    },
+    {
+      "event_id": "E004",
+      "event_name": "NVIDIA Taiwan AI Factory",
+      "event_date": "2025-05-19",
+      "mechanism": "Strategic_Importance",
+      "event_car_value": -0.0176057315529649,
+      "event_car_percent": "-1.76%",
+      "mechanism_average_car": -0.0176057315529649,
+      "mechanism_average_percent": "-1.76%",
+      "relative_strength": "equal_to_mechanism_average",
+      "magnitude_ratio": 1.0,
+      "comparison_rule": "abs(event_car_value) compared with abs(mechanism_average_car)",
+      "interpretation": "NVIDIA Taiwan AI Factory matched the current Strategic_Importance mechanism average abnormal-CAR magnitude."
+    }
+  ],
+  "use_note": "Educational and research use only. Not investment advice."
+}

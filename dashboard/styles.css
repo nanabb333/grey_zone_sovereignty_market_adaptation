@@ -93,8 +93,15 @@ body {
   grid-column: 1 / 2;
 }
 
+.context-panel,
+.comparison-panel,
+.brief-panel {
+  grid-column: 1 / 2;
+}
+
 .ai-panel {
   grid-column: 2 / 3;
+  grid-row: span 3;
 }
 
 .section-heading {
@@ -248,6 +255,29 @@ body {
   background: #fbfdff;
 }
 
+.comparison-list {
+  display: grid;
+  gap: 14px;
+}
+
+.comparison-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.comparison-card h3,
+.brief-body h3 {
+  margin: 4px 0 8px;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.brief-body ul {
+  padding-left: 20px;
+}
+
 .insight-card h3 {
   margin: 4px 0 8px;
   font-size: 18px;
@@ -303,8 +333,12 @@ body {
   }
 
   .summary-panel,
+  .context-panel,
+  .comparison-panel,
+  .brief-panel,
   .ai-panel {
     grid-column: auto;
+    grid-row: auto;
   }
 
   .kpi-grid,
