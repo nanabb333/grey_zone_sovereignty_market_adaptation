@@ -161,15 +161,15 @@ http://127.0.0.1:8000/dashboard/
 
 ## Skills Demonstrated
 
-- International relations
-- Political economy
-- Risk analytics
-- Event study design
-- Financial data analytics
-- Analytics workflow design
-- Dashboard product thinking
-- AI-assisted research and product thinking
-- Research-to-product transformation
+- International Relations
+- Political Economy
+- Risk Analytics
+- Event Study Design
+- Financial Data Analytics
+- Analytics Workflow Design
+- Dashboard Product Thinking
+- AI-Assisted Research And Product Thinking
+- Research-to-Product Transformation
 
 ## Portfolio Documentation
 
