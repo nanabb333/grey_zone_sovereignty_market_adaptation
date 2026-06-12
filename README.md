@@ -1,139 +1,44 @@
-# Grey-Zone Sovereignty and Market Adaptation
+# AI Geopolitical Risk Dashboard
 
 ## Portfolio Positioning
 
-This repository is the research foundation for a three-part Taiwan geopolitical risk analytics portfolio:
+This repository is the product layer of a three-part Taiwan geopolitical risk portfolio:
 
 ```text
 Research → Analytics → Product
 ```
 
-It examines why some Taiwan-related geopolitical shocks generate negative market reactions while others produce muted or positive abnormal returns, then connects that research design to an event-study analytics engine and dashboard-ready decision-support product.
+Repo 1 develops the research question and interpretation framework. Repo 2 turns the event-study workflow into a reproducible analytics engine. Repo 3 converts those analytics outputs into a dashboard-ready decision-support product for geopolitical risk analysis.
 
-## Research Question
-
-```text
-Why do some Taiwan-related geopolitical shocks fail to generate persistent market damage despite elevated objective risk?
-```
-
-## Short Answer
-
-The findings suggest that Taiwan-related geopolitical risk does not produce uniform market damage.
-
-Risk events are negative on average. Strategic-importance events are positive on average. Repeated exposure appears associated with weaker negative reactions. This pattern is consistent with market adaptation, but it does not prove adaptation.
-
-The strongest rival explanation is anticipation: some events may have been expected and priced before the measured event window.
-
-## Why This Matters
-
-Taiwan sits at the intersection of sovereignty disputes, U.S.-China strategic competition, semiconductor supply chains, and financial market risk.
-
-For Business Analytics, Risk Analytics, Strategy Analytics, and AI Product Analytics audiences, the project shows how a complex political economy question can become a structured research design, reproducible analytics workflow, and decision-support product narrative.
-
-## Academic Research Notice
-
-This repository contains research-oriented analytics tools, datasets, workflow documentation, and supporting materials developed for academic and educational purposes.
-
-Any research notes, coding schemas, event classifications, findings summaries, or supporting documents should be treated as preliminary academic materials unless explicitly identified as peer-reviewed or formally published.
-
-Nothing in this repository should be interpreted as investment advice, policy advice, or an official publication.
-
-## Research Scope
-
-The project studies Taiwan-related geopolitical events using event-study methodology, abnormal returns, cumulative abnormal returns, and structured event coding.
-
-Because Taiwan-related shocks recur, market response may not be automatic. Investors may interpret events differently depending on whether they are novel, repeated, expected, strategically important, or already priced.
-
-## Method Overview
-
-The research and analytics workflow is:
-
-```text
-Identify Taiwan-related event
-→ code event characteristics
-→ align market data
-→ calculate returns
-→ calculate abnormal returns
-→ calculate CAR
-→ generate dashboard-ready outputs
-→ review interpretation cautiously
-```
-
-The current engine calculates benchmark-adjusted abnormal CAR. For the current TSMC examples, the benchmark is SOX.
-
-## Key Variables
-
-| Variable | Purpose |
-|---|---|
-| `surprise_score` | Codes whether an event appears high, medium, or low surprise based on pre-event information. |
-| `surprise_rationale` | Explains why the event received its surprise score. |
-| `event_family` | Groups comparable events, such as military exercises, diplomatic shocks, economic coercion, or strategic investments. |
-| `event_repetition_level` | Codes whether an event is novel or part of a repeated grey-zone pattern. |
-
-These variables make the adaptation-versus-anticipation problem more explicit.
-
-## Main Interpretation
-
-The findings are **consistent with adaptation**, especially where repeated Taiwan-related shocks produce muted or less negative abnormal returns.
-
-They are **not causal proof of adaptation**.
-
-Market reactions may reflect both objective risk and investor interpretation. Anticipation is the strongest rival explanation because some events may have been expected and priced before the measured event window. Prior pricing, broader market conditions, benchmark sensitivity, and sample limitations also remain important rival explanations.
-
-## Key Figure
-
-The most important public-facing figure is:
-
-![Repetition vs CAR](figures/repetition_vs_car.png)
-
-This figure is a descriptive diagnostic. It is suggestive evidence, not causal proof.
-
-## Public Reading Path
-
-Start here:
-
-1. [README](README.md)
-2. [Research Question](docs/public/01_research_question.md)
-3. [Theory Framework](docs/public/02_theory_framework.md)
-4. [Research Design](docs/public/03_research_design.md)
-5. [Key Findings](docs/public/04_key_findings.md)
-6. [Adaptation vs Anticipation](docs/public/05_adaptation_vs_anticipation.md)
-7. [Discussion and Limitations](docs/public/06_discussion_and_limitations.md)
-8. [Portfolio Relevance](docs/public/07_portfolio_relevance.md)
-
-For the full documentation map, see [docs/README.md](docs/README.md).
-
-## Research → Analytics → Product
-
-This repository supports a three-part portfolio narrative:
-
-```text
-Research
-→ Analytics
-→ Product
-```
-
-| Repository Role | Project | Portfolio Capability |
+| Repository | Role | Portfolio Signal |
 |---|---|---|
-| Repo 1 | Grey-Zone Sovereignty and Market Adaptation | Research dissertation / writing sample |
-| Repo 2 | Taiwan Geopolitical Risk Event Study Engine | Event-study analytics engine |
-| Repo 3 | AI Geopolitical Risk Dashboard | Analytics product and decision-support dashboard |
+| Repo 1: Grey-Zone Sovereignty and Market Adaptation | Research | Research design and interpretation |
+| Repo 2: Taiwan Geopolitical Risk Event Study Engine | Analytics Engine | Reproducible event-study workflow |
+| Repo 3: AI Geopolitical Risk Dashboard | Decision-Support Product | Productized analytics for risk interpretation |
 
-## Dashboard and Analytics Outputs
+## Product Problem
 
-Current portfolio-ready outputs include:
+Event-study outputs are useful, but CSV files, figures, and Markdown reports are slow for executives and analysts to review manually.
 
-| Output | Purpose |
-|---|---|
-| `results/event_results.csv` | Master event-level CAR results |
-| `results/dashboard_data.csv` | Dashboard-ready event table |
-| `results/mechanism_summary.csv` | Mechanism-level CAR summary |
-| `results/event_insights.json` | Deterministic rule-based insights |
-| `results/historical_comparison.json` | Event-versus-mechanism comparison metadata |
-| `results/executive_brief.json` | Deterministic analyst-style brief |
-| `results/llm_context.json` | Structured context for future analyst-reviewed LLM use |
+Risk analysts, business analytics teams, and strategy stakeholders need a clear interface that summarizes event-level market reactions, compares events against mechanism-level patterns, surfaces deterministic insights, and prepares executive-facing summaries.
 
-No OpenAI, Claude, Gemini, external APIs, forecasting, trading recommendations, or investment advice are used.
+## Product Solution
+
+This dashboard turns Repo 2 outputs into an analyst-facing decision-support workspace.
+
+It provides KPI cards, latest-event review, executive summaries, rule-based insights, historical comparisons, deterministic executive briefs, and LLM-ready context for future analyst-reviewed AI workflows.
+
+The current version uses deterministic rules only. It does not use live LLM calls, external APIs, forecasting, trading recommendations, or automated investment advice.
+
+## Decision-Support Value
+
+The dashboard helps analysts and stakeholders answer:
+
+- Which events produced the strongest positive or negative abnormal returns?
+- How do individual events compare with mechanism-level averages?
+- What event-study outputs support an analyst explanation?
+- What summary can be shared with non-technical stakeholders?
+- What structured context is available for future analyst-reviewed LLM support?
 
 ## Dashboard Screenshots
 
@@ -145,28 +50,63 @@ Dashboard intelligence layer:
 
 ![Dashboard Intelligence](docs/screenshots/dashboard_intelligence.png)
 
+## Executive User Value
+
+The dashboard is designed for fast executive review of Taiwan-related geopolitical risk analytics.
+
+It helps non-technical stakeholders understand:
+
+- key risk indicators from the latest event-study run
+- strongest positive and negative market reactions
+- event interpretation using benchmark-adjusted abnormal CAR
+- mechanism-level historical comparisons
+- rule-based insights that require analyst review
+- concise executive brief language for discussion
+
+## Data Inputs
+
+The dashboard consumes structured outputs from Repo 2:
+
+| Input | Purpose |
+|---|---|
+| `results/dashboard_data.csv` | Event-level dashboard dataset |
+| `results/mechanism_summary.csv` | Mechanism-level summary |
+| `results/executive_summary.md` | Executive-facing run summary |
+| `results/event_insights.json` | Rule-based event insights |
+| `results/historical_comparison.json` | Event-versus-mechanism comparison metadata |
+| `results/executive_brief.json` | Deterministic executive brief |
+| `results/llm_context.json` | Structured context for future analyst-reviewed LLM use |
+
+## Intelligence Layer
+
+The intelligence layer is deterministic and auditable.
+
+It includes:
+
+- `event_insights.json`: rule-based event insights derived from Repo 2 outputs
+- `historical_comparison.json`: event-versus-mechanism comparison metadata
+- `executive_brief.json`: deterministic executive brief content
+- `llm_context.json`: structured context for future analyst-reviewed LLM support
+
+The intelligence layer summarizes existing analytics outputs. It does not create new event classifications, forecasts, trading recommendations, or unsupported claims.
+
+## Dashboard Features
+
+Current dashboard views include:
+
+- KPI cards
+- latest event review
+- executive summary display
+- historical comparison section
+- executive brief section
+- LLM-ready context summary
+- rule-based insight panel
+
+The dashboard is designed as a decision-support product, not a prediction system.
+
 ## How to Run
 
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the event-study engine:
-
-```bash
-python3 scripts/run_event_study.py
-```
-
-Generate dashboard intelligence outputs:
-
-```bash
-python3 scripts/generate_event_insights.py
-python3 scripts/generate_dashboard_intelligence.py
-```
-
-Run the dashboard locally:
+From the repository root, start a local server:
 
 ```bash
 python3 -m http.server 8000 --bind 127.0.0.1
@@ -178,37 +118,49 @@ Then open:
 http://127.0.0.1:8000/dashboard/
 ```
 
-## Skills Demonstrated
+The dashboard reads static outputs from `results/` and renders the product interface from `dashboard/`.
 
+## Product Analytics Skills Demonstrated
+
+- Product analytics
 - Business analytics
 - Risk analytics
 - Strategy analytics
-- Political economy research
-- Event-study methodology
-- Financial market interpretation
-- Reproducible analytics workflow design
-- Dashboard product thinking
-- AI product analytics
+- KPI design
+- Dashboard information architecture
+- Stakeholder-focused analytics communication
+- Decision-support product thinking
+- Rule-based insight generation
 - Executive communication
+- AI product analytics
+- LLM-ready context design
 
 ## Portfolio Documentation
 
-- [Portfolio Positioning](docs/portfolio_positioning.md)
-- [Research to Product Story](docs/research_to_product_story.md)
-- [Recruiter Summary](docs/recruiter_summary.md)
 - [Repo 3 Case Study](docs/repo3_case_study.md)
+- [Repo 3 Product Spec](docs/repo3_product_spec.md)
+- [Dashboard Information Architecture](docs/dashboard_information_architecture.md)
+- [Dashboard Wireframe](docs/dashboard_wireframe.md)
+- [AI Workflow Design](docs/ai_workflow_design.md)
+- [Research to Product Story](docs/research_to_product_story.md)
 
-## Roadmap
+## Responsible Use Boundary
 
-Completed:
+This dashboard is for academic, educational, and portfolio demonstration purposes.
 
-- Dashboard V1
-- Rule-based intelligence layer
-- Portfolio documentation
-- Public documentation layer
+It does not provide:
 
-Future roadmap:
+- forecasting
+- trading recommendations
+- investment advice
+- policy advice
+- live LLM-generated interpretation
+- external API-based analysis
 
-- Public demo deployment
-- Analyst-reviewed LLM explanation layer
-- Dashboard filters and event explorer
+All dashboard intelligence should be treated as analyst-review support.
+
+## Future Enhancements
+
+- Add analyst-reviewed LLM explanation drafts using `llm_context.json`
+- Add dashboard filters for event mechanism and direction
+- Add event-detail drilldowns linked to reports and figures
