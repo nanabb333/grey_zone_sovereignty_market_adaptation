@@ -15,7 +15,7 @@ This project turns a Taiwan geopolitical risk research question into an event-st
 ## Research Question
 
 ```text
-Why do some Taiwan-related geopolitical shocks produce negative financial-market reactions while others generate muted or positive abnormal returns?
+Why do some Taiwan-related geopolitical shocks fail to generate persistent market damage despite elevated objective risk?
 ```
 
 The project studies Taiwan-related geopolitical events using event-study methodology, abnormal returns, cumulative abnormal returns, and structured event coding.
