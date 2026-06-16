@@ -108,6 +108,10 @@ body {
   grid-row: span 3;
 }
 
+.insight-panel {
+  grid-row: span 3;
+}
+
 .section-heading {
   margin-bottom: 18px;
 }
@@ -179,6 +183,18 @@ body {
   overflow-wrap: anywhere;
 }
 
+.status-pass {
+  color: var(--positive);
+}
+
+.status-warning {
+  color: #a16207;
+}
+
+.status-fail {
+  color: var(--negative);
+}
+
 .direction-positive {
   color: var(--positive);
 }
@@ -243,6 +259,26 @@ body {
 .ai-placeholder ul {
   margin-bottom: 0;
   padding-left: 20px;
+}
+
+.doc-links {
+  display: grid;
+  gap: 10px;
+}
+
+.doc-links a {
+  display: block;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdff;
+  color: var(--accent-strong);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.doc-links a:hover {
+  border-color: var(--accent);
 }
 
 .insight-list {
@@ -388,6 +424,7 @@ body {
   .scenario-panel,
   .comparison-panel,
   .brief-panel,
+  .insight-panel,
   .ai-panel {
     grid-column: auto;
     grid-row: auto;

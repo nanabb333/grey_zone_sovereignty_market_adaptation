@@ -293,11 +293,12 @@ const renderNewsDatabaseSummary = (summaryData) => {
 
 const renderProjectMetadata = (validationData) => {
   const summary = validationData.summary ?? {};
+  const status = validationData.status ?? "N/A";
   const items = [
     ["Events", summary.event_count ?? "N/A"],
     ["News Items", summary.news_item_count ?? "N/A"],
     ["Event Families", summary.event_family_count ?? "N/A"],
-    ["Validation Status", validationData.status ?? "N/A"],
+    ["Validation Status", status],
   ];
 
   document.getElementById("projectMetadata").innerHTML = items
@@ -305,7 +306,9 @@ const renderProjectMetadata = (validationData) => {
       ([label, value]) => `
         <div class="detail-item">
           <p class="detail-label">${label}</p>
-          <p class="detail-value">${value}</p>
+          <p class="detail-value ${
+            label === "Validation Status" ? `status-${String(value).toLowerCase()}` : ""
+          }">${value}</p>
         </div>
       `,
     )

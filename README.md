@@ -2,6 +2,17 @@
 
 Portfolio project: an academic Taiwan geopolitical risk event-study extended into a dashboard-ready intelligence prototype for analyst review, evidence traceability, and stakeholder communication.
 
+## Quick Review Path
+
+For a five-minute portfolio review:
+
+1. Read the project overview below.
+2. Skim the screenshots in this README.
+3. Open [Portfolio Landing Page](docs/portfolio_landing_page.md).
+4. Review [Results Index](docs/results_index.md).
+5. Run `python3 scripts/run_all_checks.py`.
+6. Launch the dashboard locally from the repository root.
+
 ## Project Overview
 
 This project starts from an academic event-study on Taiwan-related geopolitical shocks and extends it into a polished, dashboard-ready intelligence prototype. The repository keeps the original event-study design intact while adding structured evidence, descriptive analytics, scenario context retrieval, data validation, and portfolio-facing documentation.
@@ -239,6 +250,25 @@ http://127.0.0.1:8000/dashboard/
 
 The dashboard reads static outputs from `results/` and renders the product interface from `dashboard/`.
 
+## Reproduce Outputs
+
+Run the full release check:
+
+```bash
+python3 scripts/run_all_checks.py
+```
+
+Or run the core scripts individually:
+
+```bash
+python3 scripts/build_news_event_database.py
+python3 scripts/analyze_event_family_patterns.py
+python3 scripts/scenario_similarity.py
+python3 scripts/validate_project_data.py
+```
+
+See [Reproducibility Guide](docs/reproducibility_guide.md) for expected outputs and known validation warnings.
+
 ## Product Analytics Skills Demonstrated
 
 - Product analytics
@@ -265,6 +295,10 @@ This repository is designed to show four portfolio signals:
 
 ## Portfolio Documentation
 
+- [Portfolio Landing Page](docs/portfolio_landing_page.md)
+- [Results Index](docs/results_index.md)
+- [Reproducibility Guide](docs/reproducibility_guide.md)
+- [Repository Quality Audit](docs/repository_quality_audit.md)
 - [Executive Walkthrough](docs/executive_walkthrough.md)
 - [Portfolio Case Study](docs/portfolio_case_study.md)
 - [Recruiter Summary](docs/recruiter_summary.md)
