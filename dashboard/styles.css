@@ -94,6 +94,7 @@ body {
 }
 
 .context-panel,
+.metadata-panel,
 .news-panel,
 .family-panel,
 .scenario-panel,
@@ -381,6 +382,7 @@ body {
 
   .summary-panel,
   .context-panel,
+  .metadata-panel,
   .news-panel,
   .family-panel,
   .scenario-panel,

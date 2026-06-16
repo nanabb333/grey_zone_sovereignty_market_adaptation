@@ -22,7 +22,7 @@
           "event_date": "2023-04-08",
           "event_description": "PLA launched Joint Sword exercises around Taiwan after the Tsai-McCarthy meeting",
           "event_family": "Military_Exercise",
-          "event_id": "EV007",
+          "event_id": "E007",
           "event_name": "Joint Sword 2023",
           "event_title": "Joint Sword 2023",
           "historical_market_reaction": {
@@ -65,10 +65,56 @@
           "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
           "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
           "event_category": "Military Demonstration",
+          "event_date": "2022-08-04",
+          "event_description": "China conducted major military drills and fired missiles near Taiwan",
+          "event_family": "Military_Exercise",
+          "event_id": "E004",
+          "event_name": "PLA Military Exercises After Pelosi Visit",
+          "event_title": "PLA Military Exercises After Pelosi Visit",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=3.3773 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": 3.3773
+          },
+          "linked_news_count": 1,
+          "linked_news_evidence_count": 1,
+          "matched_actors": [
+            "prc"
+          ],
+          "matched_geographies": [
+            "taiwan strait"
+          ],
+          "matched_keywords": [
+            "exercises",
+            "military",
+            "scale",
+            "taiwan"
+          ],
+          "matched_terms": [
+            "exercises",
+            "military",
+            "scale",
+            "taiwan"
+          ],
+          "score_components": {
+            "actor_match": 5,
+            "event_family_match": 25,
+            "geography_match": 5,
+            "keyword_overlap": 32,
+            "news_evidence_count": 3,
+            "repetition_level": 0,
+            "surprise_score": 3
+          },
+          "similarity_score": 73
+        },
+        {
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
+          "event_category": "Military Demonstration",
           "event_date": "2024-05-23",
           "event_description": "PLA launched Joint Sword-2024A exercises around Taiwan after Lai's inauguration",
           "event_family": "Military_Exercise",
-          "event_id": "EV013",
+          "event_id": "E013",
           "event_name": "Joint Sword-2024A",
           "event_title": "Joint Sword-2024A",
           "historical_market_reaction": {
@@ -104,50 +150,6 @@
             "surprise_score": 3
           },
           "similarity_score": 68
-        },
-        {
-          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
-          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
-          "event_category": "Military Demonstration",
-          "event_date": "2024-10-14",
-          "event_description": "PLA launched Joint Sword-2024B exercises around Taiwan",
-          "event_family": "Military_Exercise",
-          "event_id": "EV015",
-          "event_name": "Joint Sword-2024B",
-          "event_title": "Joint Sword-2024B",
-          "historical_market_reaction": {
-            "label": "tsmc_car_7=5.3488 (historical descriptive market reaction)",
-            "metric": "tsmc_car_7",
-            "value": 5.3488
-          },
-          "linked_news_count": 1,
-          "linked_news_evidence_count": 1,
-          "matched_actors": [
-            "prc"
-          ],
-          "matched_geographies": [
-            "taiwan strait"
-          ],
-          "matched_keywords": [
-            "exercises",
-            "military",
-            "taiwan"
-          ],
-          "matched_terms": [
-            "exercises",
-            "military",
-            "taiwan"
-          ],
-          "score_components": {
-            "actor_match": 5,
-            "event_family_match": 25,
-            "geography_match": 5,
-            "keyword_overlap": 24,
-            "news_evidence_count": 3,
-            "repetition_level": 3,
-            "surprise_score": 1
-          },
-          "similarity_score": 66
         }
       ]
     },
@@ -166,7 +168,7 @@
           "event_date": "2022-10-07",
           "event_description": "U.S. imposed advanced computing and semiconductor manufacturing controls on China",
           "event_family": "Export_Control",
-          "event_id": "EV005",
+          "event_id": "E005",
           "event_name": "BIS Advanced Semiconductor Export Controls",
           "event_title": "BIS Advanced Semiconductor Export Controls",
           "historical_market_reaction": {
@@ -213,7 +215,7 @@
           "event_date": "2025-03-04",
           "event_description": "TSMC announced plans to expand U.S. investment to US$165 billion",
           "event_family": "Strategic_Investment",
-          "event_id": "EV017",
+          "event_id": "E017",
           "event_name": "TSMC US$165B U.S. Expansion",
           "event_title": "TSMC US$165B U.S. Expansion",
           "historical_market_reaction": {
@@ -253,7 +255,7 @@
           "event_date": "2024-04-08",
           "event_description": "U.S. Commerce announced preliminary CHIPS Act terms with TSMC",
           "event_family": "Strategic_Investment",
-          "event_id": "EV011",
+          "event_id": "E011",
           "event_name": "TSMC CHIPS Act Preliminary Terms",
           "event_title": "TSMC CHIPS Act Preliminary Terms",
           "historical_market_reaction": {
@@ -303,7 +305,7 @@
           "event_date": "2022-08-02",
           "event_description": "U.S. House Speaker Nancy Pelosi visited Taiwan amid PRC warnings",
           "event_family": "Diplomatic_Shock",
-          "event_id": "EV002",
+          "event_id": "E002",
           "event_name": "Pelosi Visit",
           "event_title": "Pelosi Visit",
           "historical_market_reaction": {
@@ -311,8 +313,8 @@
             "metric": "tsmc_car_7",
             "value": 1.8572
           },
-          "linked_news_count": 2,
-          "linked_news_evidence_count": 2,
+          "linked_news_count": 1,
+          "linked_news_evidence_count": 1,
           "matched_actors": [
             "prc",
             "taiwan",
@@ -336,11 +338,11 @@
             "event_family_match": 25,
             "geography_match": 5,
             "keyword_overlap": 24,
-            "news_evidence_count": 6,
+            "news_evidence_count": 3,
             "repetition_level": 0,
             "surprise_score": 5
           },
-          "similarity_score": 80
+          "similarity_score": 77
         },
         {
           "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
@@ -349,7 +351,7 @@
           "event_date": "2022-07-19",
           "event_description": "China warned of strong measures if Pelosi visited Taiwan",
           "event_family": "Diplomatic_Shock",
-          "event_id": "EV001",
+          "event_id": "E001",
           "event_name": "China Warns Against Pelosi Taiwan Visit",
           "event_title": "China Warns Against Pelosi Taiwan Visit",
           "historical_market_reaction": {
@@ -389,7 +391,7 @@
           "event_date": "2023-08-12",
           "event_description": "Taiwan Vice President Lai Ching-te transited through the United States",
           "event_family": "Diplomatic_Shock",
-          "event_id": "EV008",
+          "event_id": "E008",
           "event_name": "Lai U.S. Transit",
           "event_title": "Lai U.S. Transit",
           "historical_market_reaction": {
@@ -437,7 +439,7 @@
           "event_date": "2023-08-19",
           "event_description": "China launched military drills around Taiwan after Lai's U.S. transit",
           "event_family": "Military_Exercise",
-          "event_id": "EV009",
+          "event_id": "E009",
           "event_name": "PLA Drills After Lai U.S. Transit",
           "event_title": "PLA Drills After Lai U.S. Transit",
           "historical_market_reaction": {
@@ -478,7 +480,7 @@
           "event_date": "2025-01-22",
           "event_description": "PLA aircraft and warships surrounded Taiwan during joint combat readiness patrols",
           "event_family": "Military_Exercise",
-          "event_id": "EV016",
+          "event_id": "E016",
           "event_name": "PLA Joint Combat Readiness Patrols Around Taiwan",
           "event_title": "PLA Joint Combat Readiness Patrols Around Taiwan",
           "historical_market_reaction": {
@@ -518,7 +520,7 @@
           "event_date": "2024-05-23",
           "event_description": "PLA launched Joint Sword-2024A exercises around Taiwan after Lai's inauguration",
           "event_family": "Military_Exercise",
-          "event_id": "EV013",
+          "event_id": "E013",
           "event_name": "Joint Sword-2024A",
           "event_title": "Joint Sword-2024A",
           "historical_market_reaction": {
@@ -568,7 +570,7 @@
           "event_date": "2024-04-08",
           "event_description": "U.S. Commerce announced preliminary CHIPS Act terms with TSMC",
           "event_family": "Strategic_Investment",
-          "event_id": "EV011",
+          "event_id": "E011",
           "event_name": "TSMC CHIPS Act Preliminary Terms",
           "event_title": "TSMC CHIPS Act Preliminary Terms",
           "historical_market_reaction": {
@@ -616,7 +618,7 @@
           "event_date": "2022-12-06",
           "event_description": "TSMC announced updates expanding Arizona investment to about US$40 billion",
           "event_family": "Strategic_Investment",
-          "event_id": "EV006",
+          "event_id": "E006",
           "event_name": "TSMC Arizona US$40B Expansion",
           "event_title": "TSMC Arizona US$40B Expansion",
           "historical_market_reaction": {
@@ -662,7 +664,7 @@
           "event_date": "2025-03-04",
           "event_description": "TSMC announced plans to expand U.S. investment to US$165 billion",
           "event_family": "Strategic_Investment",
-          "event_id": "EV017",
+          "event_id": "E017",
           "event_name": "TSMC US$165B U.S. Expansion",
           "event_title": "TSMC US$165B U.S. Expansion",
           "historical_market_reaction": {
@@ -716,7 +718,7 @@
           "event_date": "2025-03-04",
           "event_description": "TSMC announced plans to expand U.S. investment to US$165 billion",
           "event_family": "Strategic_Investment",
-          "event_id": "EV017",
+          "event_id": "E017",
           "event_name": "TSMC US$165B U.S. Expansion",
           "event_title": "TSMC US$165B U.S. Expansion",
           "historical_market_reaction": {
@@ -756,7 +758,7 @@
           "event_date": "2022-08-03",
           "event_description": "China blocked selected Taiwan imports and halted natural sand exports",
           "event_family": "Economic_Coercion",
-          "event_id": "EV003",
+          "event_id": "E003",
           "event_name": "China Trade Restrictions After Pelosi Visit",
           "event_title": "China Trade Restrictions After Pelosi Visit",
           "historical_market_reaction": {
@@ -788,7 +790,7 @@
           "event_date": "2024-04-08",
           "event_description": "U.S. Commerce announced preliminary CHIPS Act terms with TSMC",
           "event_family": "Strategic_Investment",
-          "event_id": "EV011",
+          "event_id": "E011",
           "event_name": "TSMC CHIPS Act Preliminary Terms",
           "event_title": "TSMC CHIPS Act Preliminary Terms",
           "historical_market_reaction": {

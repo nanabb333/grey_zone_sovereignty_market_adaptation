@@ -40,13 +40,6 @@ NEWS_REQUIRED_COLUMNS = [
 MARKET_REQUIRED_COLUMNS = ["event_name", "event_date"]
 PREFERRED_CAR_COLUMNS = ["tsmc_car_7", "tsmc_car_3", "twse_car_7", "twse_car_3"]
 
-DASHBOARD_EVENT_ALIASES = {
-    "e001": "Pelosi Visit",
-    "e002": "Joint Sword 2023",
-    "e003": "Joint Sword-2024A",
-    "e004": "NVIDIA Taiwan AI Factory",
-}
-
 STOPWORDS = {
     "a",
     "an",
@@ -177,12 +170,7 @@ def event_name_key(name: str) -> str:
 def news_candidate_keys(row: dict[str, str]) -> list[str]:
     related = row.get("related_event_id", "").strip()
     date = row.get("date", "").strip()
-    alias = DASHBOARD_EVENT_ALIASES.get(related.lower())
-    keys = []
-    if alias:
-        keys.append(event_name_key(alias))
-    keys.append(event_name_key(related))
-    keys.append(normalize_text(f"{date} {related}"))
+    keys = [event_name_key(related), normalize_text(f"{date} {related}")]
     return [key for key in keys if key]
 
 
@@ -196,6 +184,7 @@ def build_event_indexes(
     for index, event in enumerate(events, start=1):
         event["event_family"] = normalize_family(event["event_family"])
         event["event_id"] = event.get("event_id", "").strip() or f"EV{index:03d}"
+        by_name[event_name_key(event["event_id"])] = event
         by_name[event_name_key(event["event_name"])] = event
         by_full_key[event_key(event)] = event
         by_date[event["date"]].append(event)

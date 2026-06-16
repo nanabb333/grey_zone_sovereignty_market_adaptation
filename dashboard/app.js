@@ -7,6 +7,7 @@ const executiveBriefPath = "../results/executive_brief.json";
 const newsDatabaseSummaryPath = "../results/news_database_summary.json";
 const eventFamilySummaryPath = "../results/event_family_summary.json";
 const scenarioSimilarityPath = "../results/scenario_similarity_results.json";
+const dataValidationPath = "../results/data_validation_report.json";
 
 const formatPercent = (value) => {
   const number = Number(value);
@@ -290,6 +291,27 @@ const renderNewsDatabaseSummary = (summaryData) => {
     .join("");
 };
 
+const renderProjectMetadata = (validationData) => {
+  const summary = validationData.summary ?? {};
+  const items = [
+    ["Events", summary.event_count ?? "N/A"],
+    ["News Items", summary.news_item_count ?? "N/A"],
+    ["Event Families", summary.event_family_count ?? "N/A"],
+    ["Validation Status", validationData.status ?? "N/A"],
+  ];
+
+  document.getElementById("projectMetadata").innerHTML = items
+    .map(
+      ([label, value]) => `
+        <div class="detail-item">
+          <p class="detail-label">${label}</p>
+          <p class="detail-value">${value}</p>
+        </div>
+      `,
+    )
+    .join("");
+};
+
 const renderEventFamilyAnalytics = (summaryData) => {
   const container = document.getElementById("eventFamilyAnalytics");
   const summaries = summaryData.summaries ?? [];
@@ -460,6 +482,7 @@ const loadDashboard = async () => {
       newsSummaryResponse,
       eventFamilyResponse,
       scenarioSimilarityResponse,
+      dataValidationResponse,
     ] = await Promise.all([
       fetch(dashboardDataPath),
       fetch(executiveSummaryPath),
@@ -470,6 +493,7 @@ const loadDashboard = async () => {
       fetch(newsDatabaseSummaryPath),
       fetch(eventFamilySummaryPath),
       fetch(scenarioSimilarityPath),
+      fetch(dataValidationPath),
     ]);
 
     if (
@@ -481,7 +505,8 @@ const loadDashboard = async () => {
       !briefResponse.ok ||
       !newsSummaryResponse.ok ||
       !eventFamilyResponse.ok ||
-      !scenarioSimilarityResponse.ok
+      !scenarioSimilarityResponse.ok ||
+      !dataValidationResponse.ok
     ) {
       throw new Error("Unable to load Repo 2 dashboard outputs.");
     }
@@ -495,6 +520,7 @@ const loadDashboard = async () => {
     const newsSummaryData = await newsSummaryResponse.json();
     const eventFamilyData = await eventFamilyResponse.json();
     const scenarioSimilarityData = await scenarioSimilarityResponse.json();
+    const dataValidationData = await dataValidationResponse.json();
 
     renderKpiCards(events);
     renderLatestEvent(events);
@@ -502,6 +528,7 @@ const loadDashboard = async () => {
       renderMarkdown(executiveSummary);
     renderInsights(insightData);
     renderContextSummary(contextData);
+    renderProjectMetadata(dataValidationData);
     renderNewsDatabaseSummary(newsSummaryData);
     renderEventFamilyAnalytics(eventFamilyData);
     renderScenarioSimilarity(scenarioSimilarityData);
@@ -513,6 +540,7 @@ const loadDashboard = async () => {
     document.getElementById("executiveSummary").textContent = error.message;
     document.getElementById("insightCards").textContent = error.message;
     document.getElementById("contextSummary").textContent = error.message;
+    document.getElementById("projectMetadata").textContent = error.message;
     document.getElementById("newsDatabaseSummary").textContent = error.message;
     document.getElementById("eventFamilyAnalytics").textContent = error.message;
     document.getElementById("scenarioSimilarity").textContent = error.message;

@@ -103,6 +103,18 @@ The repository now separates source material into clear data layers:
 - market-reaction outputs: `results/event_abnormal_return_summary.csv`
 - dashboard-ready summaries: `results/*.json` and `results/*.md`
 
+## Data Architecture
+
+The intelligence prototype follows a layered architecture:
+
+```text
+Research Layer -> Evidence Layer -> Analytics Layer -> Scenario Layer -> Dashboard Layer
+```
+
+The research layer preserves the original event-study data and outputs. The evidence layer adds curated news-source context. The analytics layer summarizes event-family patterns. The scenario layer retrieves historically similar coded events. The dashboard layer presents these static outputs for analyst review.
+
+Each event in `data/events_v2.csv` has a persistent `event_id` in `E###` format, and downstream evidence or scenario outputs use that ID where possible.
+
 ## Analytics Layers
 
 The analytics layer is descriptive and reproducible:
@@ -110,6 +122,28 @@ The analytics layer is descriptive and reproducible:
 - `scripts/build_news_event_database.py` validates and summarizes curated news evidence
 - `scripts/analyze_event_family_patterns.py` summarizes historical market reactions by event family
 - `scripts/scenario_similarity.py` retrieves historically similar coded events for example scenarios
+- `scripts/validate_project_data.py` checks data integrity and linkage health
+
+## Data Integrity
+
+Core data quality conventions:
+
+- stable `event_id` values in `data/events_v2.csv`
+- stable `news_id` values in `data/news/news_events.csv`
+- explicit `related_event_id` links from news evidence to coded events
+- generated validation reports in `results/data_validation_report.json` and `results/data_validation_report.md`
+
+One contextual news row may remain intentionally unlinked when the evidence item is relevant but not represented as a coded event in `data/events_v2.csv`; this is surfaced as a validation warning for analyst review.
+
+## Validation Framework
+
+Run the project validation check with:
+
+```bash
+python3 scripts/validate_project_data.py
+```
+
+The validator checks duplicate event IDs, missing event IDs, orphan news records, invalid event-family values, missing critical fields, and duplicate news IDs. The dashboard metadata panel displays the validation status from the generated report.
 
 ## News Evidence Database Layer
 

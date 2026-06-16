@@ -12,8 +12,8 @@ The layer supports historical similarity analysis, context retrieval, and scenar
 | Rank | Historical Event | Date | Event Family | Similarity Score | Linked News | Historical CAR Context |
 |---:|---|---|---|---:|---:|---|
 | 1 | Joint Sword 2023 | 2023-04-08 | Military_Exercise | 73 | 1 | tsmc_car_7=-1.0286 (historical descriptive market reaction) |
-| 2 | Joint Sword-2024A | 2024-05-23 | Military_Exercise | 68 | 1 | tsmc_car_7=-0.4712 (historical descriptive market reaction) |
-| 3 | Joint Sword-2024B | 2024-10-14 | Military_Exercise | 66 | 1 | tsmc_car_7=5.3488 (historical descriptive market reaction) |
+| 2 | PLA Military Exercises After Pelosi Visit | 2022-08-04 | Military_Exercise | 73 | 1 | tsmc_car_7=3.3773 (historical descriptive market reaction) |
+| 3 | Joint Sword-2024A | 2024-05-23 | Military_Exercise | 68 | 1 | tsmc_car_7=-0.4712 (historical descriptive market reaction) |
 
 ## S002: new semiconductor export control restrictions
 
@@ -33,7 +33,7 @@ The layer supports historical similarity analysis, context retrieval, and scenar
 
 | Rank | Historical Event | Date | Event Family | Similarity Score | Linked News | Historical CAR Context |
 |---:|---|---|---|---:|---:|---|
-| 1 | Pelosi Visit | 2022-08-02 | Diplomatic_Shock | 80 | 2 | tsmc_car_7=1.8572 (historical descriptive market reaction) |
+| 1 | Pelosi Visit | 2022-08-02 | Diplomatic_Shock | 77 | 1 | tsmc_car_7=1.8572 (historical descriptive market reaction) |
 | 2 | China Warns Against Pelosi Taiwan Visit | 2022-07-19 | Diplomatic_Shock | 52 | 0 | tsmc_car_7=-8.6019 (historical descriptive market reaction) |
 | 3 | Lai U.S. Transit | 2023-08-12 | Diplomatic_Shock | 42 | 0 | tsmc_car_7=-1.4803 (historical descriptive market reaction) |
 

@@ -1,0 +1,37 @@
+{
+  "checks": [
+    "duplicate event_id",
+    "missing event_id",
+    "orphan news records",
+    "invalid event family values",
+    "missing critical fields",
+    "duplicate news_id"
+  ],
+  "errors": [],
+  "input_files": {
+    "events": "data/events_v2.csv",
+    "news": "data/news/news_events.csv"
+  },
+  "method_note": "Validation checks structural data quality and linkage integrity. It does not add analytical claims or change the event-study methodology.",
+  "status": "warning",
+  "summary": {
+    "error_count": 0,
+    "event_count": 18,
+    "event_family_count": 7,
+    "news_item_count": 12,
+    "warning_count": 1
+  },
+  "warnings": [
+    {
+      "check": "orphan_news_records",
+      "note": "These news items do not link to an event_id in data/events_v2.csv and require analyst review before use in event-linked analysis.",
+      "records": [
+        {
+          "news_id": "N007",
+          "related_event_id": "UNLINKED_NAURU_2024",
+          "title": "Nauru switches diplomatic recognition from Taiwan to China"
+        }
+      ]
+    }
+  ]
+}
