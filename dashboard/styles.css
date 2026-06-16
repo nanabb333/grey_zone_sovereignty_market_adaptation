@@ -94,6 +94,7 @@ body {
 }
 
 .context-panel,
+.news-panel,
 .comparison-panel,
 .brief-panel {
   grid-column: 1 / 2;
@@ -334,6 +335,7 @@ body {
 
   .summary-panel,
   .context-panel,
+  .news-panel,
   .comparison-panel,
   .brief-panel,
   .ai-panel {

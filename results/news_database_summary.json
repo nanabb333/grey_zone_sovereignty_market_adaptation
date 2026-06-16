@@ -1,0 +1,35 @@
+{
+  "average_relevance_score": 0.869,
+  "count_by_actor": {
+    "Nauru; Taiwan; PRC": 1,
+    "PRC": 5,
+    "PRC; Taiwan": 1,
+    "TSMC; United States": 2,
+    "United States": 1,
+    "United States; TSMC": 1,
+    "United States; Taiwan; PRC": 1
+  },
+  "count_by_event_family": {
+    "Diplomatic Shock": 1,
+    "Diplomatic Tension": 1,
+    "Military Demonstration": 5,
+    "Policy Response": 2,
+    "Semiconductor Supply Chain": 2,
+    "Technology Competition": 1
+  },
+  "count_by_geography": {
+    "PRC; Taiwan": 1,
+    "Pacific Islands; Taiwan": 1,
+    "Taiwan Strait": 6,
+    "United States; Global semiconductor supply chain": 1,
+    "United States; Taiwan": 3
+  },
+  "input_file": "data/news/news_events.csv",
+  "method_note": "Curated news-evidence starter layer for analyst review. Outputs enrich source traceability and do not replace event-study design.",
+  "news_item_count": 12,
+  "use_limits": [
+    "Curated dataset, not exhaustive.",
+    "Placeholder rows require exact source verification before publication.",
+    "Not investment advice, forecasting, or automated causal analysis."
+  ]
+}

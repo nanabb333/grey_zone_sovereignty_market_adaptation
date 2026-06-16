@@ -4,6 +4,7 @@ const eventInsightsPath = "../results/event_insights.json";
 const llmContextPath = "../results/llm_context.json";
 const historicalComparisonPath = "../results/historical_comparison.json";
 const executiveBriefPath = "../results/executive_brief.json";
+const newsDatabaseSummaryPath = "../results/news_database_summary.json";
 
 const formatPercent = (value) => {
   const number = Number(value);
@@ -258,6 +259,35 @@ const renderContextSummary = (contextData) => {
     .join("");
 };
 
+const renderNewsDatabaseSummary = (summaryData) => {
+  const eventFamilyCounts = summaryData.count_by_event_family ?? {};
+  const actorCounts = summaryData.count_by_actor ?? {};
+  const topEventFamilies = Object.entries(eventFamilyCounts)
+    .sort(([, a], [, b]) => Number(b) - Number(a))
+    .slice(0, 3)
+    .map(([family, count]) => `${family} (${count})`)
+    .join(", ");
+  const actorsCovered = Object.keys(actorCounts).join("; ");
+
+  const items = [
+    ["Total News Items", summaryData.news_item_count ?? "N/A"],
+    ["Top Event Families", topEventFamilies || "N/A"],
+    ["Actors Covered", actorsCovered || "N/A"],
+    ["Average Relevance", summaryData.average_relevance_score ?? "N/A"],
+  ];
+
+  document.getElementById("newsDatabaseSummary").innerHTML = items
+    .map(
+      ([label, value]) => `
+        <div class="detail-item">
+          <p class="detail-label">${label}</p>
+          <p class="detail-value">${value}</p>
+        </div>
+      `,
+    )
+    .join("");
+};
+
 const renderHistoricalComparison = (comparisonData) => {
   const comparisons = comparisonData.comparisons ?? [];
   const container = document.getElementById("historicalComparison");
@@ -336,6 +366,7 @@ const loadDashboard = async () => {
       contextResponse,
       comparisonResponse,
       briefResponse,
+      newsSummaryResponse,
     ] = await Promise.all([
       fetch(dashboardDataPath),
       fetch(executiveSummaryPath),
@@ -343,6 +374,7 @@ const loadDashboard = async () => {
       fetch(llmContextPath),
       fetch(historicalComparisonPath),
       fetch(executiveBriefPath),
+      fetch(newsDatabaseSummaryPath),
     ]);
 
     if (
@@ -351,7 +383,8 @@ const loadDashboard = async () => {
       !insightsResponse.ok ||
       !contextResponse.ok ||
       !comparisonResponse.ok ||
-      !briefResponse.ok
+      !briefResponse.ok ||
+      !newsSummaryResponse.ok
     ) {
       throw new Error("Unable to load Repo 2 dashboard outputs.");
     }
@@ -362,6 +395,7 @@ const loadDashboard = async () => {
     const contextData = await contextResponse.json();
     const comparisonData = await comparisonResponse.json();
     const briefData = await briefResponse.json();
+    const newsSummaryData = await newsSummaryResponse.json();
 
     renderKpiCards(events);
     renderLatestEvent(events);
@@ -369,6 +403,7 @@ const loadDashboard = async () => {
       renderMarkdown(executiveSummary);
     renderInsights(insightData);
     renderContextSummary(contextData);
+    renderNewsDatabaseSummary(newsSummaryData);
     renderHistoricalComparison(comparisonData);
     renderExecutiveBrief(briefData);
   } catch (error) {
@@ -377,6 +412,7 @@ const loadDashboard = async () => {
     document.getElementById("executiveSummary").textContent = error.message;
     document.getElementById("insightCards").textContent = error.message;
     document.getElementById("contextSummary").textContent = error.message;
+    document.getElementById("newsDatabaseSummary").textContent = error.message;
     document.getElementById("historicalComparison").textContent = error.message;
     document.getElementById("executiveBrief").textContent = error.message;
   }

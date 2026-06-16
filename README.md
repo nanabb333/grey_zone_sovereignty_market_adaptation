@@ -76,6 +76,19 @@ The dashboard consumes structured outputs from Repo 2:
 | `results/historical_comparison.json` | Event-versus-mechanism comparison metadata |
 | `results/executive_brief.json` | Deterministic executive brief |
 | `results/llm_context.json` | Structured context for future analyst-reviewed LLM use |
+| `results/news_database_summary.json` | Curated news-evidence summary for future source drilldowns |
+
+## News Evidence Database Layer
+
+The repository now includes a curated news-evidence layer in `data/news/news_events.csv`. This layer links geopolitical events and related candidate events to structured source evidence, including event family, actor, geography, summary notes, and analyst coding notes.
+
+The layer is designed as evidence enrichment for future analysis and dashboard drilldowns. It does not replace the original event-study design, alter the empirical results, forecast markets, or provide investment advice. Placeholder rows should be verified against exact source URLs before publication or formal research use.
+
+Generate the summary outputs with:
+
+```bash
+python3 scripts/build_news_event_database.py
+```
 
 ## Intelligence Layer
 
