@@ -1,98 +1,55 @@
 # Recruiter Summary
 
-> Academic Research Notice:
-> This document is provided for educational and research reference purposes only.
-> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
-> It should not be treated as a peer-reviewed publication.
+## One-Sentence Pitch
 
-## What This Portfolio Demonstrates
+An academic Taiwan geopolitical risk event-study extended into a dashboard-ready intelligence prototype with structured data, evidence traceability, descriptive analytics, scenario context retrieval, and portfolio-grade documentation.
 
-This portfolio demonstrates the ability to turn a complex geopolitical risk research problem into a reproducible analytics workflow and then into a dashboard-ready decision-support product.
+## What This Demonstrates
 
-It shows three capabilities:
+This project shows a candidate who can move from research to product:
 
-1. Research capability
-2. Analytics engineering capability
-3. Analytics product capability
+- frame a complex geopolitical risk problem
+- structure messy analytical inputs into reusable datasets
+- automate reproducible Python workflows
+- communicate technical outputs through dashboard design
+- document assumptions, limitations, and data integrity checks
+- avoid overclaiming in a high-stakes analytical domain
 
-The project begins with Taiwan geopolitical risk research, converts the event-study method into a Python analytics engine, and then packages the outputs into a dashboard with deterministic insight generation.
+## Why It Is Recruiter-Relevant
 
-## Intended Audience
+The repository is not just a notebook or static chart. It demonstrates an end-to-end analytics workflow:
 
-The portfolio is intended for:
+```text
+research design -> data engineering -> analytics outputs -> dashboard prototype -> stakeholder documentation
+```
 
-- Business Analytics recruiters
-- political risk analytics teams
-- financial research teams
-- risk intelligence teams
-- policy analytics teams
-- research automation teams
-- graduate admissions committees
+That makes it relevant for business analytics, risk analytics, strategy analytics, research automation, and data product roles.
 
 ## Target Roles
-
-The portfolio is most relevant for roles such as:
 
 - Business Analyst
 - Data Analyst
 - Risk Analyst
 - Political Risk Analyst
 - Research Analyst
-- Financial Data Analyst
-- Analytics Product Analyst
 - Strategy and Insights Analyst
+- Analytics Product Analyst
 - AI-Assisted Analytics Analyst
 
-It is not positioned as a pure software engineering portfolio.
+## Core Strengths Shown
 
-## Core Strengths
+Research judgment:
+The project preserves event-study methodology and communicates limitations clearly.
 
-### Domain Knowledge
+Analytics engineering:
+The repository includes validation scripts, structured outputs, data dictionaries, and reproducible build steps.
 
-The portfolio shows familiarity with Taiwan geopolitical risk, cross-strait tensions, semiconductor relevance, and financial market response analysis.
+Product thinking:
+The dashboard translates research artifacts into an analyst-facing review experience.
 
-### Analytical Method
+Responsible AI readiness:
+The project prepares structured context for future analyst-reviewed AI workflows without using live LLM calls or unsupported generated claims.
 
-The portfolio applies event-study methodology, abnormal returns, CAR, event windows, and benchmark-adjusted interpretation.
+## Responsible-Use Boundary
 
-### Workflow Automation
-
-The portfolio demonstrates how a manual research workflow can become a repeatable analytics engine.
-
-### Product Thinking
-
-The portfolio shows how raw analytics outputs can become a dashboard product for a real target user: the geopolitical risk analyst.
-
-### AI-Ready Design
-
-Repo 3 includes deterministic insight generation and LLM-ready context, while clearly avoiding unsupported forecasts or trading recommendations.
-
-## Recruiter-Friendly Summary
-
-This portfolio shows a Business Analytics candidate who can:
-
-- understand a complex geopolitical risk problem
-- design a research-backed analytical method
-- automate a repeatable financial analytics workflow
-- package results for dashboard-based decision support
-- communicate findings to non-technical stakeholders
-- think responsibly about future AI-assisted analytics
-
-## One-Sentence Pitch
-
-I built a three-part Taiwan geopolitical risk analytics portfolio that moves from academic research to automated event-study analytics to a dashboard-ready decision-support product.
-
-## What Makes It Different
-
-Many portfolios show isolated charts or notebooks.
-
-This portfolio shows an end-to-end analytics product path:
-
-```text
-research foundation
-→ analytics engine
-→ dashboard intelligence
-→ stakeholder-ready decision support
-```
-
-That makes it especially relevant for Business Analytics, risk analytics, research automation, and AI-assisted analytics roles.
+The project does not provide market forecasts, investment advice, trading signals, or causal proof. It is a portfolio demonstration of careful analytical product design.

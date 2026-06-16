@@ -1,8 +1,12 @@
-# AI Geopolitical Risk Dashboard
+# Taiwan Geopolitical Risk Intelligence Dashboard
+
+Portfolio project: an academic Taiwan geopolitical risk event-study extended into a dashboard-ready intelligence prototype for analyst review, evidence traceability, and stakeholder communication.
 
 ## Project Overview
 
-This project extends an academic Taiwan geopolitical risk event-study into a dashboard-ready geopolitical intelligence prototype. The repository keeps the original event-study design intact while adding structured evidence, descriptive analytics, and scenario context retrieval for analyst-support workflows.
+This project starts from an academic event-study on Taiwan-related geopolitical shocks and extends it into a polished, dashboard-ready intelligence prototype. The repository keeps the original event-study design intact while adding structured evidence, descriptive analytics, scenario context retrieval, data validation, and portfolio-facing documentation.
+
+The result is a research-to-product portfolio piece: rigorous enough to show methodological discipline, structured enough to show analytics engineering, and accessible enough for recruiters or stakeholders to understand the product value quickly.
 
 The prototype is designed for historical similarity analysis, evidence enrichment, descriptive scenario comparison, and dashboard communication. It does not provide market prediction, investment advice, automated trading signals, or unsupported causal claims.
 
@@ -56,6 +60,8 @@ The dashboard helps analysts and stakeholders answer:
 
 ## Dashboard Screenshots
 
+The dashboard is static and local-file friendly. It presents the project as an analyst-support workspace rather than a notebook-only research artifact.
+
 Executive dashboard:
 
 ![Dashboard Home](docs/screenshots/dashboard_home.png)
@@ -63,6 +69,8 @@ Executive dashboard:
 Dashboard intelligence layer:
 
 ![Dashboard Intelligence](docs/screenshots/dashboard_intelligence.png)
+
+Additional screenshot targets are tracked in [GitHub Publication Checklist](docs/github_publication_checklist.md).
 
 ## Executive User Value
 
@@ -246,8 +254,21 @@ The dashboard reads static outputs from `results/` and renders the product inter
 - AI product analytics
 - LLM-ready context design
 
+## Portfolio Framing
+
+This repository is designed to show four portfolio signals:
+
+- Research judgment: the project preserves method boundaries and avoids unsupported claims.
+- Analytics engineering: scripts generate structured outputs and validation reports.
+- Data product thinking: research artifacts are translated into a dashboard workflow.
+- Communication quality: documentation is written for analysts, recruiters, and stakeholders.
+
 ## Portfolio Documentation
 
+- [Executive Walkthrough](docs/executive_walkthrough.md)
+- [Portfolio Case Study](docs/portfolio_case_study.md)
+- [Recruiter Summary](docs/recruiter_summary.md)
+- [GitHub Publication Checklist](docs/github_publication_checklist.md)
 - [Repo 3 Case Study](docs/repo3_case_study.md)
 - [Repo 3 Product Spec](docs/repo3_product_spec.md)
 - [Dashboard Information Architecture](docs/dashboard_information_architecture.md)
