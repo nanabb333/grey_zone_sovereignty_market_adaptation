@@ -272,6 +272,39 @@ body {
 .scenario-list {
   display: grid;
   gap: 14px;
+  margin-top: 16px;
+}
+
+.scenario-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.scenario-card h3 {
+  margin: 4px 0 8px;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.scenario-match-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.scenario-match {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.scenario-match h4 {
+  margin: 2px 0 8px;
+  font-size: 15px;
+  letter-spacing: 0;
 }
 
 .comparison-card {

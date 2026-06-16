@@ -14,6 +14,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[1]
 EVENTS_PATH = REPO_ROOT / "data" / "events_v2.csv"
 NEWS_PATH = REPO_ROOT / "data" / "news" / "news_events.csv"
+MARKET_PATH = REPO_ROOT / "results" / "event_abnormal_return_summary.csv"
 RESULTS_DIR = REPO_ROOT / "results"
 JSON_OUTPUT_PATH = RESULTS_DIR / "scenario_similarity_results.json"
 MD_OUTPUT_PATH = RESULTS_DIR / "scenario_similarity_results.md"
@@ -25,6 +26,7 @@ EVENT_REQUIRED_COLUMNS = [
     "brief_description",
     "surprise_rationale",
     "event_family",
+    "event_repetition_level",
 ]
 NEWS_REQUIRED_COLUMNS = [
     "news_id",
@@ -35,6 +37,8 @@ NEWS_REQUIRED_COLUMNS = [
     "geography",
     "summary",
 ]
+MARKET_REQUIRED_COLUMNS = ["event_name", "event_date"]
+PREFERRED_CAR_COLUMNS = ["tsmc_car_7", "tsmc_car_3", "twse_car_7", "twse_car_3"]
 
 DASHBOARD_EVENT_ALIASES = {
     "e001": "Pelosi Visit",
@@ -84,10 +88,37 @@ SCENARIOS = [
         "actors": ["United States", "Taiwan", "PRC"],
         "geographies": ["Taiwan", "Taiwan Strait"],
     },
+    {
+        "scenario_id": "S004",
+        "scenario_text": "grey-zone naval and air pressure around Taiwan",
+        "event_family": "Military_Exercise",
+        "actors": ["PRC", "PLA", "China", "Taiwan"],
+        "geographies": ["Taiwan Strait", "Taiwan"],
+    },
+    {
+        "scenario_id": "S005",
+        "scenario_text": "strategic chip investment or state support announcement",
+        "event_family": "Strategic_Investment",
+        "actors": ["TSMC", "United States", "Taiwan"],
+        "geographies": ["United States", "Taiwan", "Global semiconductor supply chain"],
+    },
+    {
+        "scenario_id": "S006",
+        "scenario_text": "supply-chain disruption risk linked to cross-strait tensions",
+        "event_family": "Economic_Coercion",
+        "actors": ["PRC", "China", "Taiwan"],
+        "geographies": ["Taiwan Strait", "Taiwan", "Global semiconductor supply chain"],
+    },
 ]
 
 
-def read_csv(path: Path, required_columns: list[str]) -> list[dict[str, str]]:
+def read_csv(
+    path: Path,
+    required_columns: list[str],
+    optional: bool = False,
+) -> list[dict[str, str]]:
+    if optional and not path.exists():
+        return []
     if not path.exists():
         raise FileNotFoundError(f"Missing input file: {path}")
 
@@ -114,6 +145,25 @@ def tokenize(value: str) -> set[str]:
 
 def normalize_family(value: str) -> str:
     return value.strip().replace(" ", "_")
+
+
+def parse_float(value: str | None) -> float | None:
+    if value is None or value == "":
+        return None
+    try:
+        return float(value)
+    except ValueError:
+        return None
+
+
+def select_car_column(market_rows: list[dict[str, str]]) -> str | None:
+    if not market_rows:
+        return None
+    fieldnames = set(market_rows[0].keys())
+    for column in PREFERRED_CAR_COLUMNS:
+        if column in fieldnames:
+            return column
+    return None
 
 
 def event_key(row: dict[str, str]) -> str:
@@ -143,8 +193,9 @@ def build_event_indexes(
     by_full_key: dict[str, dict[str, str]] = {}
     by_date: dict[str, list[dict[str, str]]] = defaultdict(list)
 
-    for event in events:
+    for index, event in enumerate(events, start=1):
         event["event_family"] = normalize_family(event["event_family"])
+        event["event_id"] = event.get("event_id", "").strip() or f"EV{index:03d}"
         by_name[event_name_key(event["event_name"])] = event
         by_full_key[event_key(event)] = event
         by_date[event["date"]].append(event)
@@ -178,6 +229,35 @@ def link_news_to_events(
     return dict(linked_news)
 
 
+def build_market_context(
+    market_rows: list[dict[str, str]],
+    events_by_name: dict[str, dict[str, str]],
+    events_by_full_key: dict[str, dict[str, str]],
+) -> tuple[dict[str, dict[str, Any]], str | None]:
+    car_column = select_car_column(market_rows)
+    context: dict[str, dict[str, Any]] = {}
+    if car_column is None:
+        return context, None
+
+    for market in market_rows:
+        key = normalize_text(f"{market.get('event_date', '')} {market.get('event_name', '')}")
+        event = events_by_full_key.get(key) or events_by_name.get(
+            event_name_key(market.get("event_name", ""))
+        )
+        car_value = parse_float(market.get(car_column))
+        if event is not None and car_value is not None:
+            context[event_key(event)] = {
+                "metric": car_column,
+                "value": round(car_value, 4),
+                "label": (
+                    f"{car_column}={round(car_value, 4)} "
+                    "(historical descriptive market reaction)"
+                ),
+            }
+
+    return context, car_column
+
+
 def linked_news_terms(news_items: list[dict[str, str]], column: str) -> set[str]:
     terms: set[str] = set()
     for item in news_items:
@@ -194,6 +274,7 @@ def score_event(
     scenario: dict[str, Any],
     event: dict[str, str],
     news_items: list[dict[str, str]],
+    market_context: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
     scenario_tokens = tokenize(scenario["scenario_text"])
     event_tokens = tokenize(
@@ -225,28 +306,55 @@ def score_event(
     geography_score = min(len(geography_overlap) * 5, 10)
 
     news_score = min(len(news_items) * 3, 10)
-    total_score = keyword_score + family_score + actor_score + geography_score + news_score
+    surprise_score = {"High": 5, "Medium": 3, "Low": 1}.get(
+        event.get("surprise_score", ""),
+        0,
+    )
+    repetition_level = parse_float(event.get("event_repetition_level"))
+    repetition_score = 3 if repetition_level is not None and repetition_level >= 3 else 0
+    total_score = (
+        keyword_score
+        + family_score
+        + actor_score
+        + geography_score
+        + news_score
+        + surprise_score
+        + repetition_score
+    )
+    historical_market_reaction = market_context.get(event_key(event))
 
     return {
+        "event_id": event["event_id"],
         "event_name": event["event_name"],
+        "event_title": event["event_name"],
         "event_date": event["date"],
         "event_family": event["event_family"],
         "event_category": event["event_category"],
+        "event_description": event["brief_description"],
         "similarity_score": total_score,
         "linked_news_evidence_count": len(news_items),
+        "linked_news_count": len(news_items),
+        "historical_market_reaction": historical_market_reaction,
         "score_components": {
             "keyword_overlap": keyword_score,
             "event_family_match": family_score,
             "actor_match": actor_score,
             "geography_match": geography_score,
             "news_evidence_count": news_score,
+            "surprise_score": surprise_score,
+            "repetition_level": repetition_score,
         },
+        "matched_terms": overlap,
         "matched_keywords": overlap,
         "matched_actors": actor_overlap,
         "matched_geographies": geography_overlap,
         "context_note": (
             "Historical similarity result for scenario comparison and context retrieval. "
-            "This is not a future-market estimate or decision rule."
+            "Historical similarity is not a forecast or investment signal."
+        ),
+        "cautious_interpretation": (
+            "This match identifies a historically comparable coded event. Any market "
+            "reaction shown is historical descriptive context only."
         ),
     }
 
@@ -254,11 +362,18 @@ def score_event(
 def run_similarity(
     events: list[dict[str, str]],
     linked_news: dict[str, list[dict[str, str]]],
+    market_context: dict[str, dict[str, Any]],
+    car_metric: str | None,
 ) -> dict[str, Any]:
     scenario_results = []
     for scenario in SCENARIOS:
         scored_events = [
-            score_event(scenario, event, linked_news.get(event_key(event), []))
+            score_event(
+                scenario,
+                event,
+                linked_news.get(event_key(event), []),
+                market_context,
+            )
             for event in events
         ]
         top_matches = sorted(
@@ -274,13 +389,15 @@ def run_similarity(
             {
                 "scenario_id": scenario["scenario_id"],
                 "scenario_text": scenario["scenario_text"],
+                "scenario_title": scenario["scenario_text"].title(),
                 "scenario_event_family": scenario["event_family"],
                 "top_matches": top_matches,
                 "interpretation_note": (
                     "Use these matches as historical context for analyst review. "
                     "Similarity scores are transparent rule-based retrieval aids, "
-                    "not future-outcome estimates."
+                    "not future-market estimates."
                 ),
+                "caution_label": "Historical similarity is not a forecast or investment signal.",
             }
         )
 
@@ -288,14 +405,20 @@ def run_similarity(
         "input_files": {
             "events": str(EVENTS_PATH.relative_to(REPO_ROOT)),
             "news": str(NEWS_PATH.relative_to(REPO_ROOT)),
+            "market_reactions": str(MARKET_PATH.relative_to(REPO_ROOT))
+            if MARKET_PATH.exists()
+            else None,
         },
+        "historical_car_metric": car_metric,
         "scoring_method": {
             "keyword_overlap_max": 40,
             "event_family_match_max": 25,
             "actor_match_max": 15,
             "geography_match_max": 10,
             "news_evidence_count_max": 10,
-            "max_similarity_score": 100,
+            "surprise_score_max": 5,
+            "repetition_level_max": 3,
+            "nominal_max_similarity_score": 108,
         },
         "scenarios": scenario_results,
         "method_note": (
@@ -306,7 +429,7 @@ def run_similarity(
         "use_limits": [
             "Historical similarity and context retrieval only.",
             "Scores are rule-based and require analyst review.",
-            "Historical CAR patterns should not be treated as future-outcome estimates.",
+            "Historical CAR patterns should not be treated as future-market estimates.",
             "News evidence rows may include placeholder source metadata pending verification.",
         ],
     }
@@ -330,15 +453,17 @@ def render_markdown(results: dict[str, Any]) -> str:
                 f"- Scenario event family: `{scenario['scenario_event_family']}`",
                 f"- Interpretation: {scenario['interpretation_note']}",
                 "",
-                "| Rank | Historical Event | Date | Event Family | Similarity Score | Linked News |",
-                "|---:|---|---|---|---:|---:|",
+                "| Rank | Historical Event | Date | Event Family | Similarity Score | Linked News | Historical CAR Context |",
+                "|---:|---|---|---|---:|---:|---|",
             ]
         )
         for index, match in enumerate(scenario["top_matches"], start=1):
+            car_context = match["historical_market_reaction"]["label"] if match["historical_market_reaction"] else "N/A"
             lines.append(
                 "| {rank} | {event_name} | {event_date} | {event_family} | "
-                "{similarity_score} | {linked_news_evidence_count} |".format(
+                "{similarity_score} | {linked_news_evidence_count} | {car_context} |".format(
                     rank=index,
+                    car_context=car_context,
                     **match,
                 )
             )
@@ -353,6 +478,7 @@ def render_markdown(results: dict[str, Any]) -> str:
 def main() -> None:
     events = read_csv(EVENTS_PATH, EVENT_REQUIRED_COLUMNS)
     news_rows = read_csv(NEWS_PATH, NEWS_REQUIRED_COLUMNS)
+    market_rows = read_csv(MARKET_PATH, MARKET_REQUIRED_COLUMNS, optional=True)
     events_by_name, events_by_full_key, events_by_date = build_event_indexes(events)
     linked_news = link_news_to_events(
         news_rows,
@@ -360,7 +486,12 @@ def main() -> None:
         events_by_full_key,
         events_by_date,
     )
-    results = run_similarity(events, linked_news)
+    market_context, car_metric = build_market_context(
+        market_rows,
+        events_by_name,
+        events_by_full_key,
+    )
+    results = run_similarity(events, linked_news, market_context, car_metric)
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     JSON_OUTPUT_PATH.write_text(

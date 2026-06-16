@@ -1,22 +1,36 @@
 {
+  "historical_car_metric": "tsmc_car_7",
   "input_files": {
     "events": "data/events_v2.csv",
+    "market_reactions": "results/event_abnormal_return_summary.csv",
     "news": "data/news/news_events.csv"
   },
   "method_note": "Scenario comparison uses keyword overlap, event-family match, actor match, geography match, and linked news evidence count to retrieve similar historical coded events.",
   "scenarios": [
     {
-      "interpretation_note": "Use these matches as historical context for analyst review. Similarity scores are transparent rule-based retrieval aids, not future-outcome estimates.",
+      "caution_label": "Historical similarity is not a forecast or investment signal.",
+      "interpretation_note": "Use these matches as historical context for analyst review. Similarity scores are transparent rule-based retrieval aids, not future-market estimates.",
       "scenario_event_family": "Military_Exercise",
       "scenario_id": "S001",
       "scenario_text": "large-scale military exercises near Taiwan",
+      "scenario_title": "Large-Scale Military Exercises Near Taiwan",
       "top_matches": [
         {
-          "context_note": "Historical similarity result for scenario comparison and context retrieval. This is not a future-market estimate or decision rule.",
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
           "event_category": "Military Demonstration",
           "event_date": "2023-04-08",
+          "event_description": "PLA launched Joint Sword exercises around Taiwan after the Tsai-McCarthy meeting",
           "event_family": "Military_Exercise",
+          "event_id": "EV007",
           "event_name": "Joint Sword 2023",
+          "event_title": "Joint Sword 2023",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=-1.0286 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": -1.0286
+          },
+          "linked_news_count": 1,
           "linked_news_evidence_count": 1,
           "matched_actors": [
             "prc"
@@ -30,48 +44,39 @@
             "scale",
             "taiwan"
           ],
+          "matched_terms": [
+            "exercises",
+            "military",
+            "scale",
+            "taiwan"
+          ],
           "score_components": {
             "actor_match": 5,
             "event_family_match": 25,
             "geography_match": 5,
             "keyword_overlap": 32,
-            "news_evidence_count": 3
+            "news_evidence_count": 3,
+            "repetition_level": 0,
+            "surprise_score": 3
           },
-          "similarity_score": 70
+          "similarity_score": 73
         },
         {
-          "context_note": "Historical similarity result for scenario comparison and context retrieval. This is not a future-market estimate or decision rule.",
-          "event_category": "Military Demonstration",
-          "event_date": "2024-10-14",
-          "event_family": "Military_Exercise",
-          "event_name": "Joint Sword-2024B",
-          "linked_news_evidence_count": 1,
-          "matched_actors": [
-            "prc"
-          ],
-          "matched_geographies": [
-            "taiwan strait"
-          ],
-          "matched_keywords": [
-            "exercises",
-            "military",
-            "taiwan"
-          ],
-          "score_components": {
-            "actor_match": 5,
-            "event_family_match": 25,
-            "geography_match": 5,
-            "keyword_overlap": 24,
-            "news_evidence_count": 3
-          },
-          "similarity_score": 62
-        },
-        {
-          "context_note": "Historical similarity result for scenario comparison and context retrieval. This is not a future-market estimate or decision rule.",
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
           "event_category": "Military Demonstration",
           "event_date": "2024-05-23",
+          "event_description": "PLA launched Joint Sword-2024A exercises around Taiwan after Lai's inauguration",
           "event_family": "Military_Exercise",
+          "event_id": "EV013",
           "event_name": "Joint Sword-2024A",
+          "event_title": "Joint Sword-2024A",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=-0.4712 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": -0.4712
+          },
+          "linked_news_count": 1,
           "linked_news_evidence_count": 1,
           "matched_actors": [
             "prc"
@@ -84,29 +89,92 @@
             "military",
             "taiwan"
           ],
+          "matched_terms": [
+            "exercises",
+            "military",
+            "taiwan"
+          ],
           "score_components": {
             "actor_match": 5,
             "event_family_match": 25,
             "geography_match": 5,
             "keyword_overlap": 24,
-            "news_evidence_count": 3
+            "news_evidence_count": 3,
+            "repetition_level": 3,
+            "surprise_score": 3
           },
-          "similarity_score": 62
+          "similarity_score": 68
+        },
+        {
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
+          "event_category": "Military Demonstration",
+          "event_date": "2024-10-14",
+          "event_description": "PLA launched Joint Sword-2024B exercises around Taiwan",
+          "event_family": "Military_Exercise",
+          "event_id": "EV015",
+          "event_name": "Joint Sword-2024B",
+          "event_title": "Joint Sword-2024B",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=5.3488 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": 5.3488
+          },
+          "linked_news_count": 1,
+          "linked_news_evidence_count": 1,
+          "matched_actors": [
+            "prc"
+          ],
+          "matched_geographies": [
+            "taiwan strait"
+          ],
+          "matched_keywords": [
+            "exercises",
+            "military",
+            "taiwan"
+          ],
+          "matched_terms": [
+            "exercises",
+            "military",
+            "taiwan"
+          ],
+          "score_components": {
+            "actor_match": 5,
+            "event_family_match": 25,
+            "geography_match": 5,
+            "keyword_overlap": 24,
+            "news_evidence_count": 3,
+            "repetition_level": 3,
+            "surprise_score": 1
+          },
+          "similarity_score": 66
         }
       ]
     },
     {
-      "interpretation_note": "Use these matches as historical context for analyst review. Similarity scores are transparent rule-based retrieval aids, not future-outcome estimates.",
+      "caution_label": "Historical similarity is not a forecast or investment signal.",
+      "interpretation_note": "Use these matches as historical context for analyst review. Similarity scores are transparent rule-based retrieval aids, not future-market estimates.",
       "scenario_event_family": "Export_Control",
       "scenario_id": "S002",
       "scenario_text": "new semiconductor export control restrictions",
+      "scenario_title": "New Semiconductor Export Control Restrictions",
       "top_matches": [
         {
-          "context_note": "Historical similarity result for scenario comparison and context retrieval. This is not a future-market estimate or decision rule.",
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
           "event_category": "Technology Competition",
           "event_date": "2022-10-07",
+          "event_description": "U.S. imposed advanced computing and semiconductor manufacturing controls on China",
           "event_family": "Export_Control",
+          "event_id": "EV005",
           "event_name": "BIS Advanced Semiconductor Export Controls",
+          "event_title": "BIS Advanced Semiconductor Export Controls",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=4.4497 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": 4.4497
+          },
+          "linked_news_count": 1,
           "linked_news_evidence_count": 1,
           "matched_actors": [
             "united states"
@@ -121,21 +189,39 @@
             "restrictions",
             "semiconductor"
           ],
+          "matched_terms": [
+            "control",
+            "export",
+            "restrictions",
+            "semiconductor"
+          ],
           "score_components": {
             "actor_match": 5,
             "event_family_match": 25,
             "geography_match": 10,
             "keyword_overlap": 32,
-            "news_evidence_count": 3
+            "news_evidence_count": 3,
+            "repetition_level": 0,
+            "surprise_score": 3
           },
-          "similarity_score": 75
+          "similarity_score": 78
         },
         {
-          "context_note": "Historical similarity result for scenario comparison and context retrieval. This is not a future-market estimate or decision rule.",
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
           "event_category": "Technology Competition",
           "event_date": "2025-03-04",
+          "event_description": "TSMC announced plans to expand U.S. investment to US$165 billion",
           "event_family": "Strategic_Investment",
+          "event_id": "EV017",
           "event_name": "TSMC US$165B U.S. Expansion",
+          "event_title": "TSMC US$165B U.S. Expansion",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=-3.0385 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": -3.0385
+          },
+          "linked_news_count": 1,
           "linked_news_evidence_count": 1,
           "matched_actors": [
             "united states"
@@ -146,21 +232,36 @@
           "matched_keywords": [
             "semiconductor"
           ],
+          "matched_terms": [
+            "semiconductor"
+          ],
           "score_components": {
             "actor_match": 5,
             "event_family_match": 0,
             "geography_match": 5,
             "keyword_overlap": 8,
-            "news_evidence_count": 3
+            "news_evidence_count": 3,
+            "repetition_level": 3,
+            "surprise_score": 3
           },
-          "similarity_score": 21
+          "similarity_score": 27
         },
         {
-          "context_note": "Historical similarity result for scenario comparison and context retrieval. This is not a future-market estimate or decision rule.",
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
           "event_category": "Technology Competition",
           "event_date": "2024-04-08",
+          "event_description": "U.S. Commerce announced preliminary CHIPS Act terms with TSMC",
           "event_family": "Strategic_Investment",
+          "event_id": "EV011",
           "event_name": "TSMC CHIPS Act Preliminary Terms",
+          "event_title": "TSMC CHIPS Act Preliminary Terms",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=8.136 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": 8.136
+          },
+          "linked_news_count": 1,
           "linked_news_evidence_count": 1,
           "matched_actors": [
             "united states"
@@ -171,29 +272,46 @@
           "matched_keywords": [
             "semiconductor"
           ],
+          "matched_terms": [
+            "semiconductor"
+          ],
           "score_components": {
             "actor_match": 5,
             "event_family_match": 0,
             "geography_match": 5,
             "keyword_overlap": 8,
-            "news_evidence_count": 3
+            "news_evidence_count": 3,
+            "repetition_level": 0,
+            "surprise_score": 3
           },
-          "similarity_score": 21
+          "similarity_score": 24
         }
       ]
     },
     {
-      "interpretation_note": "Use these matches as historical context for analyst review. Similarity scores are transparent rule-based retrieval aids, not future-outcome estimates.",
+      "caution_label": "Historical similarity is not a forecast or investment signal.",
+      "interpretation_note": "Use these matches as historical context for analyst review. Similarity scores are transparent rule-based retrieval aids, not future-market estimates.",
       "scenario_event_family": "Diplomatic_Shock",
       "scenario_id": "S003",
       "scenario_text": "high-level diplomatic visit involving Taiwan",
+      "scenario_title": "High-Level Diplomatic Visit Involving Taiwan",
       "top_matches": [
         {
-          "context_note": "Historical similarity result for scenario comparison and context retrieval. This is not a future-market estimate or decision rule.",
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
           "event_category": "Diplomatic Shock",
           "event_date": "2022-08-02",
+          "event_description": "U.S. House Speaker Nancy Pelosi visited Taiwan amid PRC warnings",
           "event_family": "Diplomatic_Shock",
+          "event_id": "EV002",
           "event_name": "Pelosi Visit",
+          "event_title": "Pelosi Visit",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=1.8572 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": 1.8572
+          },
+          "linked_news_count": 2,
           "linked_news_evidence_count": 2,
           "matched_actors": [
             "prc",
@@ -208,25 +326,47 @@
             "taiwan",
             "visit"
           ],
+          "matched_terms": [
+            "diplomatic",
+            "taiwan",
+            "visit"
+          ],
           "score_components": {
             "actor_match": 15,
             "event_family_match": 25,
             "geography_match": 5,
             "keyword_overlap": 24,
-            "news_evidence_count": 6
+            "news_evidence_count": 6,
+            "repetition_level": 0,
+            "surprise_score": 5
           },
-          "similarity_score": 75
+          "similarity_score": 80
         },
         {
-          "context_note": "Historical similarity result for scenario comparison and context retrieval. This is not a future-market estimate or decision rule.",
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
           "event_category": "Diplomatic Shock",
           "event_date": "2022-07-19",
+          "event_description": "China warned of strong measures if Pelosi visited Taiwan",
           "event_family": "Diplomatic_Shock",
+          "event_id": "EV001",
           "event_name": "China Warns Against Pelosi Taiwan Visit",
+          "event_title": "China Warns Against Pelosi Taiwan Visit",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=-8.6019 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": -8.6019
+          },
+          "linked_news_count": 0,
           "linked_news_evidence_count": 0,
           "matched_actors": [],
           "matched_geographies": [],
           "matched_keywords": [
+            "diplomatic",
+            "taiwan",
+            "visit"
+          ],
+          "matched_terms": [
             "diplomatic",
             "taiwan",
             "visit"
@@ -236,20 +376,36 @@
             "event_family_match": 25,
             "geography_match": 0,
             "keyword_overlap": 24,
-            "news_evidence_count": 0
+            "news_evidence_count": 0,
+            "repetition_level": 0,
+            "surprise_score": 3
           },
-          "similarity_score": 49
+          "similarity_score": 52
         },
         {
-          "context_note": "Historical similarity result for scenario comparison and context retrieval. This is not a future-market estimate or decision rule.",
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
           "event_category": "Diplomatic Shock",
           "event_date": "2023-08-12",
+          "event_description": "Taiwan Vice President Lai Ching-te transited through the United States",
           "event_family": "Diplomatic_Shock",
+          "event_id": "EV008",
           "event_name": "Lai U.S. Transit",
+          "event_title": "Lai U.S. Transit",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=-1.4803 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": -1.4803
+          },
+          "linked_news_count": 0,
           "linked_news_evidence_count": 0,
           "matched_actors": [],
           "matched_geographies": [],
           "matched_keywords": [
+            "diplomatic",
+            "taiwan"
+          ],
+          "matched_terms": [
             "diplomatic",
             "taiwan"
           ],
@@ -258,9 +414,412 @@
             "event_family_match": 25,
             "geography_match": 0,
             "keyword_overlap": 16,
-            "news_evidence_count": 0
+            "news_evidence_count": 0,
+            "repetition_level": 0,
+            "surprise_score": 1
           },
-          "similarity_score": 41
+          "similarity_score": 42
+        }
+      ]
+    },
+    {
+      "caution_label": "Historical similarity is not a forecast or investment signal.",
+      "interpretation_note": "Use these matches as historical context for analyst review. Similarity scores are transparent rule-based retrieval aids, not future-market estimates.",
+      "scenario_event_family": "Military_Exercise",
+      "scenario_id": "S004",
+      "scenario_text": "grey-zone naval and air pressure around Taiwan",
+      "scenario_title": "Grey-Zone Naval And Air Pressure Around Taiwan",
+      "top_matches": [
+        {
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
+          "event_category": "Military Demonstration",
+          "event_date": "2023-08-19",
+          "event_description": "China launched military drills around Taiwan after Lai's U.S. transit",
+          "event_family": "Military_Exercise",
+          "event_id": "EV009",
+          "event_name": "PLA Drills After Lai U.S. Transit",
+          "event_title": "PLA Drills After Lai U.S. Transit",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=-2.2359 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": -2.2359
+          },
+          "linked_news_count": 1,
+          "linked_news_evidence_count": 1,
+          "matched_actors": [
+            "prc",
+            "taiwan"
+          ],
+          "matched_geographies": [
+            "taiwan strait"
+          ],
+          "matched_keywords": [
+            "taiwan"
+          ],
+          "matched_terms": [
+            "taiwan"
+          ],
+          "score_components": {
+            "actor_match": 10,
+            "event_family_match": 25,
+            "geography_match": 5,
+            "keyword_overlap": 8,
+            "news_evidence_count": 3,
+            "repetition_level": 0,
+            "surprise_score": 3
+          },
+          "similarity_score": 54
+        },
+        {
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
+          "event_category": "Military Demonstration",
+          "event_date": "2025-01-22",
+          "event_description": "PLA aircraft and warships surrounded Taiwan during joint combat readiness patrols",
+          "event_family": "Military_Exercise",
+          "event_id": "EV016",
+          "event_name": "PLA Joint Combat Readiness Patrols Around Taiwan",
+          "event_title": "PLA Joint Combat Readiness Patrols Around Taiwan",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=-0.3487 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": -0.3487
+          },
+          "linked_news_count": 0,
+          "linked_news_evidence_count": 0,
+          "matched_actors": [],
+          "matched_geographies": [],
+          "matched_keywords": [
+            "grey",
+            "taiwan",
+            "zone"
+          ],
+          "matched_terms": [
+            "grey",
+            "taiwan",
+            "zone"
+          ],
+          "score_components": {
+            "actor_match": 0,
+            "event_family_match": 25,
+            "geography_match": 0,
+            "keyword_overlap": 24,
+            "news_evidence_count": 0,
+            "repetition_level": 3,
+            "surprise_score": 1
+          },
+          "similarity_score": 53
+        },
+        {
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
+          "event_category": "Military Demonstration",
+          "event_date": "2024-05-23",
+          "event_description": "PLA launched Joint Sword-2024A exercises around Taiwan after Lai's inauguration",
+          "event_family": "Military_Exercise",
+          "event_id": "EV013",
+          "event_name": "Joint Sword-2024A",
+          "event_title": "Joint Sword-2024A",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=-0.4712 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": -0.4712
+          },
+          "linked_news_count": 1,
+          "linked_news_evidence_count": 1,
+          "matched_actors": [
+            "prc"
+          ],
+          "matched_geographies": [
+            "taiwan strait"
+          ],
+          "matched_keywords": [
+            "taiwan"
+          ],
+          "matched_terms": [
+            "taiwan"
+          ],
+          "score_components": {
+            "actor_match": 5,
+            "event_family_match": 25,
+            "geography_match": 5,
+            "keyword_overlap": 8,
+            "news_evidence_count": 3,
+            "repetition_level": 3,
+            "surprise_score": 3
+          },
+          "similarity_score": 52
+        }
+      ]
+    },
+    {
+      "caution_label": "Historical similarity is not a forecast or investment signal.",
+      "interpretation_note": "Use these matches as historical context for analyst review. Similarity scores are transparent rule-based retrieval aids, not future-market estimates.",
+      "scenario_event_family": "Strategic_Investment",
+      "scenario_id": "S005",
+      "scenario_text": "strategic chip investment or state support announcement",
+      "scenario_title": "Strategic Chip Investment Or State Support Announcement",
+      "top_matches": [
+        {
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
+          "event_category": "Technology Competition",
+          "event_date": "2024-04-08",
+          "event_description": "U.S. Commerce announced preliminary CHIPS Act terms with TSMC",
+          "event_family": "Strategic_Investment",
+          "event_id": "EV011",
+          "event_name": "TSMC CHIPS Act Preliminary Terms",
+          "event_title": "TSMC CHIPS Act Preliminary Terms",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=8.136 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": 8.136
+          },
+          "linked_news_count": 1,
+          "linked_news_evidence_count": 1,
+          "matched_actors": [
+            "tsmc",
+            "united states"
+          ],
+          "matched_geographies": [
+            "taiwan",
+            "united states"
+          ],
+          "matched_keywords": [
+            "announcement",
+            "investment",
+            "strategic",
+            "support"
+          ],
+          "matched_terms": [
+            "announcement",
+            "investment",
+            "strategic",
+            "support"
+          ],
+          "score_components": {
+            "actor_match": 10,
+            "event_family_match": 25,
+            "geography_match": 10,
+            "keyword_overlap": 32,
+            "news_evidence_count": 3,
+            "repetition_level": 0,
+            "surprise_score": 3
+          },
+          "similarity_score": 83
+        },
+        {
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
+          "event_category": "Technology Competition",
+          "event_date": "2022-12-06",
+          "event_description": "TSMC announced updates expanding Arizona investment to about US$40 billion",
+          "event_family": "Strategic_Investment",
+          "event_id": "EV006",
+          "event_name": "TSMC Arizona US$40B Expansion",
+          "event_title": "TSMC Arizona US$40B Expansion",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=0.9649 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": 0.9649
+          },
+          "linked_news_count": 1,
+          "linked_news_evidence_count": 1,
+          "matched_actors": [
+            "tsmc",
+            "united states"
+          ],
+          "matched_geographies": [
+            "taiwan",
+            "united states"
+          ],
+          "matched_keywords": [
+            "announcement",
+            "investment",
+            "strategic"
+          ],
+          "matched_terms": [
+            "announcement",
+            "investment",
+            "strategic"
+          ],
+          "score_components": {
+            "actor_match": 10,
+            "event_family_match": 25,
+            "geography_match": 10,
+            "keyword_overlap": 24,
+            "news_evidence_count": 3,
+            "repetition_level": 0,
+            "surprise_score": 3
+          },
+          "similarity_score": 75
+        },
+        {
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
+          "event_category": "Technology Competition",
+          "event_date": "2025-03-04",
+          "event_description": "TSMC announced plans to expand U.S. investment to US$165 billion",
+          "event_family": "Strategic_Investment",
+          "event_id": "EV017",
+          "event_name": "TSMC US$165B U.S. Expansion",
+          "event_title": "TSMC US$165B U.S. Expansion",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=-3.0385 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": -3.0385
+          },
+          "linked_news_count": 1,
+          "linked_news_evidence_count": 1,
+          "matched_actors": [
+            "tsmc",
+            "united states"
+          ],
+          "matched_geographies": [
+            "taiwan",
+            "united states"
+          ],
+          "matched_keywords": [
+            "investment",
+            "strategic"
+          ],
+          "matched_terms": [
+            "investment",
+            "strategic"
+          ],
+          "score_components": {
+            "actor_match": 10,
+            "event_family_match": 25,
+            "geography_match": 10,
+            "keyword_overlap": 16,
+            "news_evidence_count": 3,
+            "repetition_level": 3,
+            "surprise_score": 3
+          },
+          "similarity_score": 70
+        }
+      ]
+    },
+    {
+      "caution_label": "Historical similarity is not a forecast or investment signal.",
+      "interpretation_note": "Use these matches as historical context for analyst review. Similarity scores are transparent rule-based retrieval aids, not future-market estimates.",
+      "scenario_event_family": "Economic_Coercion",
+      "scenario_id": "S006",
+      "scenario_text": "supply-chain disruption risk linked to cross-strait tensions",
+      "scenario_title": "Supply-Chain Disruption Risk Linked To Cross-Strait Tensions",
+      "top_matches": [
+        {
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
+          "event_category": "Technology Competition",
+          "event_date": "2025-03-04",
+          "event_description": "TSMC announced plans to expand U.S. investment to US$165 billion",
+          "event_family": "Strategic_Investment",
+          "event_id": "EV017",
+          "event_name": "TSMC US$165B U.S. Expansion",
+          "event_title": "TSMC US$165B U.S. Expansion",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=-3.0385 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": -3.0385
+          },
+          "linked_news_count": 1,
+          "linked_news_evidence_count": 1,
+          "matched_actors": [],
+          "matched_geographies": [
+            "taiwan"
+          ],
+          "matched_keywords": [
+            "chain",
+            "supply"
+          ],
+          "matched_terms": [
+            "chain",
+            "supply"
+          ],
+          "score_components": {
+            "actor_match": 0,
+            "event_family_match": 0,
+            "geography_match": 5,
+            "keyword_overlap": 16,
+            "news_evidence_count": 3,
+            "repetition_level": 3,
+            "surprise_score": 3
+          },
+          "similarity_score": 30
+        },
+        {
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
+          "event_category": "Economic Coercion",
+          "event_date": "2022-08-03",
+          "event_description": "China blocked selected Taiwan imports and halted natural sand exports",
+          "event_family": "Economic_Coercion",
+          "event_id": "EV003",
+          "event_name": "China Trade Restrictions After Pelosi Visit",
+          "event_title": "China Trade Restrictions After Pelosi Visit",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=1.7094 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": 1.7094
+          },
+          "linked_news_count": 0,
+          "linked_news_evidence_count": 0,
+          "matched_actors": [],
+          "matched_geographies": [],
+          "matched_keywords": [],
+          "matched_terms": [],
+          "score_components": {
+            "actor_match": 0,
+            "event_family_match": 25,
+            "geography_match": 0,
+            "keyword_overlap": 0,
+            "news_evidence_count": 0,
+            "repetition_level": 0,
+            "surprise_score": 3
+          },
+          "similarity_score": 28
+        },
+        {
+          "cautious_interpretation": "This match identifies a historically comparable coded event. Any market reaction shown is historical descriptive context only.",
+          "context_note": "Historical similarity result for scenario comparison and context retrieval. Historical similarity is not a forecast or investment signal.",
+          "event_category": "Technology Competition",
+          "event_date": "2024-04-08",
+          "event_description": "U.S. Commerce announced preliminary CHIPS Act terms with TSMC",
+          "event_family": "Strategic_Investment",
+          "event_id": "EV011",
+          "event_name": "TSMC CHIPS Act Preliminary Terms",
+          "event_title": "TSMC CHIPS Act Preliminary Terms",
+          "historical_market_reaction": {
+            "label": "tsmc_car_7=8.136 (historical descriptive market reaction)",
+            "metric": "tsmc_car_7",
+            "value": 8.136
+          },
+          "linked_news_count": 1,
+          "linked_news_evidence_count": 1,
+          "matched_actors": [],
+          "matched_geographies": [
+            "taiwan"
+          ],
+          "matched_keywords": [
+            "chain",
+            "supply"
+          ],
+          "matched_terms": [
+            "chain",
+            "supply"
+          ],
+          "score_components": {
+            "actor_match": 0,
+            "event_family_match": 0,
+            "geography_match": 5,
+            "keyword_overlap": 16,
+            "news_evidence_count": 3,
+            "repetition_level": 0,
+            "surprise_score": 3
+          },
+          "similarity_score": 27
         }
       ]
     }
@@ -270,13 +829,15 @@
     "event_family_match_max": 25,
     "geography_match_max": 10,
     "keyword_overlap_max": 40,
-    "max_similarity_score": 100,
-    "news_evidence_count_max": 10
+    "news_evidence_count_max": 10,
+    "nominal_max_similarity_score": 108,
+    "repetition_level_max": 3,
+    "surprise_score_max": 5
   },
   "use_limits": [
     "Historical similarity and context retrieval only.",
     "Scores are rule-based and require analyst review.",
-    "Historical CAR patterns should not be treated as future-outcome estimates.",
+    "Historical CAR patterns should not be treated as future-market estimates.",
     "News evidence rows may include placeholder source metadata pending verification."
   ]
 }

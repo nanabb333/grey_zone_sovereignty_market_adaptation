@@ -17,8 +17,9 @@ The score combines:
 - actor match from linked news evidence in `data/news/news_events.csv`
 - geography match from linked news evidence
 - linked news evidence count
+- optional surprise-score and repetition-level signals when present in the event database
 
-The maximum score is 100. The script returns the top three historical events for each example scenario. The score is a retrieval aid, not a measure of event severity or future market impact.
+The nominal maximum score is 108. The script returns the top three historical events for each example scenario. The score is a retrieval aid, not a measure of event severity or future market impact.
 
 ## Context Retrieval Boundary
 
@@ -31,6 +32,8 @@ It should not be used to infer that a new scenario will produce the same market 
 Historical CAR patterns can provide context about how coded events were summarized in the existing event-study outputs. They should be interpreted only within the original research design and data limitations.
 
 CAR values should not be mechanically transferred from a historical event to a new scenario. A similar event family or keyword profile is not enough to support a market-outcome claim.
+
+When available, the script displays `tsmc_car_7` as a historical descriptive market-reaction metric. This label is included to keep the boundary explicit: the value describes a past coded event and is not an estimate for any user-provided scenario.
 
 ## Limitations
 

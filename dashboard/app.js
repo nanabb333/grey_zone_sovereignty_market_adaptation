@@ -329,46 +329,54 @@ const renderEventFamilyAnalytics = (summaryData) => {
 
 const renderScenarioSimilarity = (similarityData) => {
   const container = document.getElementById("scenarioSimilarity");
-  const scenario = similarityData.scenarios?.[0];
+  const scenarios = similarityData.scenarios ?? [];
 
-  if (!scenario) {
+  if (!scenarios.length) {
     container.innerHTML =
       '<div class="comparison-card"><p>No scenario similarity results available.</p></div>';
     return;
   }
 
-  const matches = scenario.top_matches ?? [];
-  container.innerHTML = `
-    <div class="ai-placeholder">
-      <p>${scenario.scenario_text}</p>
-      <p>${scenario.interpretation_note}</p>
-    </div>
-    ${matches
-      .map(
-        (match) => `
-          <article class="comparison-card">
-            <p class="insight-category">${match.event_family}</p>
-            <h3>${match.event_name}</h3>
-            <dl class="evidence-list">
-              <div>
-                <dt>Similarity Score</dt>
-                <dd>${match.similarity_score}</dd>
-              </div>
-              <div>
-                <dt>Linked News</dt>
-                <dd>${match.linked_news_evidence_count}</dd>
-              </div>
-              <div>
-                <dt>Event Date</dt>
-                <dd>${match.event_date}</dd>
-              </div>
-            </dl>
-            <p class="insight-note">${match.context_note}</p>
-          </article>
-        `,
-      )
-      .join("")}
-  `;
+  container.innerHTML = scenarios
+    .map((scenario) => {
+      const matches = scenario.top_matches ?? [];
+      return `
+        <article class="scenario-card">
+          <p class="insight-category">${scenario.scenario_id}</p>
+          <h3>${scenario.scenario_text}</h3>
+          <p class="insight-note">${scenario.caution_label}</p>
+          <div class="scenario-match-list">
+            ${matches
+              .map((match) => {
+                const carContext = match.historical_market_reaction?.label ?? "N/A";
+                return `
+                  <div class="scenario-match">
+                    <p class="detail-label">${match.event_family}</p>
+                    <h4>${match.event_title}</h4>
+                    <dl class="evidence-list">
+                      <div>
+                        <dt>Similarity Score</dt>
+                        <dd>${match.similarity_score}</dd>
+                      </div>
+                      <div>
+                        <dt>Linked News</dt>
+                        <dd>${match.linked_news_count}</dd>
+                      </div>
+                      <div>
+                        <dt>Historical CAR</dt>
+                        <dd>${carContext}</dd>
+                      </div>
+                    </dl>
+                  </div>
+                `;
+              })
+              .join("")}
+          </div>
+          <p class="insight-note">${scenario.interpretation_note}</p>
+        </article>
+      `;
+    })
+    .join("");
 };
 
 const renderHistoricalComparison = (comparisonData) => {

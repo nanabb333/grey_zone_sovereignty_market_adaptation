@@ -1,5 +1,11 @@
 # AI Geopolitical Risk Dashboard
 
+## Project Overview
+
+This project extends an academic Taiwan geopolitical risk event-study into a dashboard-ready geopolitical intelligence prototype. The repository keeps the original event-study design intact while adding structured evidence, descriptive analytics, and scenario context retrieval for analyst-support workflows.
+
+The prototype is designed for historical similarity analysis, evidence enrichment, descriptive scenario comparison, and dashboard communication. It does not provide market prediction, investment advice, automated trading signals, or unsupported causal claims.
+
 ## Portfolio Positioning
 
 This repository is the product layer of a three-part Taiwan geopolitical risk portfolio:
@@ -29,6 +35,14 @@ This dashboard turns Repo 2 outputs into an analyst-facing decision-support work
 It provides KPI cards, latest-event review, executive summaries, rule-based insights, historical comparisons, deterministic executive briefs, and LLM-ready context for future analyst-reviewed AI workflows.
 
 The current version uses deterministic rules only. It does not use live LLM calls, external APIs, forecasting, trading recommendations, or automated investment advice.
+
+## What This Project Demonstrates
+
+- Research-to-product translation from event-study outputs to a static dashboard prototype
+- Structured data design across event coding, news evidence, analytics, and scenario retrieval
+- Cautious geopolitical risk communication for analyst review
+- Deterministic intelligence workflows without API keys, live LLM calls, or internet dependency
+- Portfolio-ready product framing without changing validated research claims
 
 ## Decision-Support Value
 
@@ -80,6 +94,23 @@ The dashboard consumes structured outputs from Repo 2:
 | `results/event_family_summary.json` | Descriptive event-family analytics linking events, news evidence, and CAR outputs |
 | `results/scenario_similarity_results.json` | Historical similarity results for example scenario comparison |
 
+## Data Layers
+
+The repository now separates source material into clear data layers:
+
+- event database: `data/events_v2.csv`
+- curated news evidence: `data/news/news_events.csv`
+- market-reaction outputs: `results/event_abnormal_return_summary.csv`
+- dashboard-ready summaries: `results/*.json` and `results/*.md`
+
+## Analytics Layers
+
+The analytics layer is descriptive and reproducible:
+
+- `scripts/build_news_event_database.py` validates and summarizes curated news evidence
+- `scripts/analyze_event_family_patterns.py` summarizes historical market reactions by event family
+- `scripts/scenario_similarity.py` retrieves historically similar coded events for example scenarios
+
 ## News Evidence Database Layer
 
 The repository now includes a curated news-evidence layer in `data/news/news_events.csv`. This layer links geopolitical events and related candidate events to structured source evidence, including event family, actor, geography, summary notes, and analyst coding notes.
@@ -106,15 +137,19 @@ python3 scripts/analyze_event_family_patterns.py
 
 ## Scenario Similarity Layer
 
-The repository now includes a scenario similarity layer that compares example geopolitical scenarios against historical coded events. It supports historical similarity, context retrieval, and scenario comparison by matching scenario text to event-family coding, actor metadata, geography metadata, and linked news evidence.
+The repository now includes a scenario similarity layer that compares example geopolitical scenarios against historical coded events. It supports historical similarity, context retrieval, and scenario comparison by matching scenario text to event-family coding, actor metadata, geography metadata, linked news evidence, surprise coding, repetition level, and available historical CAR context.
 
-This layer helps users retrieve similar precedents and supporting evidence for analyst review. It does not change the event-study methodology or treat historical market reactions as future-market estimates.
+This layer helps users retrieve similar precedents and supporting evidence for analyst review. It does not change the event-study methodology or treat historical market reactions as future-market estimates. Scenario case briefs are available in `docs/scenario_case_briefs.md`.
 
 Generate the scenario similarity outputs with:
 
 ```bash
 python3 scripts/scenario_similarity.py
 ```
+
+## Dashboard Prototype
+
+The static dashboard in `dashboard/` presents event-study outputs, evidence summaries, event-family analytics, and scenario similarity results in one local-file-friendly interface. It requires no API key, internet access, or LLM call.
 
 ## Intelligence Layer
 
@@ -139,6 +174,9 @@ Current dashboard views include:
 - historical comparison section
 - executive brief section
 - LLM-ready context summary
+- news evidence summary
+- event-family analytics
+- scenario similarity cards
 - rule-based insight panel
 
 The dashboard is designed as a decision-support product, not a prediction system.
@@ -182,6 +220,9 @@ The dashboard reads static outputs from `results/` and renders the product inter
 - [Dashboard Wireframe](docs/dashboard_wireframe.md)
 - [AI Workflow Design](docs/ai_workflow_design.md)
 - [Research to Product Story](docs/research_to_product_story.md)
+- [Scenario Similarity Methodology](docs/scenario_similarity_methodology.md)
+- [Scenario Case Briefs](docs/scenario_case_briefs.md)
+- [Intelligence Product Positioning](docs/intelligence_product_positioning.md)
 
 ## Responsible Use Boundary
 
@@ -197,6 +238,10 @@ It does not provide:
 - external API-based analysis
 
 All dashboard intelligence should be treated as analyst-review support.
+
+## Limitations
+
+The repository uses curated datasets and deterministic summary scripts. News evidence includes placeholder-safe starter rows that require exact source verification before publication. Scenario similarity scores are transparent retrieval aids and should not be interpreted as severity measures, causal estimates, or future-market estimates.
 
 ## Future Enhancements
 
