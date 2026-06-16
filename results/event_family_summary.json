@@ -1,0 +1,116 @@
+{
+  "car_metric": "tsmc_car_7",
+  "event_families_covered": 7,
+  "input_files": {
+    "events": "data/events_v2.csv",
+    "market_reactions": "results/event_abnormal_return_summary.csv",
+    "news": "data/news/news_events.csv"
+  },
+  "method_note": "Events are grouped by data/events_v2.csv event_family. News evidence is linked by related_event_id, dated event labels, or conservative single-event date matches. Market reactions are linked by event name and date where available.",
+  "summaries": [
+    {
+      "average_car": -2.7417,
+      "car_metric": "tsmc_car_7",
+      "car_observation_count": 3,
+      "event_count": 3,
+      "event_family": "Diplomatic_Shock",
+      "interpretation_note": "Descriptive event-family summary for analyst review; not causal, predictive, or investment guidance.",
+      "linked_news_count": 1,
+      "max_car": 1.8572,
+      "median_car": -1.4803,
+      "min_car": -8.6019,
+      "negative_car_count": 2,
+      "positive_car_count": 1
+    },
+    {
+      "average_car": 1.7094,
+      "car_metric": "tsmc_car_7",
+      "car_observation_count": 1,
+      "event_count": 1,
+      "event_family": "Economic_Coercion",
+      "interpretation_note": "Descriptive event-family summary for analyst review; not causal, predictive, or investment guidance.",
+      "linked_news_count": 0,
+      "max_car": 1.7094,
+      "median_car": 1.7094,
+      "min_car": 1.7094,
+      "negative_car_count": 0,
+      "positive_car_count": 1
+    },
+    {
+      "average_car": 4.4497,
+      "car_metric": "tsmc_car_7",
+      "car_observation_count": 1,
+      "event_count": 1,
+      "event_family": "Export_Control",
+      "interpretation_note": "Descriptive event-family summary for analyst review; not causal, predictive, or investment guidance.",
+      "linked_news_count": 1,
+      "max_car": 4.4497,
+      "median_car": 4.4497,
+      "min_car": 4.4497,
+      "negative_car_count": 0,
+      "positive_car_count": 1
+    },
+    {
+      "average_car": -1.0081,
+      "car_metric": "tsmc_car_7",
+      "car_observation_count": 1,
+      "event_count": 1,
+      "event_family": "Legal_Judicial_Signaling",
+      "interpretation_note": "Descriptive event-family summary for analyst review; not causal, predictive, or investment guidance.",
+      "linked_news_count": 1,
+      "max_car": -1.0081,
+      "median_car": -1.0081,
+      "min_car": -1.0081,
+      "negative_car_count": 1,
+      "positive_car_count": 0
+    },
+    {
+      "average_car": -0.2862,
+      "car_metric": "tsmc_car_7",
+      "car_observation_count": 8,
+      "event_count": 8,
+      "event_family": "Military_Exercise",
+      "interpretation_note": "Descriptive event-family summary for analyst review; not causal, predictive, or investment guidance.",
+      "linked_news_count": 5,
+      "max_car": 5.3488,
+      "median_car": -0.7499,
+      "min_car": -4.4508,
+      "negative_car_count": 6,
+      "positive_car_count": 2
+    },
+    {
+      "average_car": 0.0312,
+      "car_metric": "tsmc_car_7",
+      "car_observation_count": 1,
+      "event_count": 1,
+      "event_family": "Political_Signaling",
+      "interpretation_note": "Descriptive event-family summary for analyst review; not causal, predictive, or investment guidance.",
+      "linked_news_count": 0,
+      "max_car": 0.0312,
+      "median_car": 0.0312,
+      "min_car": 0.0312,
+      "negative_car_count": 0,
+      "positive_car_count": 1
+    },
+    {
+      "average_car": 2.0208,
+      "car_metric": "tsmc_car_7",
+      "car_observation_count": 3,
+      "event_count": 3,
+      "event_family": "Strategic_Investment",
+      "interpretation_note": "Descriptive event-family summary for analyst review; not causal, predictive, or investment guidance.",
+      "linked_news_count": 3,
+      "max_car": 8.136,
+      "median_car": 0.9649,
+      "min_car": -3.0385,
+      "negative_car_count": 1,
+      "positive_car_count": 2
+    }
+  ],
+  "use_limits": [
+    "Descriptive pattern analysis only.",
+    "Not a causal estimate or forecast.",
+    "Not investment advice or trading guidance.",
+    "Requires analyst review of event coding and news-source links."
+  ]
+}

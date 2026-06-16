@@ -5,6 +5,7 @@ const llmContextPath = "../results/llm_context.json";
 const historicalComparisonPath = "../results/historical_comparison.json";
 const executiveBriefPath = "../results/executive_brief.json";
 const newsDatabaseSummaryPath = "../results/news_database_summary.json";
+const eventFamilySummaryPath = "../results/event_family_summary.json";
 
 const formatPercent = (value) => {
   const number = Number(value);
@@ -288,6 +289,43 @@ const renderNewsDatabaseSummary = (summaryData) => {
     .join("");
 };
 
+const renderEventFamilyAnalytics = (summaryData) => {
+  const container = document.getElementById("eventFamilyAnalytics");
+  const summaries = summaryData.summaries ?? [];
+
+  if (!summaries.length) {
+    container.innerHTML =
+      '<div class="comparison-card"><p>No event-family analytics available.</p></div>';
+    return;
+  }
+
+  container.innerHTML = summaries
+    .map(
+      (family) => `
+        <article class="comparison-card">
+          <p class="insight-category">${family.event_family}</p>
+          <h3>${family.event_count} event(s), ${family.linked_news_count} linked news item(s)</h3>
+          <dl class="evidence-list">
+            <div>
+              <dt>Average CAR</dt>
+              <dd>${family.average_car === "" ? "N/A" : `${family.average_car}%`}</dd>
+            </div>
+            <div>
+              <dt>Positive / Negative</dt>
+              <dd>${family.positive_car_count} / ${family.negative_car_count}</dd>
+            </div>
+            <div>
+              <dt>CAR Metric</dt>
+              <dd>${family.car_metric || "N/A"}</dd>
+            </div>
+          </dl>
+          <p class="insight-note">${family.interpretation_note}</p>
+        </article>
+      `,
+    )
+    .join("");
+};
+
 const renderHistoricalComparison = (comparisonData) => {
   const comparisons = comparisonData.comparisons ?? [];
   const container = document.getElementById("historicalComparison");
@@ -367,6 +405,7 @@ const loadDashboard = async () => {
       comparisonResponse,
       briefResponse,
       newsSummaryResponse,
+      eventFamilyResponse,
     ] = await Promise.all([
       fetch(dashboardDataPath),
       fetch(executiveSummaryPath),
@@ -375,6 +414,7 @@ const loadDashboard = async () => {
       fetch(historicalComparisonPath),
       fetch(executiveBriefPath),
       fetch(newsDatabaseSummaryPath),
+      fetch(eventFamilySummaryPath),
     ]);
 
     if (
@@ -384,7 +424,8 @@ const loadDashboard = async () => {
       !contextResponse.ok ||
       !comparisonResponse.ok ||
       !briefResponse.ok ||
-      !newsSummaryResponse.ok
+      !newsSummaryResponse.ok ||
+      !eventFamilyResponse.ok
     ) {
       throw new Error("Unable to load Repo 2 dashboard outputs.");
     }
@@ -396,6 +437,7 @@ const loadDashboard = async () => {
     const comparisonData = await comparisonResponse.json();
     const briefData = await briefResponse.json();
     const newsSummaryData = await newsSummaryResponse.json();
+    const eventFamilyData = await eventFamilyResponse.json();
 
     renderKpiCards(events);
     renderLatestEvent(events);
@@ -404,6 +446,7 @@ const loadDashboard = async () => {
     renderInsights(insightData);
     renderContextSummary(contextData);
     renderNewsDatabaseSummary(newsSummaryData);
+    renderEventFamilyAnalytics(eventFamilyData);
     renderHistoricalComparison(comparisonData);
     renderExecutiveBrief(briefData);
   } catch (error) {
@@ -413,6 +456,7 @@ const loadDashboard = async () => {
     document.getElementById("insightCards").textContent = error.message;
     document.getElementById("contextSummary").textContent = error.message;
     document.getElementById("newsDatabaseSummary").textContent = error.message;
+    document.getElementById("eventFamilyAnalytics").textContent = error.message;
     document.getElementById("historicalComparison").textContent = error.message;
     document.getElementById("executiveBrief").textContent = error.message;
   }

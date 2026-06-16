@@ -77,6 +77,7 @@ The dashboard consumes structured outputs from Repo 2:
 | `results/executive_brief.json` | Deterministic executive brief |
 | `results/llm_context.json` | Structured context for future analyst-reviewed LLM use |
 | `results/news_database_summary.json` | Curated news-evidence summary for future source drilldowns |
+| `results/event_family_summary.json` | Descriptive event-family analytics linking events, news evidence, and CAR outputs |
 
 ## News Evidence Database Layer
 
@@ -88,6 +89,18 @@ Generate the summary outputs with:
 
 ```bash
 python3 scripts/build_news_event_database.py
+```
+
+## Event Family Analytics
+
+The repository now summarizes market-reaction outputs by geopolitical event type using the existing `event_family` coding in `data/events_v2.csv`. The event-family layer connects curated event records, structured news evidence, and available CAR outputs to support descriptive comparison across categories such as military exercises, diplomatic shocks, export controls, and strategic investments.
+
+This layer is descriptive and analyst-reviewed. It does not change the event-study methodology, infer causality, forecast market outcomes, or provide investment advice.
+
+Generate the event-family outputs with:
+
+```bash
+python3 scripts/analyze_event_family_patterns.py
 ```
 
 ## Intelligence Layer

@@ -95,6 +95,7 @@ body {
 
 .context-panel,
 .news-panel,
+.family-panel,
 .comparison-panel,
 .brief-panel {
   grid-column: 1 / 2;
@@ -261,6 +262,12 @@ body {
   gap: 14px;
 }
 
+.family-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
 .comparison-card {
   padding: 16px;
   border: 1px solid var(--line);
@@ -336,6 +343,7 @@ body {
   .summary-panel,
   .context-panel,
   .news-panel,
+  .family-panel,
   .comparison-panel,
   .brief-panel,
   .ai-panel {
