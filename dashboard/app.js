@@ -6,6 +6,7 @@ const historicalComparisonPath = "../results/historical_comparison.json";
 const executiveBriefPath = "../results/executive_brief.json";
 const newsDatabaseSummaryPath = "../results/news_database_summary.json";
 const eventFamilySummaryPath = "../results/event_family_summary.json";
+const scenarioSimilarityPath = "../results/scenario_similarity_results.json";
 
 const formatPercent = (value) => {
   const number = Number(value);
@@ -326,6 +327,50 @@ const renderEventFamilyAnalytics = (summaryData) => {
     .join("");
 };
 
+const renderScenarioSimilarity = (similarityData) => {
+  const container = document.getElementById("scenarioSimilarity");
+  const scenario = similarityData.scenarios?.[0];
+
+  if (!scenario) {
+    container.innerHTML =
+      '<div class="comparison-card"><p>No scenario similarity results available.</p></div>';
+    return;
+  }
+
+  const matches = scenario.top_matches ?? [];
+  container.innerHTML = `
+    <div class="ai-placeholder">
+      <p>${scenario.scenario_text}</p>
+      <p>${scenario.interpretation_note}</p>
+    </div>
+    ${matches
+      .map(
+        (match) => `
+          <article class="comparison-card">
+            <p class="insight-category">${match.event_family}</p>
+            <h3>${match.event_name}</h3>
+            <dl class="evidence-list">
+              <div>
+                <dt>Similarity Score</dt>
+                <dd>${match.similarity_score}</dd>
+              </div>
+              <div>
+                <dt>Linked News</dt>
+                <dd>${match.linked_news_evidence_count}</dd>
+              </div>
+              <div>
+                <dt>Event Date</dt>
+                <dd>${match.event_date}</dd>
+              </div>
+            </dl>
+            <p class="insight-note">${match.context_note}</p>
+          </article>
+        `,
+      )
+      .join("")}
+  `;
+};
+
 const renderHistoricalComparison = (comparisonData) => {
   const comparisons = comparisonData.comparisons ?? [];
   const container = document.getElementById("historicalComparison");
@@ -406,6 +451,7 @@ const loadDashboard = async () => {
       briefResponse,
       newsSummaryResponse,
       eventFamilyResponse,
+      scenarioSimilarityResponse,
     ] = await Promise.all([
       fetch(dashboardDataPath),
       fetch(executiveSummaryPath),
@@ -415,6 +461,7 @@ const loadDashboard = async () => {
       fetch(executiveBriefPath),
       fetch(newsDatabaseSummaryPath),
       fetch(eventFamilySummaryPath),
+      fetch(scenarioSimilarityPath),
     ]);
 
     if (
@@ -425,7 +472,8 @@ const loadDashboard = async () => {
       !comparisonResponse.ok ||
       !briefResponse.ok ||
       !newsSummaryResponse.ok ||
-      !eventFamilyResponse.ok
+      !eventFamilyResponse.ok ||
+      !scenarioSimilarityResponse.ok
     ) {
       throw new Error("Unable to load Repo 2 dashboard outputs.");
     }
@@ -438,6 +486,7 @@ const loadDashboard = async () => {
     const briefData = await briefResponse.json();
     const newsSummaryData = await newsSummaryResponse.json();
     const eventFamilyData = await eventFamilyResponse.json();
+    const scenarioSimilarityData = await scenarioSimilarityResponse.json();
 
     renderKpiCards(events);
     renderLatestEvent(events);
@@ -447,6 +496,7 @@ const loadDashboard = async () => {
     renderContextSummary(contextData);
     renderNewsDatabaseSummary(newsSummaryData);
     renderEventFamilyAnalytics(eventFamilyData);
+    renderScenarioSimilarity(scenarioSimilarityData);
     renderHistoricalComparison(comparisonData);
     renderExecutiveBrief(briefData);
   } catch (error) {
@@ -457,6 +507,7 @@ const loadDashboard = async () => {
     document.getElementById("contextSummary").textContent = error.message;
     document.getElementById("newsDatabaseSummary").textContent = error.message;
     document.getElementById("eventFamilyAnalytics").textContent = error.message;
+    document.getElementById("scenarioSimilarity").textContent = error.message;
     document.getElementById("historicalComparison").textContent = error.message;
     document.getElementById("executiveBrief").textContent = error.message;
   }

@@ -96,6 +96,7 @@ body {
 .context-panel,
 .news-panel,
 .family-panel,
+.scenario-panel,
 .comparison-panel,
 .brief-panel {
   grid-column: 1 / 2;
@@ -268,6 +269,11 @@ body {
   margin-top: 16px;
 }
 
+.scenario-list {
+  display: grid;
+  gap: 14px;
+}
+
 .comparison-card {
   padding: 16px;
   border: 1px solid var(--line);
@@ -344,6 +350,7 @@ body {
   .context-panel,
   .news-panel,
   .family-panel,
+  .scenario-panel,
   .comparison-panel,
   .brief-panel,
   .ai-panel {

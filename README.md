@@ -78,6 +78,7 @@ The dashboard consumes structured outputs from Repo 2:
 | `results/llm_context.json` | Structured context for future analyst-reviewed LLM use |
 | `results/news_database_summary.json` | Curated news-evidence summary for future source drilldowns |
 | `results/event_family_summary.json` | Descriptive event-family analytics linking events, news evidence, and CAR outputs |
+| `results/scenario_similarity_results.json` | Historical similarity results for example scenario comparison |
 
 ## News Evidence Database Layer
 
@@ -101,6 +102,18 @@ Generate the event-family outputs with:
 
 ```bash
 python3 scripts/analyze_event_family_patterns.py
+```
+
+## Scenario Similarity Layer
+
+The repository now includes a scenario similarity layer that compares example geopolitical scenarios against historical coded events. It supports historical similarity, context retrieval, and scenario comparison by matching scenario text to event-family coding, actor metadata, geography metadata, and linked news evidence.
+
+This layer helps users retrieve similar precedents and supporting evidence for analyst review. It does not change the event-study methodology or treat historical market reactions as future-market estimates.
+
+Generate the scenario similarity outputs with:
+
+```bash
+python3 scripts/scenario_similarity.py
 ```
 
 ## Intelligence Layer
