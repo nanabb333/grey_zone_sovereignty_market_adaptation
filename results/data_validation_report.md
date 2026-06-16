@@ -15,6 +15,7 @@ Validation checks structural data quality and linkage integrity. It does not add
 - missing event_id
 - orphan news records
 - invalid event family values
+- invalid theory variable values
 - missing critical fields
 - duplicate news_id
 

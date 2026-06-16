@@ -188,6 +188,12 @@ Generate the event-family outputs with:
 python3 scripts/analyze_event_family_patterns.py
 ```
 
+## Theory Variable Layer
+
+The repository now includes optional theory variables in `data/events_v2.csv` that operationalize dissertation concepts as structured fields: `interpretation_type`, `state_support_signal`, and `strategic_importance_level`.
+
+These fields translate existing dissertation concepts such as threat, opportunity, adaptation, state support, and strategic importance into reviewable dataset columns. They are interpretive and conservative: blank values are allowed where the existing documentation does not provide enough support. See [Theory Variable Methodology](docs/theory_variable_methodology.md) and `results/theory_variable_coverage.md`.
+
 ## Scenario Similarity Layer
 
 The repository now includes a scenario similarity layer that compares example geopolitical scenarios against historical coded events. It supports historical similarity, context retrieval, and scenario comparison by matching scenario text to event-family coding, actor metadata, geography metadata, linked news evidence, surprise coding, repetition level, and available historical CAR context.
@@ -229,6 +235,7 @@ Current dashboard views include:
 - LLM-ready context summary
 - news evidence summary
 - event-family analytics
+- theory variable coverage
 - scenario similarity cards
 - rule-based insight panel
 
@@ -310,6 +317,7 @@ This repository is designed to show four portfolio signals:
 - [AI Workflow Design](docs/ai_workflow_design.md)
 - [Research to Product Story](docs/research_to_product_story.md)
 - [Scenario Similarity Methodology](docs/scenario_similarity_methodology.md)
+- [Theory Variable Methodology](docs/theory_variable_methodology.md)
 - [Scenario Case Briefs](docs/scenario_case_briefs.md)
 - [Intelligence Product Positioning](docs/intelligence_product_positioning.md)
 

@@ -352,6 +352,35 @@ const renderEventFamilyAnalytics = (summaryData) => {
     .join("");
 };
 
+const renderTheoryLayer = (validationData) => {
+  const container = document.getElementById("theoryLayer");
+  const variables = validationData.theory_coverage?.variables ?? {};
+  const labels = {
+    interpretation_type: "Interpretation",
+    state_support_signal: "State Support",
+    strategic_importance_level: "Strategic Importance",
+  };
+
+  const cards = Object.entries(labels).map(([field, label]) => {
+    const distribution = variables[field]?.distribution ?? {};
+    const values = Object.entries(distribution)
+      .map(([category, count]) => `${category}: ${count}`)
+      .join("; ");
+    return `
+      <article class="comparison-card">
+        <p class="insight-category">${label}</p>
+        <h3>${values || "N/A"}</h3>
+        <p class="insight-note">
+          Coded: ${variables[field]?.coded_count ?? "N/A"};
+          Uncoded: ${variables[field]?.uncoded_count ?? "N/A"}
+        </p>
+      </article>
+    `;
+  });
+
+  container.innerHTML = cards.join("");
+};
+
 const renderScenarioSimilarity = (similarityData) => {
   const container = document.getElementById("scenarioSimilarity");
   const scenarios = similarityData.scenarios ?? [];
@@ -534,6 +563,7 @@ const loadDashboard = async () => {
     renderProjectMetadata(dataValidationData);
     renderNewsDatabaseSummary(newsSummaryData);
     renderEventFamilyAnalytics(eventFamilyData);
+    renderTheoryLayer(dataValidationData);
     renderScenarioSimilarity(scenarioSimilarityData);
     renderHistoricalComparison(comparisonData);
     renderExecutiveBrief(briefData);
@@ -546,6 +576,7 @@ const loadDashboard = async () => {
     document.getElementById("projectMetadata").textContent = error.message;
     document.getElementById("newsDatabaseSummary").textContent = error.message;
     document.getElementById("eventFamilyAnalytics").textContent = error.message;
+    document.getElementById("theoryLayer").textContent = error.message;
     document.getElementById("scenarioSimilarity").textContent = error.message;
     document.getElementById("historicalComparison").textContent = error.message;
     document.getElementById("executiveBrief").textContent = error.message;

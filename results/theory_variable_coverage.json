@@ -1,0 +1,40 @@
+{
+  "event_count": 18,
+  "input_file": "data/events_v2.csv",
+  "method_note": "Theory-variable coverage summarizes optional interpretive coding. Blank values indicate insufficient support for conservative coding.",
+  "use_limits": [
+    "Interpretive coding requires analyst review.",
+    "Coverage statistics do not change event-study results.",
+    "Variables are descriptive operationalizations, not causal estimates."
+  ],
+  "variables": {
+    "interpretation_type": {
+      "coded_count": 18,
+      "distribution": {
+        "Adaptation": 5,
+        "Mixed": 1,
+        "Opportunity": 3,
+        "Threat": 9
+      },
+      "uncoded_count": 0
+    },
+    "state_support_signal": {
+      "coded_count": 4,
+      "distribution": {
+        "High": 1,
+        "Low": 2,
+        "Medium": 1,
+        "Uncoded": 14
+      },
+      "uncoded_count": 14
+    },
+    "strategic_importance_level": {
+      "coded_count": 4,
+      "distribution": {
+        "High": 4,
+        "Uncoded": 14
+      },
+      "uncoded_count": 14
+    }
+  }
+}

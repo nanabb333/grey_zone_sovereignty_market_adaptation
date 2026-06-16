@@ -17,6 +17,8 @@ NEWS_PATH = REPO_ROOT / "data" / "news" / "news_events.csv"
 RESULTS_DIR = REPO_ROOT / "results"
 JSON_OUTPUT_PATH = RESULTS_DIR / "data_validation_report.json"
 MD_OUTPUT_PATH = RESULTS_DIR / "data_validation_report.md"
+THEORY_JSON_OUTPUT_PATH = RESULTS_DIR / "theory_variable_coverage.json"
+THEORY_MD_OUTPUT_PATH = RESULTS_DIR / "theory_variable_coverage.md"
 
 EVENT_CRITICAL_FIELDS = [
     "event_id",
@@ -54,6 +56,11 @@ NEWS_FAMILY_ALLOWED = {
     "Technology Competition",
 }
 EVENT_ID_PATTERN = re.compile(r"^E\d{3}$")
+THEORY_ALLOWED_VALUES = {
+    "interpretation_type": {"Threat", "Opportunity", "Adaptation", "Mixed"},
+    "state_support_signal": {"High", "Medium", "Low"},
+    "strategic_importance_level": {"High", "Medium", "Low"},
+}
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -88,6 +95,38 @@ def validate_rows_have_fields(
                 }
             )
     return issues
+
+
+def theory_distribution(rows: list[dict[str, str]], field: str) -> dict[str, int]:
+    values = Counter(row.get(field, "").strip() or "Uncoded" for row in rows)
+    return dict(sorted(values.items()))
+
+
+def build_theory_coverage(events: list[dict[str, str]]) -> dict[str, Any]:
+    variables = {}
+    for field in THEORY_ALLOWED_VALUES:
+        coded = [row for row in events if not blank(row.get(field))]
+        uncoded = len(events) - len(coded)
+        variables[field] = {
+            "coded_count": len(coded),
+            "uncoded_count": uncoded,
+            "distribution": theory_distribution(events, field),
+        }
+
+    return {
+        "input_file": str(EVENTS_PATH.relative_to(REPO_ROOT)),
+        "event_count": len(events),
+        "variables": variables,
+        "method_note": (
+            "Theory-variable coverage summarizes optional interpretive coding. "
+            "Blank values indicate insufficient support for conservative coding."
+        ),
+        "use_limits": [
+            "Interpretive coding requires analyst review.",
+            "Coverage statistics do not change event-study results.",
+            "Variables are descriptive operationalizations, not causal estimates.",
+        ],
+    }
 
 
 def validate_project_data() -> dict[str, Any]:
@@ -160,6 +199,23 @@ def validate_project_data() -> dict[str, Any]:
     if invalid_news_families:
         errors.append({"check": "invalid_news_family_values", "values": invalid_news_families})
 
+    for field, allowed_values in THEORY_ALLOWED_VALUES.items():
+        invalid_values = sorted(
+            {
+                row.get(field, "").strip()
+                for row in events
+                if not blank(row.get(field)) and row.get(field, "").strip() not in allowed_values
+            }
+        )
+        if invalid_values:
+            errors.append(
+                {
+                    "check": f"invalid_{field}_values",
+                    "values": invalid_values,
+                    "allowed_values": sorted(allowed_values),
+                }
+            )
+
     orphan_news_records = [
         {
             "news_id": row.get("news_id", ""),
@@ -187,6 +243,8 @@ def validate_project_data() -> dict[str, Any]:
     elif warnings:
         status = "warning"
 
+    theory_coverage = build_theory_coverage(events)
+
     return {
         "status": status,
         "input_files": {
@@ -205,11 +263,13 @@ def validate_project_data() -> dict[str, Any]:
             "missing event_id",
             "orphan news records",
             "invalid event family values",
+            "invalid theory variable values",
             "missing critical fields",
             "duplicate news_id",
         ],
         "errors": errors,
         "warnings": warnings,
+        "theory_coverage": theory_coverage,
         "method_note": (
             "Validation checks structural data quality and linkage integrity. It does "
             "not add analytical claims or change the event-study methodology."
@@ -257,18 +317,62 @@ def render_markdown(report: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def render_theory_coverage_markdown(coverage: dict[str, Any]) -> str:
+    lines = [
+        "# Theory Variable Coverage",
+        "",
+        f"- Input file: `{coverage['input_file']}`",
+        f"- Events: {coverage['event_count']}",
+        "",
+        str(coverage["method_note"]),
+        "",
+    ]
+
+    for field, stats in coverage["variables"].items():
+        lines.extend(
+            [
+                f"## {field}",
+                "",
+                f"- Coded: {stats['coded_count']}",
+                f"- Uncoded: {stats['uncoded_count']}",
+                "",
+                "| Category | Count |",
+                "|---|---:|",
+            ]
+        )
+        for category, count in stats["distribution"].items():
+            lines.append(f"| {category} | {count} |")
+        lines.append("")
+
+    lines.extend(["## Use Limits", ""])
+    lines.extend(f"- {limit}" for limit in coverage["use_limits"])
+    lines.append("")
+    return "\n".join(lines)
+
+
 def main() -> None:
     report = validate_project_data()
+    theory_coverage = report["theory_coverage"]
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     JSON_OUTPUT_PATH.write_text(
         json.dumps(report, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
     MD_OUTPUT_PATH.write_text(render_markdown(report), encoding="utf-8")
+    THEORY_JSON_OUTPUT_PATH.write_text(
+        json.dumps(theory_coverage, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    THEORY_MD_OUTPUT_PATH.write_text(
+        render_theory_coverage_markdown(theory_coverage),
+        encoding="utf-8",
+    )
 
     print(f"Validation status: {report['status']}")
     print(f"Wrote {JSON_OUTPUT_PATH.relative_to(REPO_ROOT)}")
     print(f"Wrote {MD_OUTPUT_PATH.relative_to(REPO_ROOT)}")
+    print(f"Wrote {THEORY_JSON_OUTPUT_PATH.relative_to(REPO_ROOT)}")
+    print(f"Wrote {THEORY_MD_OUTPUT_PATH.relative_to(REPO_ROOT)}")
 
 
 if __name__ == "__main__":

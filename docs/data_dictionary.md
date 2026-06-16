@@ -23,6 +23,9 @@ File: `data/events_v2.csv`
 | `surprise_rationale` | string | Rationale for surprise coding | `The visit was discussed in advance...` |
 | `event_family` | categorical | Comparable event-family group | `Diplomatic_Shock` |
 | `event_repetition_level` | integer | Repetition indicator within comparable event family | `1` |
+| `interpretation_type` | categorical/string | Optional theory coding: `Threat`, `Opportunity`, `Adaptation`, or `Mixed` | `Threat` |
+| `state_support_signal` | categorical/string | Optional state-policy support signal: `High`, `Medium`, or `Low` | `High` |
+| `strategic_importance_level` | categorical/string | Optional strategic-importance level: `High`, `Medium`, or `Low` | `High` |
 
 ## News Evidence Dataset
 
@@ -108,3 +111,14 @@ Files: `results/data_validation_report.json`, `results/data_validation_report.md
 | `summary.event_family_count` | integer | Number of event families | `7` |
 | `errors` | list | Blocking validation issues | `[]` |
 | `warnings` | list | Non-blocking review issues | `orphan_news_records` |
+
+## Theory Variable Coverage
+
+Files: `results/theory_variable_coverage.json`, `results/theory_variable_coverage.md`
+
+| Field | Type | Meaning | Example |
+|---|---|---|---|
+| `variables.interpretation_type.coded_count` | integer | Number of events with interpretation coding | `18` |
+| `variables.interpretation_type.uncoded_count` | integer | Number of events left blank | `0` |
+| `variables.state_support_signal.distribution` | object | Distribution of state-support coding | `{"High": 1, "Uncoded": 14}` |
+| `variables.strategic_importance_level.distribution` | object | Distribution of strategic-importance coding | `{"High": 4, "Uncoded": 14}` |

@@ -97,6 +97,7 @@ body {
 .metadata-panel,
 .news-panel,
 .family-panel,
+.theory-panel,
 .scenario-panel,
 .comparison-panel,
 .brief-panel {
@@ -306,6 +307,12 @@ body {
   margin-top: 16px;
 }
 
+.theory-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
 .scenario-list {
   display: grid;
   gap: 14px;
@@ -421,6 +428,7 @@ body {
   .metadata-panel,
   .news-panel,
   .family-panel,
+  .theory-panel,
   .scenario-panel,
   .comparison-panel,
   .brief-panel,

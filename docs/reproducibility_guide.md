@@ -31,7 +31,7 @@ python3 scripts/run_all_checks.py
 | `scripts/build_news_event_database.py` | `results/news_database_summary.json`, `results/news_database_summary.md` |
 | `scripts/analyze_event_family_patterns.py` | `results/event_family_summary.csv`, `results/event_family_summary.json`, `results/event_family_summary.md` |
 | `scripts/scenario_similarity.py` | `results/scenario_similarity_results.json`, `results/scenario_similarity_results.md` |
-| `scripts/validate_project_data.py` | `results/data_validation_report.json`, `results/data_validation_report.md` |
+| `scripts/validate_project_data.py` | `results/data_validation_report.json`, `results/data_validation_report.md`, `results/theory_variable_coverage.json`, `results/theory_variable_coverage.md` |
 
 ## Launch Dashboard Locally
 

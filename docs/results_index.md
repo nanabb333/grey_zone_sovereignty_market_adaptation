@@ -15,6 +15,8 @@ This index catalogs the major outputs and documentation artifacts in the reposit
 | [`results/scenario_similarity_results.md`](../results/scenario_similarity_results.md) | Human-readable scenario similarity results |
 | [`results/data_validation_report.json`](../results/data_validation_report.json) | Machine-readable validation report |
 | [`results/data_validation_report.md`](../results/data_validation_report.md) | Human-readable validation report |
+| [`results/theory_variable_coverage.json`](../results/theory_variable_coverage.json) | Machine-readable theory-variable coverage summary |
+| [`results/theory_variable_coverage.md`](../results/theory_variable_coverage.md) | Human-readable theory-variable coverage audit |
 
 ## Dashboard Screenshots
 
@@ -30,6 +32,7 @@ This index catalogs the major outputs and documentation artifacts in the reposit
 | [`docs/news_database_methodology.md`](news_database_methodology.md) | News evidence database methodology |
 | [`docs/event_family_analytics_methodology.md`](event_family_analytics_methodology.md) | Event-family analytics methodology |
 | [`docs/scenario_similarity_methodology.md`](scenario_similarity_methodology.md) | Scenario similarity methodology |
+| [`docs/theory_variable_methodology.md`](theory_variable_methodology.md) | Theory-variable coding methodology |
 | [`docs/data_dictionary.md`](data_dictionary.md) | Field-level data dictionary |
 | [`docs/intelligence_data_architecture.md`](intelligence_data_architecture.md) | Data-flow architecture |
 
