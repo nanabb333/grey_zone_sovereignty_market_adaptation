@@ -148,17 +148,13 @@ The dashboard helps analysts and stakeholders answer:
 - What summary can be shared with non-technical stakeholders?
 - What structured context is available for future analyst-reviewed LLM support?
 
-## Dashboard Screenshots
+## Additional Dashboard Screenshot
 
 The dashboard is static and local-file friendly. It presents the project as an analyst-support workspace rather than a notebook-only research artifact.
 
 Executive dashboard:
 
 ![Dashboard Home](docs/screenshots/dashboard_home.png)
-
-Dashboard intelligence layer:
-
-![Dashboard Intelligence](docs/screenshots/dashboard_intelligence.png)
 
 Additional screenshot targets are tracked in [GitHub Publication Checklist](docs/github_publication_checklist.md).
 
