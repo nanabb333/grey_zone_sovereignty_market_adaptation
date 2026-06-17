@@ -220,19 +220,16 @@ The V3 validation report is available at `results/events_v3_validation_report.md
 
 ## Current Event Study Coverage
 
-The validated V3 dataset contains 25 events. The current empirical CAR summary, `results/event_abnormal_return_summary.csv`, covers 18 of those events, or 72% of validated V3.
+The validated V3 dataset contains 25 events. The original empirical CAR summary, `results/event_abnormal_return_summary.csv`, covers 18 of those events. The expanded V3 CAR summary, `results/event_abnormal_return_summary_v3.csv`, covers 21 of 25 validated V3 events, or 84%.
 
-The seven remaining validated events are not yet included in the CAR layer:
+The four remaining validated events are not yet included in the CAR layer:
 
 - E019: Huawei Added to U.S. Entity List
 - E020: Huawei Foreign-Direct-Product Rule
 - E021: SMIC Added to U.S. Entity List
 - E022: TSMC Announces $12B Arizona Fab
-- E023: CHIPS and Science Act Signed
-- E024: AI Chip Export Control Expansion
-- E025: China Big Fund III Established
 
-These events are tracked in `data/car_expansion_candidates.csv`. The 2022-2024 missing events appear closer to pipeline-ready with current local market data, while the 2019-2020 events require historical market-data backfill before CAR calculations can be run. See `results/event_study_coverage_audit.md` and `docs/car_expansion_plan.md`.
+These events are tracked in `data/car_expansion_candidates.csv`. The remaining 2019-2020 events require historical market-data backfill before CAR calculations can be run. E020 and E022 also share the same event date, so future interpretation will require confounding review. See `docs/v3_car_integration_findings.md`, `results/event_family_v3_car_summary.md`, and `results/theory_variable_v3_car_summary.md`.
 
 ## Theory Findings from V3 Dataset
 
