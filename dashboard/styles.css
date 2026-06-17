@@ -342,10 +342,24 @@ body {
   margin-top: 18px;
 }
 
+.scenario-comparison-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
 .scenario-demo-card {
   padding: 18px;
   border: 1px solid var(--line);
   border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.scenario-comparison-card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-left: 4px solid #2563eb;
   border-radius: 8px;
   background: #fbfdff;
 }
@@ -427,6 +441,55 @@ body {
 
 .analog-table th {
   background: #eef6f5;
+}
+
+.comparison-matrix-table {
+  min-width: 780px;
+}
+
+.closest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.closest-grid div {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.comparison-summary {
+  margin: 10px 0 0;
+  color: #243447;
+}
+
+.matrix-status {
+  display: inline-block;
+  min-width: 72px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.matrix-match {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.matrix-partial {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.matrix-different {
+  background: #fee2e2;
+  color: #991b1b;
 }
 
 .scenario-demo-grid {
@@ -578,6 +641,7 @@ body {
 
   .kpi-grid,
   .detail-grid,
+  .closest-grid,
   .scenario-classification,
   .scenario-demo-grid {
     grid-template-columns: 1fr;

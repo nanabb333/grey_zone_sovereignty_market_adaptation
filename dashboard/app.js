@@ -8,6 +8,7 @@ const newsDatabaseSummaryPath = "../results/news_database_summary.json";
 const eventFamilySummaryPath = "../results/event_family_summary.json";
 const scenarioSimilarityPath = "../results/scenario_similarity_results.json";
 const historicalAnalogDemoPath = "../results/historical_analog_engine/demo_results.json";
+const scenarioComparisonPath = "../results/scenario_comparison_engine/comparison_results.json";
 const dataValidationPath = "../results/data_validation_report.json";
 
 const formatPercent = (value) => {
@@ -598,6 +599,126 @@ const renderScenarioIntelligenceDemo = (demoData) => {
     .join("");
 };
 
+const renderScenarioComparisonFallback = (message) => {
+  const container = document.getElementById("scenarioComparisonView");
+  container.innerHTML = `
+    <article class="scenario-comparison-card">
+      <p class="insight-category">Scenario comparison unavailable</p>
+      <h3>Regenerate deterministic comparison outputs</h3>
+      <p>
+        The dashboard could not load <code>results/scenario_comparison_engine/comparison_results.json</code>.
+        Run <code>python3 scripts/scenario_comparison_engine.py</code> after regenerating historical analog outputs,
+        then refresh this page.
+      </p>
+      <p class="insight-note">${message}</p>
+      <p class="insight-note">
+        Scenario comparison explains historical similarity and difference only.
+        It does not forecast returns or provide investment recommendations.
+      </p>
+    </article>
+  `;
+};
+
+const renderScenarioComparisonView = (comparisonData) => {
+  const container = document.getElementById("scenarioComparisonView");
+  const comparisons = comparisonData.comparisons ?? [];
+
+  if (!comparisons.length) {
+    renderScenarioComparisonFallback("Comparison JSON loaded, but no comparisons were found.");
+    return;
+  }
+
+  container.innerHTML = comparisons
+    .map((comparison) => {
+      const cva = comparison.closest_vs_alternative ?? {};
+      const closest = cva.closest_historical_analog ?? {};
+      const alternative = cva.alternative_analog ?? {};
+      const matrix = closest.comparison_matrix ?? [];
+      const matching = closest.major_matching_features ?? [];
+      const differences = closest.major_differences ?? [];
+
+      return `
+        <article class="scenario-comparison-card">
+          <div class="scenario-demo-header">
+            <div>
+              <p class="insight-category">${comparison.mapped_scenario?.scenario_id ?? "Scenario"}</p>
+              <h3>${comparison.question}</h3>
+            </div>
+            <span class="classification-badge">${comparison.mapped_scenario?.event_family ?? "N/A"}</span>
+          </div>
+
+          <div class="closest-grid">
+            <div>
+              <p class="detail-label">Closest Historical Analog</p>
+              <p class="detail-value">${closest.event_id ?? "N/A"} - ${closest.event_name ?? "N/A"}</p>
+              <p class="insight-note">Score ${formatScore(closest.similarity_score)}</p>
+            </div>
+            <div>
+              <p class="detail-label">Alternative Analog</p>
+              <p class="detail-value">${alternative.event_id ?? "N/A"} - ${alternative.event_name ?? "N/A"}</p>
+              <p class="insight-note">Score ${formatScore(alternative.similarity_score)}</p>
+            </div>
+          </div>
+          <p class="comparison-summary">${cva.comparison_summary ?? "No closest-vs-alternative summary available."}</p>
+
+          <h4>Similarity Matrix</h4>
+          <div class="analog-table-wrap">
+            <table class="analog-table comparison-matrix-table">
+              <thead>
+                <tr>
+                  <th>Dimension</th>
+                  <th>Scenario</th>
+                  <th>Historical Analog</th>
+                  <th>Status</th>
+                  <th>Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${matrix
+                  .map(
+                    (row) => `
+                      <tr>
+                        <td>${row.dimension}</td>
+                        <td>${row.query_value}</td>
+                        <td>${row.historical_value}</td>
+                        <td><span class="matrix-status matrix-${row.status}">${row.status}</span></td>
+                        <td>${row.explanation}</td>
+                      </tr>
+                    `,
+                  )
+                  .join("")}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="scenario-demo-grid">
+            <section>
+              <h4>Match Explanation</h4>
+              <ul>
+                ${
+                  matching.length
+                    ? matching.slice(0, 4).map((item) => `<li>${item}</li>`).join("")
+                    : "<li>No major matching features available.</li>"
+                }
+              </ul>
+            </section>
+            <section>
+              <h4>Key Differences</h4>
+              <ul>
+                ${
+                  differences.length
+                    ? differences.slice(0, 4).map((item) => `<li>${item}</li>`).join("")
+                    : "<li>No major differences identified by deterministic rules.</li>"
+                }
+              </ul>
+            </section>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+};
+
 const renderHistoricalComparison = (comparisonData) => {
   const comparisons = comparisonData.comparisons ?? [];
   const container = document.getElementById("historicalComparison");
@@ -761,5 +882,19 @@ const loadScenarioIntelligenceDemo = async () => {
   }
 };
 
+const loadScenarioComparisonView = async () => {
+  try {
+    const response = await fetch(scenarioComparisonPath);
+    if (!response.ok) {
+      throw new Error("Scenario comparison JSON could not be loaded.");
+    }
+    const comparisonData = await response.json();
+    renderScenarioComparisonView(comparisonData);
+  } catch (error) {
+    renderScenarioComparisonFallback(error.message);
+  }
+};
+
 loadDashboard();
 loadScenarioIntelligenceDemo();
+loadScenarioComparisonView();

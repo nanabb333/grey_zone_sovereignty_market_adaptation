@@ -1,0 +1,1524 @@
+{
+  "boundary_note": "Scenario comparison is historical decision intelligence only. It does not forecast future outcomes, estimate returns, or provide investment recommendations.",
+  "comparisons": [
+    {
+      "analog_comparisons": [
+        {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on pla; prc.",
+              "historical_only": [
+                "taiwan"
+              ],
+              "historical_value": "pla; prc; taiwan",
+              "matched_values": [
+                "pla",
+                "prc"
+              ],
+              "query_only": [],
+              "query_value": "PRC; PLA; China",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target aligns on taiwan; taiwan strait.",
+              "historical_only": [],
+              "historical_value": "taiwan; taiwan strait",
+              "matched_values": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "query_only": [],
+              "query_value": "Taiwan; Taiwan Strait",
+              "status": "match"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family is an exact match.",
+              "historical_value": "Military Exercise",
+              "query_value": "Military Exercise",
+              "status": "match"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "severity",
+              "explanation": "severity is identical.",
+              "historical_value": 4,
+              "query_value": 4,
+              "status": "match"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "surprise",
+              "explanation": "surprise is identical.",
+              "historical_value": 3,
+              "query_value": 3,
+              "status": "match"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile is strong enough for analyst review.",
+              "historical_value": "1 linked evidence item(s); event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [
+                  "Reuters placeholder"
+                ],
+                "linked_evidence_count": 1,
+                "source_packet_available": false
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "match"
+            }
+          ],
+          "confidence": "Strong analog",
+          "event_date": "2024-05-23",
+          "event_family": "Military Exercise",
+          "event_id": "E013",
+          "event_name": "Joint Sword-2024A",
+          "major_differences": [
+            "No major feature differences identified by deterministic comparison rules."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on pla; prc.",
+            "Target: target aligns on taiwan; taiwan strait.",
+            "Event Family: Event family is an exact match.",
+            "Severity: severity is identical.",
+            "Surprise: surprise is identical.",
+            "Evidence Profile: Evidence profile is strong enough for analyst review."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 30.0 point(s). Exact taxonomy-family match.",
+            "Evidence Coverage: 7.0 point(s). Linked news evidence available.",
+            "Severity Proximity: 10.0 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 10.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 15.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 5.0 point(s). Named Joint Sword pattern match."
+          ],
+          "similarity_score": 97.0
+        },
+        {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on pla; prc.",
+              "historical_only": [
+                "taiwan"
+              ],
+              "historical_value": "pla; prc; taiwan",
+              "matched_values": [
+                "pla",
+                "prc"
+              ],
+              "query_only": [],
+              "query_value": "PRC; PLA; China",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target aligns on taiwan; taiwan strait.",
+              "historical_only": [],
+              "historical_value": "taiwan; taiwan strait",
+              "matched_values": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "query_only": [],
+              "query_value": "Taiwan; Taiwan Strait",
+              "status": "match"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family is an exact match.",
+              "historical_value": "Military Exercise",
+              "query_value": "Military Exercise",
+              "status": "match"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "severity",
+              "explanation": "severity is identical.",
+              "historical_value": 4,
+              "query_value": 4,
+              "status": "match"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "surprise",
+              "explanation": "surprise is identical.",
+              "historical_value": 3,
+              "query_value": 3,
+              "status": "match"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile is strong enough for analyst review.",
+              "historical_value": "1 linked evidence item(s); event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [
+                  "Reuters placeholder"
+                ],
+                "linked_evidence_count": 1,
+                "source_packet_available": false
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "match"
+            }
+          ],
+          "confidence": "Strong analog",
+          "event_date": "2023-04-08",
+          "event_family": "Military Exercise",
+          "event_id": "E007",
+          "event_name": "Joint Sword 2023",
+          "major_differences": [
+            "No major feature differences identified by deterministic comparison rules."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on pla; prc.",
+            "Target: target aligns on taiwan; taiwan strait.",
+            "Event Family: Event family is an exact match.",
+            "Severity: severity is identical.",
+            "Surprise: surprise is identical.",
+            "Evidence Profile: Evidence profile is strong enough for analyst review."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 30.0 point(s). Exact taxonomy-family match.",
+            "Evidence Coverage: 7.0 point(s). Linked news evidence available.",
+            "Severity Proximity: 10.0 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 10.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 15.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 5.0 point(s). Named Joint Sword pattern match."
+          ],
+          "similarity_score": 97.0
+        },
+        {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on pla; prc.",
+              "historical_only": [
+                "taiwan"
+              ],
+              "historical_value": "pla; prc; taiwan",
+              "matched_values": [
+                "pla",
+                "prc"
+              ],
+              "query_only": [],
+              "query_value": "PRC; PLA; China",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target aligns on taiwan; taiwan strait.",
+              "historical_only": [
+                "prc"
+              ],
+              "historical_value": "prc; taiwan; taiwan strait",
+              "matched_values": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "query_only": [],
+              "query_value": "Taiwan; Taiwan Strait",
+              "status": "match"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family is an exact match.",
+              "historical_value": "Military Exercise",
+              "query_value": "Military Exercise",
+              "status": "match"
+            },
+            {
+              "difference": 1.0,
+              "dimension": "severity",
+              "explanation": "severity differs by 1 point(s).",
+              "historical_value": 5,
+              "query_value": 4,
+              "status": "partial"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "surprise",
+              "explanation": "surprise is identical.",
+              "historical_value": 3,
+              "query_value": 3,
+              "status": "match"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile is strong enough for analyst review.",
+              "historical_value": "1 linked evidence item(s); source packet; event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [
+                  "Associated Press placeholder"
+                ],
+                "linked_evidence_count": 1,
+                "source_packet_available": true
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "match"
+            }
+          ],
+          "confidence": "Strong analog",
+          "event_date": "2022-08-04",
+          "event_family": "Military Exercise",
+          "event_id": "E004",
+          "event_name": "PLA Military Exercises After Pelosi Visit",
+          "major_differences": [
+            "Severity: severity differs by 1 point(s)."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on pla; prc.",
+            "Target: target aligns on taiwan; taiwan strait.",
+            "Event Family: Event family is an exact match.",
+            "Surprise: surprise is identical.",
+            "Evidence Profile: Evidence profile is strong enough for analyst review."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 30.0 point(s). Exact taxonomy-family match.",
+            "Evidence Coverage: 10.0 point(s). Source packet and linked news evidence available.",
+            "Severity Proximity: 7.5 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 10.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 15.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 1.0 point(s). General historical context."
+          ],
+          "similarity_score": 93.5
+        }
+      ],
+      "analyst_notes": [
+        "Scenario comparison is historical decision intelligence only. It does not forecast future outcomes, estimate returns, or provide investment recommendations.",
+        "Comparison matrices explain similarity and difference; they are not forecasts.",
+        "Evidence profile describes historical source support and requires analyst review."
+      ],
+      "closest_vs_alternative": {
+        "alternative_analog": {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on pla; prc.",
+              "historical_only": [
+                "taiwan"
+              ],
+              "historical_value": "pla; prc; taiwan",
+              "matched_values": [
+                "pla",
+                "prc"
+              ],
+              "query_only": [],
+              "query_value": "PRC; PLA; China",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target aligns on taiwan; taiwan strait.",
+              "historical_only": [],
+              "historical_value": "taiwan; taiwan strait",
+              "matched_values": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "query_only": [],
+              "query_value": "Taiwan; Taiwan Strait",
+              "status": "match"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family is an exact match.",
+              "historical_value": "Military Exercise",
+              "query_value": "Military Exercise",
+              "status": "match"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "severity",
+              "explanation": "severity is identical.",
+              "historical_value": 4,
+              "query_value": 4,
+              "status": "match"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "surprise",
+              "explanation": "surprise is identical.",
+              "historical_value": 3,
+              "query_value": 3,
+              "status": "match"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile is strong enough for analyst review.",
+              "historical_value": "1 linked evidence item(s); event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [
+                  "Reuters placeholder"
+                ],
+                "linked_evidence_count": 1,
+                "source_packet_available": false
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "match"
+            }
+          ],
+          "confidence": "Strong analog",
+          "event_date": "2023-04-08",
+          "event_family": "Military Exercise",
+          "event_id": "E007",
+          "event_name": "Joint Sword 2023",
+          "major_differences": [
+            "No major feature differences identified by deterministic comparison rules."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on pla; prc.",
+            "Target: target aligns on taiwan; taiwan strait.",
+            "Event Family: Event family is an exact match.",
+            "Severity: severity is identical.",
+            "Surprise: surprise is identical.",
+            "Evidence Profile: Evidence profile is strong enough for analyst review."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 30.0 point(s). Exact taxonomy-family match.",
+            "Evidence Coverage: 7.0 point(s). Linked news evidence available.",
+            "Severity Proximity: 10.0 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 10.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 15.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 5.0 point(s). Named Joint Sword pattern match."
+          ],
+          "similarity_score": 97.0
+        },
+        "closest_historical_analog": {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on pla; prc.",
+              "historical_only": [
+                "taiwan"
+              ],
+              "historical_value": "pla; prc; taiwan",
+              "matched_values": [
+                "pla",
+                "prc"
+              ],
+              "query_only": [],
+              "query_value": "PRC; PLA; China",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target aligns on taiwan; taiwan strait.",
+              "historical_only": [],
+              "historical_value": "taiwan; taiwan strait",
+              "matched_values": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "query_only": [],
+              "query_value": "Taiwan; Taiwan Strait",
+              "status": "match"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family is an exact match.",
+              "historical_value": "Military Exercise",
+              "query_value": "Military Exercise",
+              "status": "match"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "severity",
+              "explanation": "severity is identical.",
+              "historical_value": 4,
+              "query_value": 4,
+              "status": "match"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "surprise",
+              "explanation": "surprise is identical.",
+              "historical_value": 3,
+              "query_value": 3,
+              "status": "match"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile is strong enough for analyst review.",
+              "historical_value": "1 linked evidence item(s); event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [
+                  "Reuters placeholder"
+                ],
+                "linked_evidence_count": 1,
+                "source_packet_available": false
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "match"
+            }
+          ],
+          "confidence": "Strong analog",
+          "event_date": "2024-05-23",
+          "event_family": "Military Exercise",
+          "event_id": "E013",
+          "event_name": "Joint Sword-2024A",
+          "major_differences": [
+            "No major feature differences identified by deterministic comparison rules."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on pla; prc.",
+            "Target: target aligns on taiwan; taiwan strait.",
+            "Event Family: Event family is an exact match.",
+            "Severity: severity is identical.",
+            "Surprise: surprise is identical.",
+            "Evidence Profile: Evidence profile is strong enough for analyst review."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 30.0 point(s). Exact taxonomy-family match.",
+            "Evidence Coverage: 7.0 point(s). Linked news evidence available.",
+            "Severity Proximity: 10.0 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 10.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 15.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 5.0 point(s). Named Joint Sword pattern match."
+          ],
+          "similarity_score": 97.0
+        },
+        "comparison_summary": "E013 is the closest analog with score 97.0. E007 is the alternative analog with score 97.0. The score gap is 0.0 point(s), so both should be reviewed when the gap is small."
+      },
+      "mapped_scenario": {
+        "actors": [
+          "PRC",
+          "PLA",
+          "China"
+        ],
+        "event_family": "Military Exercise",
+        "mapping_reason": "The question references Joint Sword and launch of another exercise, which maps to the Military Exercise family.",
+        "scenario_id": "S2-DEMO-001",
+        "severity_score": 4,
+        "surprise_score": 3,
+        "targets": [
+          "Taiwan",
+          "Taiwan Strait"
+        ],
+        "title": "Renewed Joint Sword-Style Military Exercise"
+      },
+      "question": "What happens if China launches another Joint Sword exercise?"
+    },
+    {
+      "analog_comparisons": [
+        {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on united states.",
+              "historical_only": [
+                "prc"
+              ],
+              "historical_value": "prc; united states",
+              "matched_values": [
+                "united states"
+              ],
+              "query_only": [],
+              "query_value": "United States; U.S. Commerce Department",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target aligns on prc; semiconductor.",
+              "historical_only": [
+                "united states"
+              ],
+              "historical_value": "prc; semiconductor; united states",
+              "matched_values": [
+                "prc",
+                "semiconductor"
+              ],
+              "query_only": [],
+              "query_value": "China; Advanced semiconductors; Global semiconductor supply chain",
+              "status": "match"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family is an exact match.",
+              "historical_value": "Export Control",
+              "query_value": "Export Control",
+              "status": "match"
+            },
+            {
+              "difference": 1.0,
+              "dimension": "severity",
+              "explanation": "severity differs by 1 point(s).",
+              "historical_value": 5,
+              "query_value": 4,
+              "status": "partial"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "surprise",
+              "explanation": "surprise is identical.",
+              "historical_value": 3,
+              "query_value": 3,
+              "status": "match"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile is strong enough for analyst review.",
+              "historical_value": "1 linked evidence item(s); source packet; event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [
+                  "U.S. BIS placeholder"
+                ],
+                "linked_evidence_count": 1,
+                "source_packet_available": true
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "match"
+            }
+          ],
+          "confidence": "Strong analog",
+          "event_date": "2022-10-07",
+          "event_family": "Export Control",
+          "event_id": "E005",
+          "event_name": "BIS Advanced Semiconductor Export Controls",
+          "major_differences": [
+            "Severity: severity differs by 1 point(s)."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on united states.",
+            "Target: target aligns on prc; semiconductor.",
+            "Event Family: Event family is an exact match.",
+            "Surprise: surprise is identical.",
+            "Evidence Profile: Evidence profile is strong enough for analyst review."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 30.0 point(s). Exact taxonomy-family match.",
+            "Evidence Coverage: 10.0 point(s). Source packet and linked news evidence available.",
+            "Severity Proximity: 7.5 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 10.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 15.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 1.0 point(s). General historical context."
+          ],
+          "similarity_score": 93.5
+        },
+        {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on united states.",
+              "historical_only": [
+                "prc"
+              ],
+              "historical_value": "prc; united states",
+              "matched_values": [
+                "united states"
+              ],
+              "query_only": [],
+              "query_value": "United States; U.S. Commerce Department",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target aligns on prc; semiconductor.",
+              "historical_only": [],
+              "historical_value": "prc; semiconductor",
+              "matched_values": [
+                "prc",
+                "semiconductor"
+              ],
+              "query_only": [],
+              "query_value": "China; Advanced semiconductors; Global semiconductor supply chain",
+              "status": "match"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family is an exact match.",
+              "historical_value": "Export Control",
+              "query_value": "Export Control",
+              "status": "match"
+            },
+            {
+              "difference": 1.0,
+              "dimension": "severity",
+              "explanation": "severity differs by 1 point(s).",
+              "historical_value": 5,
+              "query_value": 4,
+              "status": "partial"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "surprise",
+              "explanation": "surprise is identical.",
+              "historical_value": 3,
+              "query_value": 3,
+              "status": "match"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile has an event source but limited linked evidence.",
+              "historical_value": "0 linked evidence item(s); source packet; event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [],
+                "linked_evidence_count": 0,
+                "source_packet_available": true
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "partial"
+            }
+          ],
+          "confidence": "Strong analog",
+          "event_date": "2023-10-17",
+          "event_family": "Export Control",
+          "event_id": "E024",
+          "event_name": "AI Chip Export Control Expansion",
+          "major_differences": [
+            "Severity: severity differs by 1 point(s).",
+            "Evidence Profile: Evidence profile has an event source but limited linked evidence."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on united states.",
+            "Target: target aligns on prc; semiconductor.",
+            "Event Family: Event family is an exact match.",
+            "Surprise: surprise is identical."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 30.0 point(s). Exact taxonomy-family match.",
+            "Evidence Coverage: 6.0 point(s). Source packet and event source available.",
+            "Severity Proximity: 7.5 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 10.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 15.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 3.0 point(s). Repeated historical pattern."
+          ],
+          "similarity_score": 91.5
+        },
+        {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on united states.",
+              "historical_only": [
+                "prc"
+              ],
+              "historical_value": "prc; united states",
+              "matched_values": [
+                "united states"
+              ],
+              "query_only": [],
+              "query_value": "United States; U.S. Commerce Department",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target aligns on prc; semiconductor.",
+              "historical_only": [
+                "smic"
+              ],
+              "historical_value": "prc; semiconductor; smic",
+              "matched_values": [
+                "prc",
+                "semiconductor"
+              ],
+              "query_only": [],
+              "query_value": "China; Advanced semiconductors; Global semiconductor supply chain",
+              "status": "match"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family is an exact match.",
+              "historical_value": "Export Control",
+              "query_value": "Export Control",
+              "status": "match"
+            },
+            {
+              "difference": 1.0,
+              "dimension": "severity",
+              "explanation": "severity differs by 1 point(s).",
+              "historical_value": 5,
+              "query_value": 4,
+              "status": "partial"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "surprise",
+              "explanation": "surprise is identical.",
+              "historical_value": 3,
+              "query_value": 3,
+              "status": "match"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile has an event source but limited linked evidence.",
+              "historical_value": "0 linked evidence item(s); source packet; event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [],
+                "linked_evidence_count": 0,
+                "source_packet_available": true
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "partial"
+            }
+          ],
+          "confidence": "Strong analog",
+          "event_date": "2020-12-18",
+          "event_family": "Export Control",
+          "event_id": "E021",
+          "event_name": "SMIC Added to U.S. Entity List",
+          "major_differences": [
+            "Severity: severity differs by 1 point(s).",
+            "Evidence Profile: Evidence profile has an event source but limited linked evidence."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on united states.",
+            "Target: target aligns on prc; semiconductor.",
+            "Event Family: Event family is an exact match.",
+            "Surprise: surprise is identical."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 30.0 point(s). Exact taxonomy-family match.",
+            "Evidence Coverage: 6.0 point(s). Source packet and event source available.",
+            "Severity Proximity: 7.5 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 10.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 15.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 3.0 point(s). Repeated historical pattern."
+          ],
+          "similarity_score": 91.5
+        }
+      ],
+      "analyst_notes": [
+        "Scenario comparison is historical decision intelligence only. It does not forecast future outcomes, estimate returns, or provide investment recommendations.",
+        "Comparison matrices explain similarity and difference; they are not forecasts.",
+        "Evidence profile describes historical source support and requires analyst review."
+      ],
+      "closest_vs_alternative": {
+        "alternative_analog": {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on united states.",
+              "historical_only": [
+                "prc"
+              ],
+              "historical_value": "prc; united states",
+              "matched_values": [
+                "united states"
+              ],
+              "query_only": [],
+              "query_value": "United States; U.S. Commerce Department",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target aligns on prc; semiconductor.",
+              "historical_only": [],
+              "historical_value": "prc; semiconductor",
+              "matched_values": [
+                "prc",
+                "semiconductor"
+              ],
+              "query_only": [],
+              "query_value": "China; Advanced semiconductors; Global semiconductor supply chain",
+              "status": "match"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family is an exact match.",
+              "historical_value": "Export Control",
+              "query_value": "Export Control",
+              "status": "match"
+            },
+            {
+              "difference": 1.0,
+              "dimension": "severity",
+              "explanation": "severity differs by 1 point(s).",
+              "historical_value": 5,
+              "query_value": 4,
+              "status": "partial"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "surprise",
+              "explanation": "surprise is identical.",
+              "historical_value": 3,
+              "query_value": 3,
+              "status": "match"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile has an event source but limited linked evidence.",
+              "historical_value": "0 linked evidence item(s); source packet; event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [],
+                "linked_evidence_count": 0,
+                "source_packet_available": true
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "partial"
+            }
+          ],
+          "confidence": "Strong analog",
+          "event_date": "2023-10-17",
+          "event_family": "Export Control",
+          "event_id": "E024",
+          "event_name": "AI Chip Export Control Expansion",
+          "major_differences": [
+            "Severity: severity differs by 1 point(s).",
+            "Evidence Profile: Evidence profile has an event source but limited linked evidence."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on united states.",
+            "Target: target aligns on prc; semiconductor.",
+            "Event Family: Event family is an exact match.",
+            "Surprise: surprise is identical."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 30.0 point(s). Exact taxonomy-family match.",
+            "Evidence Coverage: 6.0 point(s). Source packet and event source available.",
+            "Severity Proximity: 7.5 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 10.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 15.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 3.0 point(s). Repeated historical pattern."
+          ],
+          "similarity_score": 91.5
+        },
+        "closest_historical_analog": {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on united states.",
+              "historical_only": [
+                "prc"
+              ],
+              "historical_value": "prc; united states",
+              "matched_values": [
+                "united states"
+              ],
+              "query_only": [],
+              "query_value": "United States; U.S. Commerce Department",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target aligns on prc; semiconductor.",
+              "historical_only": [
+                "united states"
+              ],
+              "historical_value": "prc; semiconductor; united states",
+              "matched_values": [
+                "prc",
+                "semiconductor"
+              ],
+              "query_only": [],
+              "query_value": "China; Advanced semiconductors; Global semiconductor supply chain",
+              "status": "match"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family is an exact match.",
+              "historical_value": "Export Control",
+              "query_value": "Export Control",
+              "status": "match"
+            },
+            {
+              "difference": 1.0,
+              "dimension": "severity",
+              "explanation": "severity differs by 1 point(s).",
+              "historical_value": 5,
+              "query_value": 4,
+              "status": "partial"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "surprise",
+              "explanation": "surprise is identical.",
+              "historical_value": 3,
+              "query_value": 3,
+              "status": "match"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile is strong enough for analyst review.",
+              "historical_value": "1 linked evidence item(s); source packet; event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [
+                  "U.S. BIS placeholder"
+                ],
+                "linked_evidence_count": 1,
+                "source_packet_available": true
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "match"
+            }
+          ],
+          "confidence": "Strong analog",
+          "event_date": "2022-10-07",
+          "event_family": "Export Control",
+          "event_id": "E005",
+          "event_name": "BIS Advanced Semiconductor Export Controls",
+          "major_differences": [
+            "Severity: severity differs by 1 point(s)."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on united states.",
+            "Target: target aligns on prc; semiconductor.",
+            "Event Family: Event family is an exact match.",
+            "Surprise: surprise is identical.",
+            "Evidence Profile: Evidence profile is strong enough for analyst review."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 30.0 point(s). Exact taxonomy-family match.",
+            "Evidence Coverage: 10.0 point(s). Source packet and linked news evidence available.",
+            "Severity Proximity: 7.5 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 10.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 15.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 1.0 point(s). General historical context."
+          ],
+          "similarity_score": 93.5
+        },
+        "comparison_summary": "E005 is the closest analog with score 93.5. E024 is the alternative analog with score 91.5. The score gap is 2.0 point(s), so both should be reviewed when the gap is small."
+      },
+      "mapped_scenario": {
+        "actors": [
+          "United States",
+          "U.S. Commerce Department"
+        ],
+        "event_family": "Export Control",
+        "mapping_reason": "The question references semiconductor export controls, which maps to the Export Control family.",
+        "scenario_id": "S2-DEMO-002",
+        "severity_score": 4,
+        "surprise_score": 3,
+        "targets": [
+          "China",
+          "Advanced semiconductors",
+          "Global semiconductor supply chain"
+        ],
+        "title": "New Semiconductor Export Controls"
+      },
+      "question": "What happens if new semiconductor export controls are announced?"
+    },
+    {
+      "analog_comparisons": [
+        {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on taiwan.",
+              "historical_only": [
+                "prc"
+              ],
+              "historical_value": "prc; taiwan",
+              "matched_values": [
+                "taiwan"
+              ],
+              "query_only": [],
+              "query_value": "Taiwan",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target partially aligns on taiwan; scenario-only values include prc; taiwan strait.",
+              "historical_only": [],
+              "historical_value": "taiwan",
+              "matched_values": [
+                "taiwan"
+              ],
+              "query_only": [
+                "prc",
+                "taiwan strait"
+              ],
+              "query_value": "Taiwan; Taiwan Strait; PRC",
+              "status": "partial"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family is an exact match.",
+              "historical_value": "Election",
+              "query_value": "Election",
+              "status": "match"
+            },
+            {
+              "difference": 1.0,
+              "dimension": "severity",
+              "explanation": "severity differs by 1 point(s).",
+              "historical_value": 2,
+              "query_value": 3,
+              "status": "partial"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "surprise",
+              "explanation": "surprise is identical.",
+              "historical_value": 1,
+              "query_value": 1,
+              "status": "match"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile has an event source but limited linked evidence.",
+              "historical_value": "0 linked evidence item(s); event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [],
+                "linked_evidence_count": 0,
+                "source_packet_available": false
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "partial"
+            }
+          ],
+          "confidence": "Strong analog",
+          "event_date": "2024-05-20",
+          "event_family": "Election",
+          "event_id": "E012",
+          "event_name": "Lai Ching-te Inauguration",
+          "major_differences": [
+            "Target: target partially aligns on taiwan; scenario-only values include prc; taiwan strait.",
+            "Severity: severity differs by 1 point(s).",
+            "Evidence Profile: Evidence profile has an event source but limited linked evidence."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on taiwan.",
+            "Event Family: Event family is an exact match.",
+            "Surprise: surprise is identical."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 30.0 point(s). Exact taxonomy-family match.",
+            "Evidence Coverage: 5.0 point(s). Event source URL available.",
+            "Severity Proximity: 7.5 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 10.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 5.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 4.0 point(s). Election-adjacent political sequence."
+          ],
+          "similarity_score": 81.5
+        },
+        {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on taiwan.",
+              "historical_only": [
+                "prc"
+              ],
+              "historical_value": "prc; taiwan",
+              "matched_values": [
+                "taiwan"
+              ],
+              "query_only": [],
+              "query_value": "Taiwan",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target partially aligns on prc; taiwan; scenario-only values include taiwan strait.",
+              "historical_only": [],
+              "historical_value": "prc; taiwan",
+              "matched_values": [
+                "prc",
+                "taiwan"
+              ],
+              "query_only": [
+                "taiwan strait"
+              ],
+              "query_value": "Taiwan; Taiwan Strait; PRC",
+              "status": "partial"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family differs, so this analog should be interpreted as contextual rather than direct.",
+              "historical_value": "Diplomatic Shock",
+              "query_value": "Election",
+              "status": "different"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "severity",
+              "explanation": "severity is identical.",
+              "historical_value": 3,
+              "query_value": 3,
+              "status": "match"
+            },
+            {
+              "difference": 2.0,
+              "dimension": "surprise",
+              "explanation": "surprise differs by 2 point(s).",
+              "historical_value": 3,
+              "query_value": 1,
+              "status": "different"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile is strong enough for analyst review.",
+              "historical_value": "1 linked evidence item(s); event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [
+                  "Xinhua or legal-policy placeholder"
+                ],
+                "linked_evidence_count": 1,
+                "source_packet_available": false
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "match"
+            }
+          ],
+          "confidence": "Useful analog",
+          "event_date": "2024-06-21",
+          "event_family": "Diplomatic Shock",
+          "event_id": "E014",
+          "event_name": "PRC Judicial Guidelines on Taiwan Independence",
+          "major_differences": [
+            "Target: target partially aligns on prc; taiwan; scenario-only values include taiwan strait.",
+            "Event Family: Event family differs, so this analog should be interpreted as contextual rather than direct.",
+            "Surprise: surprise differs by 2 point(s)."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on taiwan.",
+            "Severity: severity is identical.",
+            "Evidence Profile: Evidence profile is strong enough for analyst review."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 18.0 point(s). Related taxonomy family under Sprint 2 mapping rules.",
+            "Evidence Coverage: 7.0 point(s). Linked news evidence available.",
+            "Severity Proximity: 10.0 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 5.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 10.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 4.0 point(s). Election-adjacent political sequence."
+          ],
+          "similarity_score": 74.0
+        },
+        {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on taiwan.",
+              "historical_only": [
+                "prc",
+                "united states"
+              ],
+              "historical_value": "prc; taiwan; united states",
+              "matched_values": [
+                "taiwan"
+              ],
+              "query_only": [],
+              "query_value": "Taiwan",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target partially aligns on taiwan; taiwan strait; scenario-only values include prc.",
+              "historical_only": [],
+              "historical_value": "taiwan; taiwan strait",
+              "matched_values": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "query_only": [
+                "prc"
+              ],
+              "query_value": "Taiwan; Taiwan Strait; PRC",
+              "status": "partial"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family differs, so this analog should be interpreted as contextual rather than direct.",
+              "historical_value": "Diplomatic Shock",
+              "query_value": "Election",
+              "status": "different"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "severity",
+              "explanation": "severity is identical.",
+              "historical_value": 3,
+              "query_value": 3,
+              "status": "match"
+            },
+            {
+              "difference": 4.0,
+              "dimension": "surprise",
+              "explanation": "surprise differs by 4 point(s).",
+              "historical_value": 5,
+              "query_value": 1,
+              "status": "different"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile is strong enough for analyst review.",
+              "historical_value": "1 linked evidence item(s); source packet; event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [
+                  "Reuters placeholder"
+                ],
+                "linked_evidence_count": 1,
+                "source_packet_available": true
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "match"
+            }
+          ],
+          "confidence": "Useful analog",
+          "event_date": "2022-08-02",
+          "event_family": "Diplomatic Shock",
+          "event_id": "E002",
+          "event_name": "Pelosi Visit",
+          "major_differences": [
+            "Target: target partially aligns on taiwan; taiwan strait; scenario-only values include prc.",
+            "Event Family: Event family differs, so this analog should be interpreted as contextual rather than direct.",
+            "Surprise: surprise differs by 4 point(s)."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on taiwan.",
+            "Severity: severity is identical.",
+            "Evidence Profile: Evidence profile is strong enough for analyst review."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 18.0 point(s). Related taxonomy family under Sprint 2 mapping rules.",
+            "Evidence Coverage: 10.0 point(s). Source packet and linked news evidence available.",
+            "Severity Proximity: 10.0 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 0.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 10.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 4.0 point(s). Election-adjacent political sequence."
+          ],
+          "similarity_score": 72.0
+        }
+      ],
+      "analyst_notes": [
+        "Scenario comparison is historical decision intelligence only. It does not forecast future outcomes, estimate returns, or provide investment recommendations.",
+        "Comparison matrices explain similarity and difference; they are not forecasts.",
+        "Evidence profile describes historical source support and requires analyst review."
+      ],
+      "closest_vs_alternative": {
+        "alternative_analog": {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on taiwan.",
+              "historical_only": [
+                "prc"
+              ],
+              "historical_value": "prc; taiwan",
+              "matched_values": [
+                "taiwan"
+              ],
+              "query_only": [],
+              "query_value": "Taiwan",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target partially aligns on prc; taiwan; scenario-only values include taiwan strait.",
+              "historical_only": [],
+              "historical_value": "prc; taiwan",
+              "matched_values": [
+                "prc",
+                "taiwan"
+              ],
+              "query_only": [
+                "taiwan strait"
+              ],
+              "query_value": "Taiwan; Taiwan Strait; PRC",
+              "status": "partial"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family differs, so this analog should be interpreted as contextual rather than direct.",
+              "historical_value": "Diplomatic Shock",
+              "query_value": "Election",
+              "status": "different"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "severity",
+              "explanation": "severity is identical.",
+              "historical_value": 3,
+              "query_value": 3,
+              "status": "match"
+            },
+            {
+              "difference": 2.0,
+              "dimension": "surprise",
+              "explanation": "surprise differs by 2 point(s).",
+              "historical_value": 3,
+              "query_value": 1,
+              "status": "different"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile is strong enough for analyst review.",
+              "historical_value": "1 linked evidence item(s); event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [
+                  "Xinhua or legal-policy placeholder"
+                ],
+                "linked_evidence_count": 1,
+                "source_packet_available": false
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "match"
+            }
+          ],
+          "confidence": "Useful analog",
+          "event_date": "2024-06-21",
+          "event_family": "Diplomatic Shock",
+          "event_id": "E014",
+          "event_name": "PRC Judicial Guidelines on Taiwan Independence",
+          "major_differences": [
+            "Target: target partially aligns on prc; taiwan; scenario-only values include taiwan strait.",
+            "Event Family: Event family differs, so this analog should be interpreted as contextual rather than direct.",
+            "Surprise: surprise differs by 2 point(s)."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on taiwan.",
+            "Severity: severity is identical.",
+            "Evidence Profile: Evidence profile is strong enough for analyst review."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 18.0 point(s). Related taxonomy family under Sprint 2 mapping rules.",
+            "Evidence Coverage: 7.0 point(s). Linked news evidence available.",
+            "Severity Proximity: 10.0 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 5.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 10.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 4.0 point(s). Election-adjacent political sequence."
+          ],
+          "similarity_score": 74.0
+        },
+        "closest_historical_analog": {
+          "comparison_matrix": [
+            {
+              "dimension": "actor",
+              "explanation": "actor aligns on taiwan.",
+              "historical_only": [
+                "prc"
+              ],
+              "historical_value": "prc; taiwan",
+              "matched_values": [
+                "taiwan"
+              ],
+              "query_only": [],
+              "query_value": "Taiwan",
+              "status": "match"
+            },
+            {
+              "dimension": "target",
+              "explanation": "target partially aligns on taiwan; scenario-only values include prc; taiwan strait.",
+              "historical_only": [],
+              "historical_value": "taiwan",
+              "matched_values": [
+                "taiwan"
+              ],
+              "query_only": [
+                "prc",
+                "taiwan strait"
+              ],
+              "query_value": "Taiwan; Taiwan Strait; PRC",
+              "status": "partial"
+            },
+            {
+              "dimension": "event family",
+              "explanation": "Event family is an exact match.",
+              "historical_value": "Election",
+              "query_value": "Election",
+              "status": "match"
+            },
+            {
+              "difference": 1.0,
+              "dimension": "severity",
+              "explanation": "severity differs by 1 point(s).",
+              "historical_value": 2,
+              "query_value": 3,
+              "status": "partial"
+            },
+            {
+              "difference": 0.0,
+              "dimension": "surprise",
+              "explanation": "surprise is identical.",
+              "historical_value": 1,
+              "query_value": 1,
+              "status": "match"
+            },
+            {
+              "dimension": "evidence profile",
+              "explanation": "Evidence profile has an event source but limited linked evidence.",
+              "historical_value": "0 linked evidence item(s); event source",
+              "profile": {
+                "event_source_available": true,
+                "evidence_sources": [],
+                "linked_evidence_count": 0,
+                "source_packet_available": false
+              },
+              "query_value": "evidence-supported historical analog",
+              "status": "partial"
+            }
+          ],
+          "confidence": "Strong analog",
+          "event_date": "2024-05-20",
+          "event_family": "Election",
+          "event_id": "E012",
+          "event_name": "Lai Ching-te Inauguration",
+          "major_differences": [
+            "Target: target partially aligns on taiwan; scenario-only values include prc; taiwan strait.",
+            "Severity: severity differs by 1 point(s).",
+            "Evidence Profile: Evidence profile has an event source but limited linked evidence."
+          ],
+          "major_matching_features": [
+            "Actor: actor aligns on taiwan.",
+            "Event Family: Event family is an exact match.",
+            "Surprise: surprise is identical."
+          ],
+          "score_composition": [
+            "Actor Overlap: 20.0 point(s). Alias-aware actor overlap.",
+            "Event Family Match: 30.0 point(s). Exact taxonomy-family match.",
+            "Evidence Coverage: 5.0 point(s). Event source URL available.",
+            "Severity Proximity: 7.5 point(s). Distance between deterministic severity scores.",
+            "Surprise Proximity: 10.0 point(s). Distance between deterministic surprise scores.",
+            "Target Overlap: 5.0 point(s). Alias-aware target, geography, and sector overlap.",
+            "Temporal Context Fit: 4.0 point(s). Election-adjacent political sequence."
+          ],
+          "similarity_score": 81.5
+        },
+        "comparison_summary": "E012 is the closest analog with score 81.5. E014 is the alternative analog with score 74.0. The score gap is 7.5 point(s), so both should be reviewed when the gap is small."
+      },
+      "mapped_scenario": {
+        "actors": [
+          "Taiwan"
+        ],
+        "event_family": "Election",
+        "mapping_reason": "The question references a major Taiwan election, which maps to the Election family and related political-signaling records.",
+        "scenario_id": "S2-DEMO-003",
+        "severity_score": 3,
+        "surprise_score": 1,
+        "targets": [
+          "Taiwan",
+          "Taiwan Strait",
+          "PRC"
+        ],
+        "title": "Major Taiwan Election or Leadership Transition"
+      },
+      "question": "What happens after a major Taiwan election?"
+    }
+  ],
+  "input_file": "results/historical_analog_engine/demo_results.json",
+  "prototype": "scenario_comparison_engine_sprint5"
+}
