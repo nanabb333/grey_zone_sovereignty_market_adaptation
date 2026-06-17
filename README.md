@@ -117,7 +117,9 @@ The dashboard consumes structured outputs from Repo 2:
 
 The repository now separates source material into clear data layers:
 
-- event database: `data/events_v2.csv`
+- validated V2 event database: `data/events_v2.csv`
+- expanded validated V3 event database: `data/events_v3.csv`
+- V3 source packets: `data/source_packets/`
 - curated news evidence: `data/news/news_events.csv`
 - market-reaction outputs: `results/event_abnormal_return_summary.csv`
 - dashboard-ready summaries: `results/*.json` and `results/*.md`
@@ -193,6 +195,28 @@ python3 scripts/analyze_event_family_patterns.py
 The repository now includes optional theory variables in `data/events_v2.csv` that operationalize dissertation concepts as structured fields: `interpretation_type`, `state_support_signal`, and `strategic_importance_level`.
 
 These fields translate existing dissertation concepts such as threat, opportunity, adaptation, state support, and strategic importance into reviewable dataset columns. They are interpretive and conservative: blank values are allowed where the existing documentation does not provide enough support. See [Theory Variable Methodology](docs/theory_variable_methodology.md) and `results/theory_variable_coverage.md`.
+
+## Dataset V3 Expansion
+
+The repository now includes `data/events_v3.csv`, an expanded validated event dataset that preserves all 18 V2 events and adds seven net-new validated geopolitical competition events. Three V2 events were also revalidated with source packets rather than duplicated: Pelosi Taiwan Visit, China live-fire exercises around Taiwan, and the October 7 semiconductor export controls.
+
+V3 expands coverage of:
+
+- U.S.-China export-control escalation
+- Huawei and SMIC technology restrictions
+- semiconductor industrial policy
+- strategic investment in semiconductor capacity
+- China state-backed semiconductor support
+
+The V3 dataset uses source packets in `data/source_packets/` to document event date, source references, evidence quality, event-family classification, inclusion rationale, and theory relevance. This preserves a clear distinction between validated V2 events, candidate events, and newly integrated V3 events.
+
+V3 theory coding extends the existing interpretive layer with:
+
+- `interpretation_type`
+- `strategic_importance_level`
+- `state_support_signal`
+
+The V3 validation report is available at `results/events_v3_validation_report.md`. Descriptive V3 summaries are available at `results/event_family_v3_summary.md` and `results/theory_variable_v3_summary.md`. These reports provide counts and coverage only; they do not create CAR values, forecasts, or causal claims.
 
 ## Scenario Similarity Layer
 
