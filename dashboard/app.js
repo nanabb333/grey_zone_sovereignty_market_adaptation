@@ -80,8 +80,8 @@ const renderKpiCards = (events) => {
     },
     {
       label: "Dashboard Status",
-      value: "V1",
-      note: "Deterministic intelligence layer",
+      value: "V3",
+      note: "Scenario intelligence + comparison layer",
     },
   ];
 
