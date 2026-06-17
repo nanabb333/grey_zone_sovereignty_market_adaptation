@@ -218,6 +218,22 @@ V3 theory coding extends the existing interpretive layer with:
 
 The V3 validation report is available at `results/events_v3_validation_report.md`. Descriptive V3 summaries are available at `results/event_family_v3_summary.md` and `results/theory_variable_v3_summary.md`. These reports provide counts and coverage only; they do not create CAR values, forecasts, or causal claims.
 
+## Current Event Study Coverage
+
+The validated V3 dataset contains 25 events. The current empirical CAR summary, `results/event_abnormal_return_summary.csv`, covers 18 of those events, or 72% of validated V3.
+
+The seven remaining validated events are not yet included in the CAR layer:
+
+- E019: Huawei Added to U.S. Entity List
+- E020: Huawei Foreign-Direct-Product Rule
+- E021: SMIC Added to U.S. Entity List
+- E022: TSMC Announces $12B Arizona Fab
+- E023: CHIPS and Science Act Signed
+- E024: AI Chip Export Control Expansion
+- E025: China Big Fund III Established
+
+These events are tracked in `data/car_expansion_candidates.csv`. The 2022-2024 missing events appear closer to pipeline-ready with current local market data, while the 2019-2020 events require historical market-data backfill before CAR calculations can be run. See `results/event_study_coverage_audit.md` and `docs/car_expansion_plan.md`.
+
 ## Theory Findings from V3 Dataset
 
 The V3 research integration layer uses `data/events_v3.csv` to connect the expanded validated dataset back to the project's theoretical framework. The current findings are cautious and descriptive.
