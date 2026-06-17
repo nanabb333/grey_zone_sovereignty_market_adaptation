@@ -99,9 +99,14 @@ body {
 .family-panel,
 .theory-panel,
 .scenario-panel,
+.scenario-demo-panel,
 .comparison-panel,
 .brief-panel {
   grid-column: 1 / 2;
+}
+
+.scenario-demo-panel {
+  grid-column: 1 / -1;
 }
 
 .ai-panel {
@@ -262,6 +267,18 @@ body {
   padding-left: 20px;
 }
 
+.product-note {
+  padding: 16px;
+  border: 1px solid #99f6e4;
+  border-radius: 8px;
+  background: #ecfeff;
+  color: #134e4a;
+}
+
+.product-note p {
+  margin: 0;
+}
+
 .doc-links {
   display: grid;
   gap: 10px;
@@ -317,6 +334,126 @@ body {
   display: grid;
   gap: 14px;
   margin-top: 16px;
+}
+
+.scenario-demo-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.scenario-demo-card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.scenario-demo-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.scenario-demo-card h3 {
+  margin: 4px 0 0;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+.scenario-demo-card h4 {
+  margin: 16px 0 8px;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.classification-badge {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #ccfbf1;
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.scenario-classification {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.scenario-classification div {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.scenario-classification dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.scenario-classification dd {
+  margin: 3px 0 0;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.analog-table-wrap {
+  overflow-x: auto;
+}
+
+.analog-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.analog-table th,
+.analog-table td {
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.analog-table th {
+  background: #eef6f5;
+}
+
+.scenario-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.scenario-demo-grid section {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.scenario-demo-grid p {
+  margin: 0;
+}
+
+.scenario-demo-grid ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.scenario-demo-grid li {
+  margin-bottom: 6px;
 }
 
 .scenario-card {
@@ -430,6 +567,7 @@ body {
   .family-panel,
   .theory-panel,
   .scenario-panel,
+  .scenario-demo-panel,
   .comparison-panel,
   .brief-panel,
   .insight-panel,
@@ -439,7 +577,13 @@ body {
   }
 
   .kpi-grid,
-  .detail-grid {
+  .detail-grid,
+  .scenario-classification,
+  .scenario-demo-grid {
     grid-template-columns: 1fr;
+  }
+
+  .scenario-demo-header {
+    flex-direction: column;
   }
 }

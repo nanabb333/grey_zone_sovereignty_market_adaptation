@@ -1,17 +1,71 @@
-# Taiwan Geopolitical Risk Intelligence Dashboard
+# Geopolitical Scenario Intelligence Engine
 
-Portfolio project: an academic Taiwan geopolitical risk event-study extended into a dashboard-ready intelligence prototype for analyst review, evidence traceability, and stakeholder communication.
+Portfolio project: a deterministic geopolitical risk intelligence product that turns validated Taiwan-related event research into evidence-based historical analog retrieval, scenario reasoning, analyst briefs, and a dashboard demo.
+
+![Dashboard Intelligence](docs/screenshots/dashboard_intelligence.png)
+
+## 30-Second Summary
+
+The Geopolitical Scenario Intelligence Engine demonstrates a full Research → Analytics → Product workflow:
+
+- Research: validated geopolitical event dataset, source packets, news evidence, and event-study context.
+- Analytics: CAR-covered historical event analysis, event-family summaries, deterministic similarity scoring, and historical analog retrieval.
+- Product: a dashboard Scenario Intelligence Demo that answers analyst-style questions with historical analogs, evidence, observed pathways, and analyst notes.
+
+The system is designed for evidence-based historical analog and scenario reasoning. It compares user questions against validated geopolitical events and generates analyst-facing briefs.
+
+Example questions:
+
+- What happens if China launches another Joint Sword exercise?
+- What happens if new semiconductor export controls are announced?
+- What happens after a major Taiwan election?
+
+Boundary: historical analogs only; no return forecasts; no investment advice; no trading recommendations.
+
+## What the Dashboard Shows
+
+The dashboard includes a Scenario Intelligence Demo that displays:
+
+- Scenario Intelligence Demo cards for the three example questions
+- top historical analogs from validated events
+- deterministic similarity scores
+- source-linked evidence base
+- observed historical pathways from the coded record
+- analyst notes and safe-use boundaries
+
+Key release links:
+
+- [Product Case Study](docs/product_case_study.md)
+- [Sprint 2 Prototype Architecture](docs/sprint2_prototype_architecture.md)
+- [Historical Analog Retrieval Workflow](docs/historical_analog_retrieval_workflow.md)
+- [Dashboard Integration Plan](docs/dashboard_integration_plan_historical_analog_engine.md)
+- [Demo Analyst Briefs](results/historical_analog_engine/demo_analyst_briefs.md)
+- [Demo Results JSON](results/historical_analog_engine/demo_results.json)
+
+## Reproduce the Demo
+
+From the repository root:
+
+```bash
+python3 scripts/historical_analog_engine.py
+python3 -m http.server 8000 --bind 127.0.0.1
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8000/dashboard/
+```
 
 ## Quick Review Path
 
 For a five-minute portfolio review:
 
-1. Read the project overview below.
-2. Skim the screenshots in this README.
-3. Open [Portfolio Landing Page](docs/portfolio_landing_page.md).
-4. Review [Results Index](docs/results_index.md).
-5. Run `python3 scripts/run_all_checks.py`.
-6. Launch the dashboard locally from the repository root.
+1. Read the 30-second summary above.
+2. Open the local dashboard.
+3. Review the Scenario Intelligence Demo section.
+4. Open [Product Case Study](docs/product_case_study.md).
+5. Skim [Demo Analyst Briefs](results/historical_analog_engine/demo_analyst_briefs.md).
 
 ## Project Overview
 
@@ -50,6 +104,31 @@ This dashboard turns Repo 2 outputs into an analyst-facing decision-support work
 It provides KPI cards, latest-event review, executive summaries, rule-based insights, historical comparisons, deterministic executive briefs, and LLM-ready context for future analyst-reviewed AI workflows.
 
 The current version uses deterministic rules only. It does not use live LLM calls, external APIs, forecasting, trading recommendations, or automated investment advice.
+
+## Historical Analog Engine
+
+Sprint 2 adds a deterministic Historical Analog Engine prototype. It maps analyst questions to scenario families, retrieves comparable validated historical events, explains similarity scores, attaches source evidence, extracts observed historical pathways, and generates analyst briefs.
+
+Primary assets:
+
+- `scripts/historical_analog_engine.py`
+- `results/historical_analog_engine/demo_results.json`
+- `results/historical_analog_engine/demo_analyst_briefs.md`
+- `results/historical_analog_engine/sample_briefs/`
+
+The engine is a historical analog retrieval and analyst briefing system. It does not forecast returns, generate investment recommendations, or provide trading guidance.
+
+## Scenario Intelligence Demo
+
+Sprint 3 productizes the Historical Analog Engine inside the dashboard as the Scenario Intelligence Demo. The dashboard now presents three portfolio-ready demo questions:
+
+- What happens if China launches another Joint Sword exercise?
+- What happens if new semiconductor export controls are announced?
+- What happens after a major Taiwan election?
+
+For each question, the dashboard displays scenario classification, top historical analogs, similarity scores, a brief similarity explanation, evidence base, observed historical pathways, and analyst notes. The content is loaded from `results/historical_analog_engine/demo_results.json` and includes fallback instructions if that file is unavailable.
+
+This section is portfolio-safe: historical analogs only, scenario reasoning only, no forecasts, no investment advice, and no trading recommendations.
 
 ## What This Project Demonstrates
 
@@ -112,6 +191,7 @@ The dashboard consumes structured outputs from Repo 2:
 | `results/news_database_summary.json` | Curated news-evidence summary for future source drilldowns |
 | `results/event_family_summary.json` | Descriptive event-family analytics linking events, news evidence, and CAR outputs |
 | `results/scenario_similarity_results.json` | Historical similarity results for example scenario comparison |
+| `results/historical_analog_engine/demo_results.json` | Sprint 3 Scenario Intelligence Demo content |
 
 ## Data Layers
 
@@ -260,6 +340,22 @@ Generate the scenario similarity outputs with:
 python3 scripts/scenario_similarity.py
 ```
 
+## Historical Analog Demo Outputs
+
+Regenerate the deterministic Historical Analog Engine demo outputs with:
+
+```bash
+python3 scripts/historical_analog_engine.py
+```
+
+This writes:
+
+- `results/historical_analog_engine/demo_results.json`
+- `results/historical_analog_engine/demo_analyst_briefs.md`
+- `results/historical_analog_engine/sample_briefs/`
+
+The dashboard Scenario Intelligence Demo reads the JSON file directly. The generated briefs are analyst-facing Markdown artifacts for review and portfolio documentation.
+
 ## Dashboard Prototype
 
 The static dashboard in `dashboard/` presents event-study outputs, evidence summaries, event-family analytics, and scenario similarity results in one local-file-friendly interface. It requires no API key, internet access, or LLM call.
@@ -291,6 +387,7 @@ Current dashboard views include:
 - event-family analytics
 - theory variable coverage
 - scenario similarity cards
+- Scenario Intelligence Demo cards powered by the Historical Analog Engine
 - rule-based insight panel
 
 The dashboard is designed as a decision-support product, not a prediction system.
@@ -325,6 +422,7 @@ Or run the core scripts individually:
 python3 scripts/build_news_event_database.py
 python3 scripts/analyze_event_family_patterns.py
 python3 scripts/scenario_similarity.py
+python3 scripts/historical_analog_engine.py
 python3 scripts/validate_project_data.py
 ```
 

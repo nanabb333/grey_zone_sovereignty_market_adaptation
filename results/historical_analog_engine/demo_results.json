@@ -1,0 +1,1871 @@
+{
+  "boundary_note": "Historical analog retrieval only. This output does not forecast future outcomes, estimate future returns, or provide investment recommendations.",
+  "input_files": {
+    "events": "data/events_v3.csv",
+    "market_context": "results/event_abnormal_return_summary_v3.csv",
+    "news": "data/news/news_events.csv"
+  },
+  "prototype": "historical_analog_engine_sprint2",
+  "questions": [
+    {
+      "analyst_notes": [
+        "Historical analog retrieval only. This output does not forecast future outcomes, estimate future returns, or provide investment recommendations.",
+        "Similarity scores are deterministic retrieval aids and require analyst review.",
+        "Evidence rows may contain placeholder source metadata that should be verified before publication.",
+        "Historical CAR fields, when shown, describe prior coded events and are not estimates for the question scenario."
+      ],
+      "historical_analogs": [
+        {
+          "brief_description": "PLA launched Joint Sword-2024A exercises around Taiwan after Lai's inauguration",
+          "confidence": "Strong analog",
+          "event_category": "Military Demonstration",
+          "event_date": "2024-05-23",
+          "event_family": "Military Exercise",
+          "event_id": "E013",
+          "event_name": "Joint Sword-2024A",
+          "event_repetition_level": "3",
+          "evidence_items": [
+            {
+              "coding_notes": "Connects to E013 and should be cross-checked against official notices and article timestamps.",
+              "news_id": "N009",
+              "source": "Reuters placeholder",
+              "summary": "Placeholder entry representing reporting on the Joint Sword-2024A exercise period after Taiwan's presidential inauguration.",
+              "title": "China conducts Joint Sword-2024A exercises around Taiwan",
+              "url": "https://www.reuters.com/"
+            }
+          ],
+          "features": {
+            "actors": [
+              "pla",
+              "prc",
+              "taiwan"
+            ],
+            "severity_score": 4,
+            "surprise_score": 3,
+            "targets": [
+              "taiwan",
+              "taiwan strait"
+            ]
+          },
+          "historical_market_context": {
+            "matched_trading_date": "2024-05-23",
+            "metrics": {
+              "tsmc_car_3": -1.4771,
+              "tsmc_car_7": -0.4712,
+              "twse_car_3": -0.6509,
+              "twse_car_7": -0.9806
+            },
+            "note": "Historical descriptive CAR context only; not a forecast."
+          },
+          "interpretation_type": "Adaptation",
+          "observed_historical_pathways": [
+            "Later same-family records in the dataset include Joint Sword-2024B (2024-10-14), PLA Joint Combat Readiness Patrols Around Taiwan (2025-01-22), Strait Thunder-2025A (2025-04-01).",
+            "Near-term subsequent coded events include China Big Fund III Established (2024-05-24), PRC Judicial Guidelines on Taiwan Independence (2024-06-21).",
+            "The event is coded with repetition level 3, which indicates whether the pattern was novel or recurring in the historical sample.",
+            "Historical CAR context is available as descriptive event-study evidence only."
+          ],
+          "original_event_family": "Military_Exercise",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "pla",
+                "prc",
+                "taiwan"
+              ],
+              "matched_values": [
+                "pla",
+                "prc"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "PRC",
+                "PLA",
+                "China"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Exact taxonomy-family match.",
+              "historical_value": "Military Exercise",
+              "points": 30.0,
+              "query_value": "Military Exercise"
+            },
+            "evidence_coverage": {
+              "explanation": "Linked news evidence available.",
+              "historical_value": "1 linked news item(s)",
+              "points": 7.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 4,
+              "points": 10.0,
+              "query_value": 4
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 3,
+              "points": 10.0,
+              "query_value": 3
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "matched_values": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "points": 15.0,
+              "query_value": [
+                "Taiwan",
+                "Taiwan Strait"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "Named Joint Sword pattern match.",
+              "historical_value": "Joint Sword-2024A",
+              "points": 5.0,
+              "query_value": [
+                "joint sword",
+                "military",
+                "exercise",
+                "drill",
+                "taiwan"
+              ]
+            }
+          },
+          "similarity_score": 97.0,
+          "source": "https://www.mnd.gov.tw/en/Publication/83035",
+          "source_packet": "",
+          "surprise_rationale": "A PRC military response after Lai's inauguration was widely plausible, but the exercise timing and operational details still introduced information."
+        },
+        {
+          "brief_description": "PLA launched Joint Sword exercises around Taiwan after the Tsai-McCarthy meeting",
+          "confidence": "Strong analog",
+          "event_category": "Military Demonstration",
+          "event_date": "2023-04-08",
+          "event_family": "Military Exercise",
+          "event_id": "E007",
+          "event_name": "Joint Sword 2023",
+          "event_repetition_level": "2",
+          "evidence_items": [
+            {
+              "coding_notes": "Connects to E007; verify headline, timestamp, and source archive before formal coding.",
+              "news_id": "N005",
+              "source": "Reuters placeholder",
+              "summary": "Placeholder entry representing news coverage of Joint Sword 2023 military exercises following diplomatic developments.",
+              "title": "PLA launches Joint Sword exercises near Taiwan",
+              "url": "https://www.reuters.com/"
+            }
+          ],
+          "features": {
+            "actors": [
+              "pla",
+              "prc",
+              "taiwan"
+            ],
+            "severity_score": 4,
+            "surprise_score": 3,
+            "targets": [
+              "taiwan",
+              "taiwan strait"
+            ]
+          },
+          "historical_market_context": {
+            "matched_trading_date": "2023-04-10",
+            "metrics": {
+              "tsmc_car_3": -1.9749,
+              "tsmc_car_7": -1.0286,
+              "twse_car_3": -1.1468,
+              "twse_car_7": -1.2837
+            },
+            "note": "Historical descriptive CAR context only; not a forecast."
+          },
+          "interpretation_type": "Threat",
+          "observed_historical_pathways": [
+            "Later same-family records in the dataset include PLA Drills After Lai U.S. Transit (2023-08-19), China Sends Aircraft and Vessels After U.S. Arms Sale (2023-08-26), Joint Sword-2024A (2024-05-23).",
+            "Near-term subsequent coded events include Lai U.S. Transit (2023-08-12), PLA Drills After Lai U.S. Transit (2023-08-19).",
+            "The event is coded with repetition level 2, which indicates whether the pattern was novel or recurring in the historical sample.",
+            "Historical CAR context is available as descriptive event-study evidence only."
+          ],
+          "original_event_family": "Military_Exercise",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "pla",
+                "prc",
+                "taiwan"
+              ],
+              "matched_values": [
+                "pla",
+                "prc"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "PRC",
+                "PLA",
+                "China"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Exact taxonomy-family match.",
+              "historical_value": "Military Exercise",
+              "points": 30.0,
+              "query_value": "Military Exercise"
+            },
+            "evidence_coverage": {
+              "explanation": "Linked news evidence available.",
+              "historical_value": "1 linked news item(s)",
+              "points": 7.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 4,
+              "points": 10.0,
+              "query_value": 4
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 3,
+              "points": 10.0,
+              "query_value": 3
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "matched_values": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "points": 15.0,
+              "query_value": [
+                "Taiwan",
+                "Taiwan Strait"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "Named Joint Sword pattern match.",
+              "historical_value": "Joint Sword 2023",
+              "points": 5.0,
+              "query_value": [
+                "joint sword",
+                "military",
+                "exercise",
+                "drill",
+                "taiwan"
+              ]
+            }
+          },
+          "similarity_score": 97.0,
+          "source": "https://chinapower.csis.org/tracking-chinas-april-2023-military-exercises-around-taiwan/",
+          "source_packet": "",
+          "surprise_rationale": "A PRC response to the Tsai-McCarthy meeting was plausible, but the timing and scale of Joint Sword 2023 remained uncertain before the exercises."
+        },
+        {
+          "brief_description": "China conducted major military drills and fired missiles near Taiwan",
+          "confidence": "Strong analog",
+          "event_category": "Military Demonstration",
+          "event_date": "2022-08-04",
+          "event_family": "Military Exercise",
+          "event_id": "E004",
+          "event_name": "PLA Military Exercises After Pelosi Visit",
+          "event_repetition_level": "1",
+          "evidence_items": [
+            {
+              "coding_notes": "Links to E004 as military-response context; not a separate claim beyond the coded event record.",
+              "news_id": "N002",
+              "source": "Associated Press placeholder",
+              "summary": "Placeholder entry for coverage of announced military exercises following the Pelosi visit. Language should remain descriptive and avoid causal claims beyond reported sequence.",
+              "title": "China begins military drills around Taiwan after high-profile visit",
+              "url": "https://apnews.com/"
+            }
+          ],
+          "features": {
+            "actors": [
+              "pla",
+              "prc",
+              "taiwan"
+            ],
+            "severity_score": 5,
+            "surprise_score": 3,
+            "targets": [
+              "prc",
+              "taiwan",
+              "taiwan strait"
+            ]
+          },
+          "historical_market_context": {
+            "matched_trading_date": "2022-08-04",
+            "metrics": {
+              "tsmc_car_3": 8.0097,
+              "tsmc_car_7": 3.3773,
+              "twse_car_3": 3.2349,
+              "twse_car_7": 0.6505
+            },
+            "note": "Historical descriptive CAR context only; not a forecast."
+          },
+          "interpretation_type": "Threat",
+          "observed_historical_pathways": [
+            "Later same-family records in the dataset include Joint Sword 2023 (2023-04-08), PLA Drills After Lai U.S. Transit (2023-08-19), China Sends Aircraft and Vessels After U.S. Arms Sale (2023-08-26).",
+            "Near-term subsequent coded events include CHIPS and Science Act Signed (2022-08-09), BIS Advanced Semiconductor Export Controls (2022-10-07).",
+            "The event is coded with repetition level 1, which indicates whether the pattern was novel or recurring in the historical sample.",
+            "Historical CAR context is available as descriptive event-study evidence only."
+          ],
+          "original_event_family": "Military_Exercise",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "pla",
+                "prc",
+                "taiwan"
+              ],
+              "matched_values": [
+                "pla",
+                "prc"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "PRC",
+                "PLA",
+                "China"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Exact taxonomy-family match.",
+              "historical_value": "Military Exercise",
+              "points": 30.0,
+              "query_value": "Military Exercise"
+            },
+            "evidence_coverage": {
+              "explanation": "Source packet and linked news evidence available.",
+              "historical_value": "1 linked news item(s)",
+              "points": 10.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 5,
+              "points": 7.5,
+              "query_value": 4
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 3,
+              "points": 10.0,
+              "query_value": 3
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "prc",
+                "taiwan",
+                "taiwan strait"
+              ],
+              "matched_values": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "points": 15.0,
+              "query_value": [
+                "Taiwan",
+                "Taiwan Strait"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "General historical context.",
+              "historical_value": "PLA Military Exercises After Pelosi Visit",
+              "points": 1.0,
+              "query_value": [
+                "joint sword",
+                "military",
+                "exercise",
+                "drill",
+                "taiwan"
+              ]
+            }
+          },
+          "similarity_score": 93.5,
+          "source": "https://www.investing.com/news/stock-market-news/suspected-drones-over-taiwan-cyber-attacks-after-pelosi-visit-2862740",
+          "source_packet": "data/source_packets/2022-08-04_china_live_fire_exercises_taiwan.md",
+          "surprise_rationale": "A military response was expected after the visit, but the scale and operational intensity of the exercises still introduced new information."
+        },
+        {
+          "brief_description": "China launched military drills around Taiwan after Lai's U.S. transit",
+          "confidence": "Strong analog",
+          "event_category": "Military Demonstration",
+          "event_date": "2023-08-19",
+          "event_family": "Military Exercise",
+          "event_id": "E009",
+          "event_name": "PLA Drills After Lai U.S. Transit",
+          "event_repetition_level": "2",
+          "evidence_items": [
+            {
+              "coding_notes": "Useful for future evidence enrichment; keep separate from causal interpretation.",
+              "news_id": "N006",
+              "source": "Taiwan MND placeholder",
+              "summary": "Placeholder entry for official or media reporting on military activity after a Taiwan vice presidential transit through the United States.",
+              "title": "Taiwan reports PLA aircraft and vessels after Lai U.S. transit",
+              "url": "https://www.mnd.gov.tw/"
+            }
+          ],
+          "features": {
+            "actors": [
+              "pla",
+              "prc",
+              "taiwan",
+              "united states"
+            ],
+            "severity_score": 4,
+            "surprise_score": 3,
+            "targets": [
+              "prc",
+              "taiwan",
+              "taiwan strait"
+            ]
+          },
+          "historical_market_context": {
+            "matched_trading_date": "2023-08-21",
+            "metrics": {
+              "tsmc_car_3": 3.9235,
+              "tsmc_car_7": -2.2359,
+              "twse_car_3": 1.0242,
+              "twse_car_7": -3.3276
+            },
+            "note": "Historical descriptive CAR context only; not a forecast."
+          },
+          "interpretation_type": "Threat",
+          "observed_historical_pathways": [
+            "Later same-family records in the dataset include China Sends Aircraft and Vessels After U.S. Arms Sale (2023-08-26), Joint Sword-2024A (2024-05-23), Joint Sword-2024B (2024-10-14).",
+            "Near-term subsequent coded events include China Sends Aircraft and Vessels After U.S. Arms Sale (2023-08-26), AI Chip Export Control Expansion (2023-10-17).",
+            "The event is coded with repetition level 2, which indicates whether the pattern was novel or recurring in the historical sample.",
+            "Historical CAR context is available as descriptive event-study evidence only."
+          ],
+          "original_event_family": "Military_Exercise",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "pla",
+                "prc",
+                "taiwan",
+                "united states"
+              ],
+              "matched_values": [
+                "pla",
+                "prc"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "PRC",
+                "PLA",
+                "China"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Exact taxonomy-family match.",
+              "historical_value": "Military Exercise",
+              "points": 30.0,
+              "query_value": "Military Exercise"
+            },
+            "evidence_coverage": {
+              "explanation": "Linked news evidence available.",
+              "historical_value": "1 linked news item(s)",
+              "points": 7.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 4,
+              "points": 10.0,
+              "query_value": 4
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 3,
+              "points": 10.0,
+              "query_value": 3
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "prc",
+                "taiwan",
+                "taiwan strait"
+              ],
+              "matched_values": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "points": 15.0,
+              "query_value": [
+                "Taiwan",
+                "Taiwan Strait"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "General historical context.",
+              "historical_value": "PLA Drills After Lai U.S. Transit",
+              "points": 1.0,
+              "query_value": [
+                "joint sword",
+                "military",
+                "exercise",
+                "drill",
+                "taiwan"
+              ]
+            }
+          },
+          "similarity_score": 93.0,
+          "source": "https://www.aljazeera.com/news/2023/8/19/china-launches-military-drills-in-stern-warning-to-taiwan-after-us-visit",
+          "source_packet": "",
+          "surprise_rationale": "A military response to Lai's U.S. transit was foreseeable, but the specific timing and operational form still mattered for market interpretation."
+        },
+        {
+          "brief_description": "PLA launched Joint Sword-2024B exercises around Taiwan",
+          "confidence": "Strong analog",
+          "event_category": "Military Demonstration",
+          "event_date": "2024-10-14",
+          "event_family": "Military Exercise",
+          "event_id": "E015",
+          "event_name": "Joint Sword-2024B",
+          "event_repetition_level": "4",
+          "evidence_items": [
+            {
+              "coding_notes": "Candidate evidence for event-family continuity and repetition analysis; verify source details before final use.",
+              "news_id": "N011",
+              "source": "Reuters placeholder",
+              "summary": "Placeholder entry for coverage of military exercises following Taiwan National Day remarks.",
+              "title": "China announces Joint Sword-2024B drills after Taiwan National Day speech",
+              "url": "https://www.reuters.com/"
+            }
+          ],
+          "features": {
+            "actors": [
+              "pla",
+              "prc",
+              "taiwan"
+            ],
+            "severity_score": 3,
+            "surprise_score": 1,
+            "targets": [
+              "taiwan",
+              "taiwan strait"
+            ]
+          },
+          "historical_market_context": {
+            "matched_trading_date": "2024-10-14",
+            "metrics": {
+              "tsmc_car_3": 1.4217,
+              "tsmc_car_7": 5.3488,
+              "twse_car_3": 0.5034,
+              "twse_car_7": 2.2491
+            },
+            "note": "Historical descriptive CAR context only; not a forecast."
+          },
+          "interpretation_type": "Adaptation",
+          "observed_historical_pathways": [
+            "Later same-family records in the dataset include PLA Joint Combat Readiness Patrols Around Taiwan (2025-01-22), Strait Thunder-2025A (2025-04-01).",
+            "The event is coded with repetition level 4, which indicates whether the pattern was novel or recurring in the historical sample.",
+            "Historical CAR context is available as descriptive event-study evidence only."
+          ],
+          "original_event_family": "Military_Exercise",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "pla",
+                "prc",
+                "taiwan"
+              ],
+              "matched_values": [
+                "pla",
+                "prc"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "PRC",
+                "PLA",
+                "China"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Exact taxonomy-family match.",
+              "historical_value": "Military Exercise",
+              "points": 30.0,
+              "query_value": "Military Exercise"
+            },
+            "evidence_coverage": {
+              "explanation": "Linked news evidence available.",
+              "historical_value": "1 linked news item(s)",
+              "points": 7.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 3,
+              "points": 7.5,
+              "query_value": 4
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 1,
+              "points": 5.0,
+              "query_value": 3
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "matched_values": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "points": 15.0,
+              "query_value": [
+                "Taiwan",
+                "Taiwan Strait"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "Named Joint Sword pattern match.",
+              "historical_value": "Joint Sword-2024B",
+              "points": 5.0,
+              "query_value": [
+                "joint sword",
+                "military",
+                "exercise",
+                "drill",
+                "taiwan"
+              ]
+            }
+          },
+          "similarity_score": 89.5,
+          "source": "https://chinapower.csis.org/china-taiwan-joint-sword-2024b-coast-guard/",
+          "source_packet": "",
+          "surprise_rationale": "The event fit an increasingly recognizable Joint Sword pattern, making the category relatively expected even if details remained uncertain."
+        }
+      ],
+      "mapped_scenario": {
+        "actors": [
+          "PRC",
+          "PLA",
+          "China"
+        ],
+        "event_family": "Military Exercise",
+        "mapping_reason": "The question references Joint Sword and launch of another exercise, which maps to the Military Exercise family.",
+        "scenario_id": "S2-DEMO-001",
+        "severity_score": 4,
+        "surprise_score": 3,
+        "targets": [
+          "Taiwan",
+          "Taiwan Strait"
+        ],
+        "title": "Renewed Joint Sword-Style Military Exercise"
+      },
+      "question": "What happens if China launches another Joint Sword exercise?"
+    },
+    {
+      "analyst_notes": [
+        "Historical analog retrieval only. This output does not forecast future outcomes, estimate future returns, or provide investment recommendations.",
+        "Similarity scores are deterministic retrieval aids and require analyst review.",
+        "Evidence rows may contain placeholder source metadata that should be verified before publication.",
+        "Historical CAR fields, when shown, describe prior coded events and are not estimates for the question scenario."
+      ],
+      "historical_analogs": [
+        {
+          "brief_description": "U.S. imposed advanced computing and semiconductor manufacturing controls on China",
+          "confidence": "Strong analog",
+          "event_category": "Technology Competition",
+          "event_date": "2022-10-07",
+          "event_family": "Export Control",
+          "event_id": "E005",
+          "event_name": "BIS Advanced Semiconductor Export Controls",
+          "event_repetition_level": "1",
+          "evidence_items": [
+            {
+              "coding_notes": "Use as source-evidence candidate for strategic-importance coding; confirm final rule and news source before publication.",
+              "news_id": "N003",
+              "source": "U.S. BIS placeholder",
+              "summary": "Placeholder entry for policy documentation and reporting on U.S. export controls affecting advanced chips and related equipment.",
+              "title": "United States announces advanced semiconductor export-control measures",
+              "url": "https://www.bis.doc.gov/"
+            }
+          ],
+          "features": {
+            "actors": [
+              "prc",
+              "united states"
+            ],
+            "severity_score": 5,
+            "surprise_score": 3,
+            "targets": [
+              "prc",
+              "semiconductor",
+              "united states"
+            ]
+          },
+          "historical_market_context": {
+            "matched_trading_date": "2022-10-07",
+            "metrics": {
+              "tsmc_car_3": 3.08,
+              "tsmc_car_7": 4.4497,
+              "twse_car_3": 2.3331,
+              "twse_car_7": -0.7568
+            },
+            "note": "Historical descriptive CAR context only; not a forecast."
+          },
+          "interpretation_type": "Mixed",
+          "observed_historical_pathways": [
+            "Later same-family records in the dataset include AI Chip Export Control Expansion (2023-10-17).",
+            "Near-term subsequent coded events include TSMC Arizona US$40B Expansion (2022-12-06).",
+            "The event is coded with repetition level 1, which indicates whether the pattern was novel or recurring in the historical sample.",
+            "Historical CAR context is available as descriptive event-study evidence only."
+          ],
+          "original_event_family": "Export_Control",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "prc",
+                "united states"
+              ],
+              "matched_values": [
+                "united states"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "United States",
+                "U.S. Commerce Department"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Exact taxonomy-family match.",
+              "historical_value": "Export Control",
+              "points": 30.0,
+              "query_value": "Export Control"
+            },
+            "evidence_coverage": {
+              "explanation": "Source packet and linked news evidence available.",
+              "historical_value": "1 linked news item(s)",
+              "points": 10.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 5,
+              "points": 7.5,
+              "query_value": 4
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 3,
+              "points": 10.0,
+              "query_value": 3
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "prc",
+                "semiconductor",
+                "united states"
+              ],
+              "matched_values": [
+                "prc",
+                "semiconductor"
+              ],
+              "points": 15.0,
+              "query_value": [
+                "China",
+                "Advanced semiconductors",
+                "Global semiconductor supply chain"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "General historical context.",
+              "historical_value": "BIS Advanced Semiconductor Export Controls",
+              "points": 1.0,
+              "query_value": [
+                "export",
+                "control",
+                "semiconductor",
+                "chip",
+                "entity",
+                "china"
+              ]
+            }
+          },
+          "similarity_score": 93.5,
+          "source": "https://www.bis.gov/press-release/commerce-implements-new-export-controls-advanced-computing-semiconductor-manufacturing-items-peoples",
+          "source_packet": "data/source_packets/2022-10-07_semiconductor_export_controls.md",
+          "surprise_rationale": "U.S.-China technology controls were foreseeable, but the scope of the advanced-computing and semiconductor restrictions contained important new policy detail."
+        },
+        {
+          "brief_description": "U.S. Commerce updated and broadened advanced-computing and AI-chip export controls targeting China",
+          "confidence": "Strong analog",
+          "event_category": "Technology Competition",
+          "event_date": "2023-10-17",
+          "event_family": "Export Control",
+          "event_id": "E024",
+          "event_name": "AI Chip Export Control Expansion",
+          "event_repetition_level": "4",
+          "evidence_items": [],
+          "features": {
+            "actors": [
+              "prc",
+              "united states"
+            ],
+            "severity_score": 5,
+            "surprise_score": 3,
+            "targets": [
+              "prc",
+              "semiconductor"
+            ]
+          },
+          "historical_market_context": {
+            "matched_trading_date": "2023-10-17",
+            "metrics": {
+              "tsmc_car_3": 7.4752,
+              "tsmc_car_7": 6.7548,
+              "twse_car_3": 3.0999,
+              "twse_car_7": 3.8509
+            },
+            "note": "Historical descriptive CAR context only; not a forecast."
+          },
+          "interpretation_type": "Mixed",
+          "observed_historical_pathways": [
+            "The event is coded with repetition level 4, which indicates whether the pattern was novel or recurring in the historical sample.",
+            "Historical CAR context is available as descriptive event-study evidence only."
+          ],
+          "original_event_family": "Export_Control",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "prc",
+                "united states"
+              ],
+              "matched_values": [
+                "united states"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "United States",
+                "U.S. Commerce Department"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Exact taxonomy-family match.",
+              "historical_value": "Export Control",
+              "points": 30.0,
+              "query_value": "Export Control"
+            },
+            "evidence_coverage": {
+              "explanation": "Source packet and event source available.",
+              "historical_value": "0 linked news item(s)",
+              "points": 6.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 5,
+              "points": 7.5,
+              "query_value": 4
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 3,
+              "points": 10.0,
+              "query_value": 3
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "prc",
+                "semiconductor"
+              ],
+              "matched_values": [
+                "prc",
+                "semiconductor"
+              ],
+              "points": 15.0,
+              "query_value": [
+                "China",
+                "Advanced semiconductors",
+                "Global semiconductor supply chain"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "Repeated historical pattern.",
+              "historical_value": "AI Chip Export Control Expansion",
+              "points": 3.0,
+              "query_value": [
+                "export",
+                "control",
+                "semiconductor",
+                "chip",
+                "entity",
+                "china"
+              ]
+            }
+          },
+          "similarity_score": 91.5,
+          "source": "https://www.axios.com/2023/10/17/biden-export-restrictions-ai-chips-china",
+          "source_packet": "data/source_packets/2023-10-17_ai_chip_export_control_expansion.md",
+          "surprise_rationale": "The 2023 update was a follow-on to the 2022 controls, but the detailed tightening and loophole closure provided new policy information."
+        },
+        {
+          "brief_description": "U.S. Commerce added SMIC-related entities to the Entity List, restricting China's leading foundry's access to U.S. technology",
+          "confidence": "Strong analog",
+          "event_category": "Technology Competition",
+          "event_date": "2020-12-18",
+          "event_family": "Export Control",
+          "event_id": "E021",
+          "event_name": "SMIC Added to U.S. Entity List",
+          "event_repetition_level": "3",
+          "evidence_items": [],
+          "features": {
+            "actors": [
+              "prc",
+              "united states"
+            ],
+            "severity_score": 5,
+            "surprise_score": 3,
+            "targets": [
+              "prc",
+              "semiconductor",
+              "smic"
+            ]
+          },
+          "historical_market_context": null,
+          "interpretation_type": "Mixed",
+          "observed_historical_pathways": [
+            "Later same-family records in the dataset include BIS Advanced Semiconductor Export Controls (2022-10-07), AI Chip Export Control Expansion (2023-10-17).",
+            "The event is coded with repetition level 3, which indicates whether the pattern was novel or recurring in the historical sample."
+          ],
+          "original_event_family": "Export_Control",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "prc",
+                "united states"
+              ],
+              "matched_values": [
+                "united states"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "United States",
+                "U.S. Commerce Department"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Exact taxonomy-family match.",
+              "historical_value": "Export Control",
+              "points": 30.0,
+              "query_value": "Export Control"
+            },
+            "evidence_coverage": {
+              "explanation": "Source packet and event source available.",
+              "historical_value": "0 linked news item(s)",
+              "points": 6.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 5,
+              "points": 7.5,
+              "query_value": 4
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 3,
+              "points": 10.0,
+              "query_value": 3
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "prc",
+                "semiconductor",
+                "smic"
+              ],
+              "matched_values": [
+                "prc",
+                "semiconductor"
+              ],
+              "points": 15.0,
+              "query_value": [
+                "China",
+                "Advanced semiconductors",
+                "Global semiconductor supply chain"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "Repeated historical pattern.",
+              "historical_value": "SMIC Added to U.S. Entity List",
+              "points": 3.0,
+              "query_value": [
+                "export",
+                "control",
+                "semiconductor",
+                "chip",
+                "entity",
+                "china"
+              ]
+            }
+          },
+          "similarity_score": 91.5,
+          "source": "https://2017-2021.commerce.gov/news/press-releases/2020/12/commerce-department-adds-dozens-chinese-companies-entity-list.html",
+          "source_packet": "data/source_packets/2020-12-18_smic_entity_list.md",
+          "surprise_rationale": "The action was a clear semiconductor technology-control event, though investors had already seen a series of U.S.-China technology restrictions."
+        },
+        {
+          "brief_description": "U.S. Commerce tightened foreign-direct-product restrictions affecting Huawei's access to chips made with U.S. technology",
+          "confidence": "Strong analog",
+          "event_category": "Technology Competition",
+          "event_date": "2020-05-15",
+          "event_family": "Export Control",
+          "event_id": "E020",
+          "event_name": "Huawei Foreign-Direct-Product Rule",
+          "event_repetition_level": "2",
+          "evidence_items": [],
+          "features": {
+            "actors": [
+              "united states"
+            ],
+            "severity_score": 5,
+            "surprise_score": 3,
+            "targets": [
+              "huawei",
+              "semiconductor"
+            ]
+          },
+          "historical_market_context": null,
+          "interpretation_type": "Mixed",
+          "observed_historical_pathways": [
+            "Later same-family records in the dataset include SMIC Added to U.S. Entity List (2020-12-18), BIS Advanced Semiconductor Export Controls (2022-10-07), AI Chip Export Control Expansion (2023-10-17).",
+            "Near-term subsequent coded events include SMIC Added to U.S. Entity List (2020-12-18).",
+            "The event is coded with repetition level 2, which indicates whether the pattern was novel or recurring in the historical sample."
+          ],
+          "original_event_family": "Export_Control",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "united states"
+              ],
+              "matched_values": [
+                "united states"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "United States",
+                "U.S. Commerce Department"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Exact taxonomy-family match.",
+              "historical_value": "Export Control",
+              "points": 30.0,
+              "query_value": "Export Control"
+            },
+            "evidence_coverage": {
+              "explanation": "Source packet and event source available.",
+              "historical_value": "0 linked news item(s)",
+              "points": 6.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 5,
+              "points": 7.5,
+              "query_value": 4
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 3,
+              "points": 10.0,
+              "query_value": 3
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "huawei",
+                "semiconductor"
+              ],
+              "matched_values": [
+                "semiconductor"
+              ],
+              "points": 7.5,
+              "query_value": [
+                "China",
+                "Advanced semiconductors",
+                "Global semiconductor supply chain"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "General historical context.",
+              "historical_value": "Huawei Foreign-Direct-Product Rule",
+              "points": 1.0,
+              "query_value": [
+                "export",
+                "control",
+                "semiconductor",
+                "chip",
+                "entity",
+                "china"
+              ]
+            }
+          },
+          "similarity_score": 82.0,
+          "source": "https://www.bis.doc.gov/index.php/documents/about-bis/newsroom/press-releases/2569-commerce-addresses-huawei-s-efforts-to-undermine-entity-list-restricts-products-designed-and-produced-with-u-s-technologies/file",
+          "source_packet": "data/source_packets/2020-05-15_huawei_fdp_rule.md",
+          "surprise_rationale": "The rule materially extended U.S. export-control reach; same-day TSMC Arizona announcement creates confounding risk for event-window interpretation."
+        },
+        {
+          "brief_description": "U.S. Commerce announced the addition of Huawei to the Entity List amid national-security and foreign-policy concerns",
+          "confidence": "Strong analog",
+          "event_category": "Technology Competition",
+          "event_date": "2019-05-15",
+          "event_family": "Export Control",
+          "event_id": "E019",
+          "event_name": "Huawei Added to U.S. Entity List",
+          "event_repetition_level": "1",
+          "evidence_items": [],
+          "features": {
+            "actors": [
+              "united states"
+            ],
+            "severity_score": 5,
+            "surprise_score": 3,
+            "targets": [
+              "huawei",
+              "semiconductor"
+            ]
+          },
+          "historical_market_context": null,
+          "interpretation_type": "Threat",
+          "observed_historical_pathways": [
+            "Later same-family records in the dataset include Huawei Foreign-Direct-Product Rule (2020-05-15), SMIC Added to U.S. Entity List (2020-12-18), BIS Advanced Semiconductor Export Controls (2022-10-07).",
+            "The event is coded with repetition level 1, which indicates whether the pattern was novel or recurring in the historical sample."
+          ],
+          "original_event_family": "Export_Control",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "united states"
+              ],
+              "matched_values": [
+                "united states"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "United States",
+                "U.S. Commerce Department"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Exact taxonomy-family match.",
+              "historical_value": "Export Control",
+              "points": 30.0,
+              "query_value": "Export Control"
+            },
+            "evidence_coverage": {
+              "explanation": "Source packet and event source available.",
+              "historical_value": "0 linked news item(s)",
+              "points": 6.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 5,
+              "points": 7.5,
+              "query_value": 4
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 3,
+              "points": 10.0,
+              "query_value": 3
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "huawei",
+                "semiconductor"
+              ],
+              "matched_values": [
+                "semiconductor"
+              ],
+              "points": 7.5,
+              "query_value": [
+                "China",
+                "Advanced semiconductors",
+                "Global semiconductor supply chain"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "General historical context.",
+              "historical_value": "Huawei Added to U.S. Entity List",
+              "points": 1.0,
+              "query_value": [
+                "export",
+                "control",
+                "semiconductor",
+                "chip",
+                "entity",
+                "china"
+              ]
+            }
+          },
+          "similarity_score": 82.0,
+          "source": "https://www.federalregister.gov/documents/2019/05/21/2019-10616/addition-of-entities-to-the-entity-list",
+          "source_packet": "data/source_packets/2019-05-15_huawei_entity_list.md",
+          "surprise_rationale": "The Entity List action was a major policy escalation; the Federal Register effective date was 2019-05-16, but the public announcement date is coded as 2019-05-15."
+        }
+      ],
+      "mapped_scenario": {
+        "actors": [
+          "United States",
+          "U.S. Commerce Department"
+        ],
+        "event_family": "Export Control",
+        "mapping_reason": "The question references semiconductor export controls, which maps to the Export Control family.",
+        "scenario_id": "S2-DEMO-002",
+        "severity_score": 4,
+        "surprise_score": 3,
+        "targets": [
+          "China",
+          "Advanced semiconductors",
+          "Global semiconductor supply chain"
+        ],
+        "title": "New Semiconductor Export Controls"
+      },
+      "question": "What happens if new semiconductor export controls are announced?"
+    },
+    {
+      "analyst_notes": [
+        "Historical analog retrieval only. This output does not forecast future outcomes, estimate future returns, or provide investment recommendations.",
+        "Similarity scores are deterministic retrieval aids and require analyst review.",
+        "Evidence rows may contain placeholder source metadata that should be verified before publication.",
+        "Historical CAR fields, when shown, describe prior coded events and are not estimates for the question scenario."
+      ],
+      "historical_analogs": [
+        {
+          "brief_description": "Lai Ching-te was inaugurated as Taiwan president",
+          "confidence": "Strong analog",
+          "event_category": "Political Signaling",
+          "event_date": "2024-05-20",
+          "event_family": "Election",
+          "event_id": "E012",
+          "event_name": "Lai Ching-te Inauguration",
+          "event_repetition_level": "1",
+          "evidence_items": [],
+          "features": {
+            "actors": [
+              "prc",
+              "taiwan"
+            ],
+            "severity_score": 2,
+            "surprise_score": 1,
+            "targets": [
+              "taiwan"
+            ]
+          },
+          "historical_market_context": {
+            "matched_trading_date": "2024-05-20",
+            "metrics": {
+              "tsmc_car_3": 1.8693,
+              "tsmc_car_7": 0.0312,
+              "twse_car_3": 1.3367,
+              "twse_car_7": -0.2749
+            },
+            "note": "Historical descriptive CAR context only; not a forecast."
+          },
+          "interpretation_type": "Threat",
+          "observed_historical_pathways": [
+            "Near-term subsequent coded events include Joint Sword-2024A (2024-05-23), China Big Fund III Established (2024-05-24).",
+            "The event is coded with repetition level 1, which indicates whether the pattern was novel or recurring in the historical sample.",
+            "Historical CAR context is available as descriptive event-study evidence only."
+          ],
+          "original_event_family": "Political_Signaling",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "prc",
+                "taiwan"
+              ],
+              "matched_values": [
+                "taiwan"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "Taiwan"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Exact taxonomy-family match.",
+              "historical_value": "Election",
+              "points": 30.0,
+              "query_value": "Election"
+            },
+            "evidence_coverage": {
+              "explanation": "Event source URL available.",
+              "historical_value": "0 linked news item(s)",
+              "points": 5.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 2,
+              "points": 7.5,
+              "query_value": 3
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 1,
+              "points": 10.0,
+              "query_value": 1
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "taiwan"
+              ],
+              "matched_values": [
+                "taiwan"
+              ],
+              "points": 5.0,
+              "query_value": [
+                "Taiwan",
+                "Taiwan Strait",
+                "PRC"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "Election-adjacent political sequence.",
+              "historical_value": "Lai Ching-te Inauguration",
+              "points": 4.0,
+              "query_value": [
+                "election",
+                "inauguration",
+                "taiwan",
+                "president",
+                "leadership"
+              ]
+            }
+          },
+          "similarity_score": 81.5,
+          "source": "https://chinapower.csis.org/china-respond-inauguration-taiwan-william-lai-joint-sword-2024a-military-exercise/",
+          "source_packet": "",
+          "surprise_rationale": "The inauguration date was scheduled and highly visible, so the event itself was expected even if PRC reactions remained uncertain."
+        },
+        {
+          "brief_description": "China issued guidelines for punishing diehard Taiwan independence separatists",
+          "confidence": "Useful analog",
+          "event_category": "Political Signaling",
+          "event_date": "2024-06-21",
+          "event_family": "Diplomatic Shock",
+          "event_id": "E014",
+          "event_name": "PRC Judicial Guidelines on Taiwan Independence",
+          "event_repetition_level": "1",
+          "evidence_items": [
+            {
+              "coding_notes": "Use cautious language; do not infer enforcement outcomes without verified follow-up evidence.",
+              "news_id": "N010",
+              "source": "Xinhua or legal-policy placeholder",
+              "summary": "Placeholder entry for legal-policy reporting relevant to political-signaling and coercive-policy context.",
+              "title": "PRC issues judicial guidelines related to Taiwan independence cases",
+              "url": "https://www.gov.cn/"
+            }
+          ],
+          "features": {
+            "actors": [
+              "prc",
+              "taiwan"
+            ],
+            "severity_score": 3,
+            "surprise_score": 3,
+            "targets": [
+              "prc",
+              "taiwan"
+            ]
+          },
+          "historical_market_context": {
+            "matched_trading_date": "2024-06-21",
+            "metrics": {
+              "tsmc_car_3": 0.6854,
+              "tsmc_car_7": -1.0081,
+              "twse_car_3": -2.2721,
+              "twse_car_7": -3.9926
+            },
+            "note": "Historical descriptive CAR context only; not a forecast."
+          },
+          "interpretation_type": "Threat",
+          "observed_historical_pathways": [
+            "Near-term subsequent coded events include Joint Sword-2024B (2024-10-14).",
+            "The event is coded with repetition level 1, which indicates whether the pattern was novel or recurring in the historical sample.",
+            "Historical CAR context is available as descriptive event-study evidence only."
+          ],
+          "original_event_family": "Legal_Judicial_Signaling",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "prc",
+                "taiwan"
+              ],
+              "matched_values": [
+                "taiwan"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "Taiwan"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Related taxonomy family under Sprint 2 mapping rules.",
+              "historical_value": "Diplomatic Shock",
+              "points": 18.0,
+              "query_value": "Election"
+            },
+            "evidence_coverage": {
+              "explanation": "Linked news evidence available.",
+              "historical_value": "1 linked news item(s)",
+              "points": 7.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 3,
+              "points": 10.0,
+              "query_value": 3
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 3,
+              "points": 5.0,
+              "query_value": 1
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "prc",
+                "taiwan"
+              ],
+              "matched_values": [
+                "prc",
+                "taiwan"
+              ],
+              "points": 10.0,
+              "query_value": [
+                "Taiwan",
+                "Taiwan Strait",
+                "PRC"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "Election-adjacent political sequence.",
+              "historical_value": "PRC Judicial Guidelines on Taiwan Independence",
+              "points": 4.0,
+              "query_value": [
+                "election",
+                "inauguration",
+                "taiwan",
+                "president",
+                "leadership"
+              ]
+            }
+          },
+          "similarity_score": 74.0,
+          "source": "https://english.scio.gov.cn/pressroom/2024-06/21/content_117267501.htm",
+          "source_packet": "",
+          "surprise_rationale": "PRC legal pressure on Taiwan independence was consistent with prior signaling, but the formal judicial guidelines introduced specific legal-political content."
+        },
+        {
+          "brief_description": "U.S. House Speaker Nancy Pelosi visited Taiwan amid PRC warnings",
+          "confidence": "Useful analog",
+          "event_category": "Diplomatic Shock",
+          "event_date": "2022-08-02",
+          "event_family": "Diplomatic Shock",
+          "event_id": "E002",
+          "event_name": "Pelosi Visit",
+          "event_repetition_level": "1",
+          "evidence_items": [
+            {
+              "coding_notes": "Links to E002 as contextual evidence; verify exact article metadata before analytical use.",
+              "news_id": "N001",
+              "source": "Reuters placeholder",
+              "summary": "Placeholder entry representing reporting on a senior U.S. congressional visit and related diplomatic warnings. Use only after replacing with a verified article citation.",
+              "title": "Pelosi arrives in Taiwan amid heightened cross-strait warnings",
+              "url": "https://www.reuters.com/"
+            }
+          ],
+          "features": {
+            "actors": [
+              "prc",
+              "taiwan",
+              "united states"
+            ],
+            "severity_score": 3,
+            "surprise_score": 5,
+            "targets": [
+              "taiwan",
+              "taiwan strait"
+            ]
+          },
+          "historical_market_context": {
+            "matched_trading_date": "2022-08-02",
+            "metrics": {
+              "tsmc_car_3": -0.0834,
+              "tsmc_car_7": 1.8572,
+              "twse_car_3": -1.9399,
+              "twse_car_7": -1.8636
+            },
+            "note": "Historical descriptive CAR context only; not a forecast."
+          },
+          "interpretation_type": "Threat",
+          "observed_historical_pathways": [
+            "Later same-family records in the dataset include Lai U.S. Transit (2023-08-12), PRC Judicial Guidelines on Taiwan Independence (2024-06-21).",
+            "Near-term subsequent coded events include China Trade Restrictions After Pelosi Visit (2022-08-03), PLA Military Exercises After Pelosi Visit (2022-08-04).",
+            "The event is coded with repetition level 1, which indicates whether the pattern was novel or recurring in the historical sample.",
+            "Historical CAR context is available as descriptive event-study evidence only."
+          ],
+          "original_event_family": "Diplomatic_Shock",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "prc",
+                "taiwan",
+                "united states"
+              ],
+              "matched_values": [
+                "taiwan"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "Taiwan"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Related taxonomy family under Sprint 2 mapping rules.",
+              "historical_value": "Diplomatic Shock",
+              "points": 18.0,
+              "query_value": "Election"
+            },
+            "evidence_coverage": {
+              "explanation": "Source packet and linked news evidence available.",
+              "historical_value": "1 linked news item(s)",
+              "points": 10.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 3,
+              "points": 10.0,
+              "query_value": 3
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 5,
+              "points": 0.0,
+              "query_value": 1
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "matched_values": [
+                "taiwan",
+                "taiwan strait"
+              ],
+              "points": 10.0,
+              "query_value": [
+                "Taiwan",
+                "Taiwan Strait",
+                "PRC"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "Election-adjacent political sequence.",
+              "historical_value": "Pelosi Visit",
+              "points": 4.0,
+              "query_value": [
+                "election",
+                "inauguration",
+                "taiwan",
+                "president",
+                "leadership"
+              ]
+            }
+          },
+          "similarity_score": 72.0,
+          "source": "https://www.cnbc.com/2022/08/02/china-ratchets-up-military-and-economic-pressure-on-taiwan-as-pelosi-begins-her-visit-.html",
+          "source_packet": "data/source_packets/2022-08-02_pelosi_taiwan_visit.md",
+          "surprise_rationale": "The visit was discussed in advance, but uncertainty remained over whether it would occur and how Beijing would respond."
+        },
+        {
+          "brief_description": "China warned of strong measures if Pelosi visited Taiwan",
+          "confidence": "Useful analog",
+          "event_category": "Diplomatic Shock",
+          "event_date": "2022-07-19",
+          "event_family": "Diplomatic Shock",
+          "event_id": "E001",
+          "event_name": "China Warns Against Pelosi Taiwan Visit",
+          "event_repetition_level": "1",
+          "evidence_items": [],
+          "features": {
+            "actors": [
+              "prc",
+              "taiwan"
+            ],
+            "severity_score": 3,
+            "surprise_score": 3,
+            "targets": [
+              "prc",
+              "taiwan"
+            ]
+          },
+          "historical_market_context": {
+            "matched_trading_date": "2022-07-19",
+            "metrics": {
+              "tsmc_car_3": -4.5601,
+              "tsmc_car_7": -8.6019,
+              "twse_car_3": -2.6162,
+              "twse_car_7": -5.8369
+            },
+            "note": "Historical descriptive CAR context only; not a forecast."
+          },
+          "interpretation_type": "Threat",
+          "observed_historical_pathways": [
+            "Later same-family records in the dataset include Pelosi Visit (2022-08-02), Lai U.S. Transit (2023-08-12), PRC Judicial Guidelines on Taiwan Independence (2024-06-21).",
+            "Near-term subsequent coded events include Pelosi Visit (2022-08-02), China Trade Restrictions After Pelosi Visit (2022-08-03).",
+            "The event is coded with repetition level 1, which indicates whether the pattern was novel or recurring in the historical sample.",
+            "Historical CAR context is available as descriptive event-study evidence only."
+          ],
+          "original_event_family": "Diplomatic_Shock",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "prc",
+                "taiwan"
+              ],
+              "matched_values": [
+                "taiwan"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "Taiwan"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Related taxonomy family under Sprint 2 mapping rules.",
+              "historical_value": "Diplomatic Shock",
+              "points": 18.0,
+              "query_value": "Election"
+            },
+            "evidence_coverage": {
+              "explanation": "Event source URL available.",
+              "historical_value": "0 linked news item(s)",
+              "points": 5.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 3,
+              "points": 10.0,
+              "query_value": 3
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 3,
+              "points": 5.0,
+              "query_value": 1
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "prc",
+                "taiwan"
+              ],
+              "matched_values": [
+                "prc",
+                "taiwan"
+              ],
+              "points": 10.0,
+              "query_value": [
+                "Taiwan",
+                "Taiwan Strait",
+                "PRC"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "Election-adjacent political sequence.",
+              "historical_value": "China Warns Against Pelosi Taiwan Visit",
+              "points": 4.0,
+              "query_value": [
+                "election",
+                "inauguration",
+                "taiwan",
+                "president",
+                "leadership"
+              ]
+            }
+          },
+          "similarity_score": 72.0,
+          "source": "https://www.axios.com/2022/07/19/china-pelosi-taiwan-visit",
+          "source_packet": "",
+          "surprise_rationale": "The possibility of a Pelosi visit was already public, but the warning clarified escalation risk and official PRC signaling before the visit."
+        },
+        {
+          "brief_description": "Taiwan Vice President Lai Ching-te transited through the United States",
+          "confidence": "Useful analog",
+          "event_category": "Diplomatic Shock",
+          "event_date": "2023-08-12",
+          "event_family": "Diplomatic Shock",
+          "event_id": "E008",
+          "event_name": "Lai U.S. Transit",
+          "event_repetition_level": "2",
+          "evidence_items": [],
+          "features": {
+            "actors": [
+              "prc",
+              "taiwan",
+              "united states"
+            ],
+            "severity_score": 2,
+            "surprise_score": 1,
+            "targets": [
+              "taiwan"
+            ]
+          },
+          "historical_market_context": {
+            "matched_trading_date": "2023-08-14",
+            "metrics": {
+              "tsmc_car_3": 1.516,
+              "tsmc_car_7": -1.4803,
+              "twse_car_3": 1.9057,
+              "twse_car_7": -0.7369
+            },
+            "note": "Historical descriptive CAR context only; not a forecast."
+          },
+          "interpretation_type": "Threat",
+          "observed_historical_pathways": [
+            "Later same-family records in the dataset include PRC Judicial Guidelines on Taiwan Independence (2024-06-21).",
+            "Near-term subsequent coded events include PLA Drills After Lai U.S. Transit (2023-08-19), China Sends Aircraft and Vessels After U.S. Arms Sale (2023-08-26).",
+            "The event is coded with repetition level 2, which indicates whether the pattern was novel or recurring in the historical sample.",
+            "Historical CAR context is available as descriptive event-study evidence only."
+          ],
+          "original_event_family": "Diplomatic_Shock",
+          "score_components": {
+            "actor_overlap": {
+              "explanation": "Alias-aware actor overlap.",
+              "historical_value": [
+                "prc",
+                "taiwan",
+                "united states"
+              ],
+              "matched_values": [
+                "taiwan"
+              ],
+              "points": 20.0,
+              "query_value": [
+                "Taiwan"
+              ]
+            },
+            "event_family_match": {
+              "explanation": "Related taxonomy family under Sprint 2 mapping rules.",
+              "historical_value": "Diplomatic Shock",
+              "points": 18.0,
+              "query_value": "Election"
+            },
+            "evidence_coverage": {
+              "explanation": "Event source URL available.",
+              "historical_value": "0 linked news item(s)",
+              "points": 5.0,
+              "query_value": "linked evidence and source packet coverage"
+            },
+            "severity_proximity": {
+              "explanation": "Distance between deterministic severity scores.",
+              "historical_value": 2,
+              "points": 7.5,
+              "query_value": 3
+            },
+            "surprise_proximity": {
+              "explanation": "Distance between deterministic surprise scores.",
+              "historical_value": 1,
+              "points": 10.0,
+              "query_value": 1
+            },
+            "target_overlap": {
+              "explanation": "Alias-aware target, geography, and sector overlap.",
+              "historical_value": [
+                "taiwan"
+              ],
+              "matched_values": [
+                "taiwan"
+              ],
+              "points": 5.0,
+              "query_value": [
+                "Taiwan",
+                "Taiwan Strait",
+                "PRC"
+              ]
+            },
+            "temporal_context_fit": {
+              "explanation": "Election-adjacent political sequence.",
+              "historical_value": "Lai U.S. Transit",
+              "points": 4.0,
+              "query_value": [
+                "election",
+                "inauguration",
+                "taiwan",
+                "president",
+                "leadership"
+              ]
+            }
+          },
+          "similarity_score": 69.5,
+          "source": "https://www.aljazeera.com/news/2023/8/19/china-launches-military-drills-in-stern-warning-to-taiwan-after-us-visit",
+          "source_packet": "",
+          "surprise_rationale": "The transit was scheduled and publicly visible before the event, making the occurrence relatively expected even if follow-on reactions remained uncertain."
+        }
+      ],
+      "mapped_scenario": {
+        "actors": [
+          "Taiwan"
+        ],
+        "event_family": "Election",
+        "mapping_reason": "The question references a major Taiwan election, which maps to the Election family and related political-signaling records.",
+        "scenario_id": "S2-DEMO-003",
+        "severity_score": 3,
+        "surprise_score": 1,
+        "targets": [
+          "Taiwan",
+          "Taiwan Strait",
+          "PRC"
+        ],
+        "title": "Major Taiwan Election or Leadership Transition"
+      },
+      "question": "What happens after a major Taiwan election?"
+    }
+  ]
+}

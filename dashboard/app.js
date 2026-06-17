@@ -7,12 +7,19 @@ const executiveBriefPath = "../results/executive_brief.json";
 const newsDatabaseSummaryPath = "../results/news_database_summary.json";
 const eventFamilySummaryPath = "../results/event_family_summary.json";
 const scenarioSimilarityPath = "../results/scenario_similarity_results.json";
+const historicalAnalogDemoPath = "../results/historical_analog_engine/demo_results.json";
 const dataValidationPath = "../results/data_validation_report.json";
 
 const formatPercent = (value) => {
   const number = Number(value);
   if (Number.isNaN(number)) return "N/A";
   return `${number.toFixed(2)}%`;
+};
+
+const formatScore = (value) => {
+  const number = Number(value);
+  if (Number.isNaN(number)) return "N/A";
+  return number.toFixed(1);
 };
 
 const parseCsv = (text) => {
@@ -433,6 +440,164 @@ const renderScenarioSimilarity = (similarityData) => {
     .join("");
 };
 
+const renderScenarioIntelligenceFallback = (message) => {
+  const container = document.getElementById("scenarioIntelligenceDemo");
+  container.innerHTML = `
+    <article class="scenario-demo-card">
+      <p class="insight-category">Historical analog demo unavailable</p>
+      <h3>Regenerate deterministic demo outputs</h3>
+      <p>
+        The dashboard could not load <code>results/historical_analog_engine/demo_results.json</code>.
+        Run <code>python3 scripts/historical_analog_engine.py</code> from the repository root,
+        then refresh this page.
+      </p>
+      <p class="insight-note">${message}</p>
+      <p class="insight-note">
+        Historical analog retrieval only. No forecasts, investment advice, or trading recommendations.
+      </p>
+    </article>
+  `;
+};
+
+const renderScenarioIntelligenceDemo = (demoData) => {
+  const container = document.getElementById("scenarioIntelligenceDemo");
+  const questions = demoData.questions ?? [];
+
+  if (!questions.length) {
+    renderScenarioIntelligenceFallback("Demo JSON loaded, but no demo questions were found.");
+    return;
+  }
+
+  container.innerHTML = questions
+    .map((question) => {
+      const scenario = question.mapped_scenario ?? {};
+      const analogs = question.historical_analogs ?? [];
+      const topAnalog = analogs[0] ?? {};
+      const components = topAnalog.score_components ?? {};
+      const evidenceItems = topAnalog.evidence_items ?? [];
+      const pathways = topAnalog.observed_historical_pathways ?? [];
+      const analystNotes = question.analyst_notes ?? [];
+
+      const briefExplanation =
+        Object.entries(components)
+          .slice(0, 4)
+          .map(([, component]) => component.explanation)
+          .filter(Boolean)
+          .join(" ")
+        || "Similarity explanation unavailable for this demo question.";
+
+      return `
+        <article class="scenario-demo-card">
+          <div class="scenario-demo-header">
+            <div>
+              <p class="insight-category">${scenario.scenario_id ?? "Scenario"}</p>
+              <h3>${question.question}</h3>
+            </div>
+            <span class="classification-badge">${scenario.event_family ?? "Unclassified"}</span>
+          </div>
+
+          <dl class="scenario-classification">
+            <div>
+              <dt>Scenario Classification</dt>
+              <dd>${scenario.event_family ?? "N/A"}</dd>
+            </div>
+            <div>
+              <dt>Actors</dt>
+              <dd>${(scenario.actors ?? []).join("; ") || "N/A"}</dd>
+            </div>
+            <div>
+              <dt>Targets</dt>
+              <dd>${(scenario.targets ?? []).join("; ") || "N/A"}</dd>
+            </div>
+          </dl>
+
+          <h4>Top Historical Analogs</h4>
+          <div class="analog-table-wrap">
+            <table class="analog-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Event</th>
+                  <th>Family</th>
+                  <th>Score</th>
+                  <th>Confidence</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${analogs
+                  .slice(0, 3)
+                  .map(
+                    (analog, index) => `
+                      <tr>
+                        <td>${index + 1}</td>
+                        <td>${analog.event_id} - ${analog.event_name}</td>
+                        <td>${analog.event_family}</td>
+                        <td>${formatScore(analog.similarity_score)}</td>
+                        <td>${analog.confidence}</td>
+                      </tr>
+                    `,
+                  )
+                  .join("")}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="scenario-demo-grid">
+            <section>
+              <h4>Brief Similarity Explanation</h4>
+              <p>${briefExplanation}</p>
+              <p class="insight-note">
+                Top analog: ${topAnalog.event_id ?? "N/A"} - ${topAnalog.event_name ?? "N/A"}.
+                Similarity score ${formatScore(topAnalog.similarity_score)}.
+              </p>
+            </section>
+
+            <section>
+              <h4>Evidence Base</h4>
+              <ul>
+                <li>Event source: ${topAnalog.source || "N/A"}</li>
+                ${
+                  evidenceItems.length
+                    ? evidenceItems
+                        .slice(0, 2)
+                        .map(
+                          (item) =>
+                            `<li>${item.news_id}: ${item.source} - ${item.title}</li>`,
+                        )
+                        .join("")
+                    : "<li>Linked news evidence: none in current demo output.</li>"
+                }
+              </ul>
+            </section>
+
+            <section>
+              <h4>Observed Historical Pathways</h4>
+              <ul>
+                ${
+                  pathways.length
+                    ? pathways.slice(0, 3).map((pathway) => `<li>${pathway}</li>`).join("")
+                    : "<li>No observed pathway summary available.</li>"
+                }
+              </ul>
+            </section>
+
+            <section>
+              <h4>Analyst Notes</h4>
+              <ul>
+                ${
+                  analystNotes.length
+                    ? analystNotes.slice(0, 4).map((note) => `<li>${note}</li>`).join("")
+                    : "<li>Historical analog retrieval only. No forecasts or investment recommendations.</li>"
+                }
+              </ul>
+            </section>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+};
+
 const renderHistoricalComparison = (comparisonData) => {
   const comparisons = comparisonData.comparisons ?? [];
   const container = document.getElementById("historicalComparison");
@@ -583,4 +748,18 @@ const loadDashboard = async () => {
   }
 };
 
+const loadScenarioIntelligenceDemo = async () => {
+  try {
+    const response = await fetch(historicalAnalogDemoPath);
+    if (!response.ok) {
+      throw new Error("Historical analog demo JSON could not be loaded.");
+    }
+    const demoData = await response.json();
+    renderScenarioIntelligenceDemo(demoData);
+  } catch (error) {
+    renderScenarioIntelligenceFallback(error.message);
+  }
+};
+
 loadDashboard();
+loadScenarioIntelligenceDemo();
