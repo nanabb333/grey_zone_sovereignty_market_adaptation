@@ -218,6 +218,23 @@ V3 theory coding extends the existing interpretive layer with:
 
 The V3 validation report is available at `results/events_v3_validation_report.md`. Descriptive V3 summaries are available at `results/event_family_v3_summary.md` and `results/theory_variable_v3_summary.md`. These reports provide counts and coverage only; they do not create CAR values, forecasts, or causal claims.
 
+## Theory Findings from V3 Dataset
+
+The V3 research integration layer uses `data/events_v3.csv` to connect the expanded validated dataset back to the project's theoretical framework. The current findings are cautious and descriptive.
+
+V3 makes the strategic-importance dimension stronger by adding validated export-control, semiconductor industrial-policy, and strategic-investment events. It also makes the `Mixed` interpretation category more meaningful because export controls can simultaneously create compliance or revenue risk and increase the strategic value of allied semiconductor chokepoints.
+
+The state-support dimension improves but remains selectively coded. This is intentional: many military, diplomatic, legal, and coercive events do not provide direct evidence of public subsidy or state-backed investment. The current V3 CAR coverage also remains incomplete because observed CAR summaries exist for the legacy 18-event analytics layer, not for all newly validated V3 rows.
+
+The main V3 theory reports are:
+
+- `results/theory_variable_analysis.md`
+- `results/state_support_analysis.md`
+- `results/strategic_importance_analysis.md`
+- `results/theory_interaction_analysis.md`
+- `results/theory_dataset_coverage.md`
+- `docs/theory_findings_memo.md`
+
 ## Scenario Similarity Layer
 
 The repository now includes a scenario similarity layer that compares example geopolitical scenarios against historical coded events. It supports historical similarity, context retrieval, and scenario comparison by matching scenario text to event-family coding, actor metadata, geography metadata, linked news evidence, surprise coding, repetition level, and available historical CAR context.
